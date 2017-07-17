@@ -1,0 +1,9 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst dual_config -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst dual_config.dual_boot_0 -pg 1 -lvl 1 -y 30
+preplace netloc EXPORT<net_container>dual_config</net_container>(SLAVE)dual_config.clk,(SLAVE)dual_boot_0.clk) 1 0 1 NJ
+preplace netloc EXPORT<net_container>dual_config</net_container>(SLAVE)dual_boot_0.avalon,(SLAVE)dual_config.avalon) 1 0 1 NJ
+preplace netloc EXPORT<net_container>dual_config</net_container>(SLAVE)dual_boot_0.nreset,(SLAVE)dual_config.nreset) 1 0 1 NJ
+levelinfo -pg 1 0 50 190
+levelinfo -hier dual_config 60 90 180

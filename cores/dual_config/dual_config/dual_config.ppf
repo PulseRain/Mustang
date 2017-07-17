@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pinplan
+ variation_name="dual_boot_0"
+ megafunction_name="ALTERA_DUAL_BOOT"
+ intended_family="MAX 10"
+ specifies="all_ports">
+ <global>
+  <pin name="clk" direction="input" scope="external" />
+  <pin name="nreset" direction="input" scope="external" />
+  <pin name="avmm_rcv_address[2..0]" direction="input" scope="external" />
+  <pin name="avmm_rcv_read" direction="input" scope="external" />
+  <pin name="avmm_rcv_writedata[31..0]" direction="input" scope="external" />
+  <pin name="avmm_rcv_write" direction="input" scope="external" />
+  <pin name="avmm_rcv_readdata[31..0]" direction="output" scope="external" />
+ </global>
+</pinplan>

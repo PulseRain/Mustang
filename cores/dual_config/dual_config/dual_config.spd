@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="simulation/submodules/mentor/altera_dual_boot.v"
+   type="VERILOG_ENCRYPT"
+   library="dual_boot_0"
+   simulator="modelsim" />
+ <file
+   path="simulation/submodules/mentor/alt_dual_boot_avmm.v"
+   type="VERILOG_ENCRYPT"
+   library="dual_boot_0"
+   simulator="modelsim" />
+ <file
+   path="simulation/submodules/mentor/alt_dual_boot.v"
+   type="VERILOG_ENCRYPT"
+   library="dual_boot_0"
+   simulator="modelsim" />
+ <file
+   path="simulation/submodules/aldec/altera_dual_boot.v"
+   type="VERILOG_ENCRYPT"
+   library="dual_boot_0"
+   simulator="riviera" />
+ <file
+   path="simulation/submodules/aldec/alt_dual_boot_avmm.v"
+   type="VERILOG_ENCRYPT"
+   library="dual_boot_0"
+   simulator="riviera" />
+ <file
+   path="simulation/submodules/aldec/alt_dual_boot.v"
+   type="VERILOG_ENCRYPT"
+   library="dual_boot_0"
+   simulator="riviera" />
+ <file path="simulation/dual_config.v" type="VERILOG" />
+ <topLevel name="dual_config" />
+ <deviceFamily name="max10" />
+</simPackage>

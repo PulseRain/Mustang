@@ -1,0 +1,44 @@
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_TOOL_NAME "Qsys"
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_TOOL_VERSION "16.1"
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -library "dual_config" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../dual_config.sopcinfo"]
+set_global_assignment -entity "dual_config" -library "dual_config" -name SLD_INFO "QSYS_NAME dual_config HAS_SOPCINFO 1 GENERATION_ID 1500183377"
+set_global_assignment -library "dual_config" -name MISC_FILE [file join $::quartus(qip_path) "../dual_config.cmp"]
+set_global_assignment -library "dual_config" -name SLD_FILE [file join $::quartus(qip_path) "dual_config.debuginfo"]
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_TARGETED_DEVICE_FAMILY "MAX 10"
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_GENERATED_DEVICE_FAMILY "{MAX 10}"
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "dual_config" -name MISC_FILE [file join $::quartus(qip_path) "../../dual_config.qsys"]
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_COMPONENT_NAME "ZHVhbF9jb25maWc="
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_COMPONENT_DISPLAY_NAME "ZHVhbF9jb25maWc="
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTUwMDE4MzM3Nw==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::TUFYIDEw::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MTBNMDhTQUUxNDRDOEc=::QXV0byBERVZJQ0U="
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::OA==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::LTE=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfRE9NQUlO::LTE=::QXV0byBDTE9DS19ET01BSU4="
+set_global_assignment -entity "dual_config" -library "dual_config" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfUkVTRVRfRE9NQUlO::LTE=::QXV0byBSRVNFVF9ET01BSU4="
+set_global_assignment -entity "altera_dual_boot" -library "dual_config" -name IP_COMPONENT_NAME "YWx0ZXJhX2R1YWxfYm9vdA=="
+set_global_assignment -entity "altera_dual_boot" -library "dual_config" -name IP_COMPONENT_DISPLAY_NAME "QWx0ZXJhIER1YWwgQ29uZmlndXJhdGlvbg=="
+set_global_assignment -entity "altera_dual_boot" -library "dual_config" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "altera_dual_boot" -library "dual_config" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "altera_dual_boot" -library "dual_config" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "altera_dual_boot" -library "dual_config" -name IP_COMPONENT_VERSION "MTYuMQ=="
+set_global_assignment -entity "altera_dual_boot" -library "dual_config" -name IP_COMPONENT_DESCRIPTION "QWx0ZXJhIER1YWwgQ29uZmlndXJhdGlvbiBhbGxvdyBjdXN0b21lcnMgdG8gcGVyZm9ybSBkZXNpZ24gdXBkYXRlLg=="
+set_global_assignment -entity "altera_dual_boot" -library "dual_config" -name IP_COMPONENT_PARAMETER "SU5URU5ERURfREVWSUNFX0ZBTUlMWQ==::TUFYIDEw::RGV2aWNlIGZhbWlseQ=="
+set_global_assignment -entity "altera_dual_boot" -library "dual_config" -name IP_COMPONENT_PARAMETER "Q0xPQ0tfRlJFUVVFTkNZ::MjQuMA==::Q2xvY2sgZnJlcXVlbmN5"
+set_global_assignment -entity "altera_dual_boot" -library "dual_config" -name IP_COMPONENT_PARAMETER "Q09ORklHX0NZQ0xF::OQ==::Q09ORklHX0NZQ0xF"
+set_global_assignment -entity "altera_dual_boot" -library "dual_config" -name IP_COMPONENT_PARAMETER "UkVTRVRfVElNRVJfQ1lDTEU=::MTM=::UkVTRVRfVElNRVJfQ1lDTEU="
+
+set_global_assignment -library "dual_config" -name VERILOG_FILE [file join $::quartus(qip_path) "dual_config.v"]
+set_global_assignment -library "dual_config" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_dual_boot.v"]
+set_global_assignment -library "dual_config" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rtl/alt_dual_boot_avmm.v"]
+set_global_assignment -library "dual_config" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rtl/alt_dual_boot.v"]
+
+set_global_assignment -entity "altera_dual_boot" -library "dual_config" -name IP_TOOL_NAME "altera_dual_boot"
+set_global_assignment -entity "altera_dual_boot" -library "dual_config" -name IP_TOOL_VERSION "16.1"
+set_global_assignment -entity "altera_dual_boot" -library "dual_config" -name IP_TOOL_ENV "Qsys"

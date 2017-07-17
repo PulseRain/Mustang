@@ -1,0 +1,23 @@
+# system info dual_config on 2017.07.15.22:36:14
+system_info:
+name,value
+DEVICE,10M08SAE144C8G
+DEVICE_FAMILY,MAX 10
+GENERATION_ID,1500183372
+#
+#
+# Files generated for dual_config on 2017.07.15.22:36:14
+files:
+filepath,kind,attributes,module,is_top
+simulation/dual_config.v,VERILOG,,dual_config,true
+simulation/submodules/mentor/altera_dual_boot.v,VERILOG_ENCRYPT,MENTOR_SPECIFIC,altera_dual_boot,false
+simulation/submodules/mentor/alt_dual_boot_avmm.v,VERILOG_ENCRYPT,MENTOR_SPECIFIC,altera_dual_boot,false
+simulation/submodules/mentor/alt_dual_boot.v,VERILOG_ENCRYPT,MENTOR_SPECIFIC,altera_dual_boot,false
+simulation/submodules/aldec/altera_dual_boot.v,VERILOG_ENCRYPT,ALDEC_SPECIFIC,altera_dual_boot,false
+simulation/submodules/aldec/alt_dual_boot_avmm.v,VERILOG_ENCRYPT,ALDEC_SPECIFIC,altera_dual_boot,false
+simulation/submodules/aldec/alt_dual_boot.v,VERILOG_ENCRYPT,ALDEC_SPECIFIC,altera_dual_boot,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+dual_config.dual_boot_0,altera_dual_boot

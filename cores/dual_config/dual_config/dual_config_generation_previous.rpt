@@ -1,0 +1,63 @@
+Info: Starting: Create simulation model
+Info: qsys-generate C:\arc\Mustang\cores\dual_config\dual_config.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=C:\arc\Mustang\cores\dual_config\dual_config\simulation --family="MAX 10" --part=10M08SAE144C8G
+Progress: Loading dual_config/dual_config.qsys
+Progress: Reading input file
+Progress: Adding dual_boot_0 [altera_dual_boot 16.1]
+Progress: Parameterizing module dual_boot_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: dual_config: Generating dual_config "dual_config" for SIM_VERILOG
+Info: dual_boot_0: "dual_config" instantiated altera_dual_boot "dual_boot_0"
+Info: dual_config: Done "dual_config" with 2 modules, 7 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:\arc\Mustang\cores\dual_config\dual_config\dual_config.spd --output-directory=C:/arc/Mustang/cores/dual_config/dual_config/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\arc\Mustang\cores\dual_config\dual_config\dual_config.spd --output-directory=C:/arc/Mustang/cores/dual_config/dual_config/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/arc/Mustang/cores/dual_config/dual_config/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in C:/arc/Mustang/cores/dual_config/dual_config/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in C:/arc/Mustang/cores/dual_config/dual_config/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/arc/Mustang/cores/dual_config/dual_config/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: Generating the following file(s) for RIVIERA simulator in C:/arc/Mustang/cores/dual_config/dual_config/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/arc/Mustang/cores/dual_config/dual_config/simulation/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\arc\Mustang\cores\dual_config\dual_config.qsys --block-symbol-file --output-directory=C:\arc\Mustang\cores\dual_config\dual_config --family="MAX 10" --part=10M08SAE144C8G
+Progress: Loading dual_config/dual_config.qsys
+Progress: Reading input file
+Progress: Adding dual_boot_0 [altera_dual_boot 16.1]
+Progress: Parameterizing module dual_boot_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\arc\Mustang\cores\dual_config\dual_config.qsys --synthesis=VERILOG --output-directory=C:\arc\Mustang\cores\dual_config\dual_config\synthesis --family="MAX 10" --part=10M08SAE144C8G
+Progress: Loading dual_config/dual_config.qsys
+Progress: Reading input file
+Progress: Adding dual_boot_0 [altera_dual_boot 16.1]
+Progress: Parameterizing module dual_boot_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: dual_config: Generating dual_config "dual_config" for QUARTUS_SYNTH
+Info: dual_boot_0: generating top-level entity altera_dual_boot
+Info: dual_boot_0: "dual_config" instantiated altera_dual_boot "dual_boot_0"
+Info: dual_config: Done "dual_config" with 2 modules, 4 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

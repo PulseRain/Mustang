@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2017.07.15.22:36:18"
+ outputDirectory="C:/arc/repo/Mustang/trunk/cores/dual_config/dual_config/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="MAX 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="10M08SAE144C8G"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="8"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="avalon" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="32" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="nreset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="avmm_rcv_address" direction="input" role="address" width="3" />
+   <port name="avmm_rcv_read" direction="input" role="read" width="1" />
+   <port
+       name="avmm_rcv_writedata"
+       direction="input"
+       role="writedata"
+       width="32" />
+   <port name="avmm_rcv_write" direction="input" role="write" width="1" />
+   <port
+       name="avmm_rcv_readdata"
+       direction="output"
+       role="readdata"
+       width="32" />
+  </interface>
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="nreset" kind="reset" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="nreset" direction="input" role="reset_n" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="dual_config:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=10M08SAE144C8G,AUTO_DEVICE_FAMILY=MAX 10,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1500183377,AUTO_UNIQUE_ID=(altera_dual_boot:16.1:CLOCK_FREQUENCY=24.0,CONFIG_CYCLE=9,INTENDED_DEVICE_FAMILY=MAX 10,RESET_TIMER_CYCLE=13)"
+   instancePathKey="dual_config"
+   kind="dual_config"
+   version="1.0"
+   name="dual_config">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1500183377" />
+  <parameter name="AUTO_DEVICE" value="10M08SAE144C8G" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="MAX 10" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="8" />
+  <generatedFiles>
+   <file
+       path="C:/arc/repo/Mustang/trunk/cores/dual_config/dual_config/synthesis/dual_config.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:/arc/repo/Mustang/trunk/cores/dual_config/dual_config/synthesis/submodules/altera_dual_boot.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/arc/repo/Mustang/trunk/cores/dual_config/dual_config/synthesis/submodules/rtl/alt_dual_boot_avmm.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/arc/repo/Mustang/trunk/cores/dual_config/dual_config/synthesis/submodules/rtl/alt_dual_boot.v"
+       type="VERILOG"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="C:/arc/repo/Mustang/trunk/cores/dual_config/dual_config.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/intelfpga_lite/16.1/ip/altera/altera_dual_boot/altera_dual_boot/altera_dual_boot_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="dual_config">queue size: 0 starting:dual_config "dual_config"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>1</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="dual_config"><![CDATA["<b>dual_config</b>" reuses <b>altera_dual_boot</b> "<b>submodules/altera_dual_boot</b>"]]></message>
+   <message level="Debug" culprit="dual_config">queue size: 0 starting:altera_dual_boot "submodules/altera_dual_boot"</message>
+   <message level="Info" culprit="dual_boot_0">generating top-level entity altera_dual_boot</message>
+   <message level="Info" culprit="dual_boot_0"><![CDATA["<b>dual_config</b>" instantiated <b>altera_dual_boot</b> "<b>dual_boot_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_dual_boot:16.1:CLOCK_FREQUENCY=24.0,CONFIG_CYCLE=9,INTENDED_DEVICE_FAMILY=MAX 10,RESET_TIMER_CYCLE=13"
+   instancePathKey="dual_config:.:dual_boot_0"
+   kind="altera_dual_boot"
+   version="16.1"
+   name="altera_dual_boot">
+  <parameter name="CLOCK_FREQUENCY" value="24.0" />
+  <parameter name="CONFIG_CYCLE" value="9" />
+  <parameter name="RESET_TIMER_CYCLE" value="13" />
+  <parameter name="INTENDED_DEVICE_FAMILY" value="MAX 10" />
+  <generatedFiles>
+   <file
+       path="C:/arc/repo/Mustang/trunk/cores/dual_config/dual_config/synthesis/submodules/altera_dual_boot.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/arc/repo/Mustang/trunk/cores/dual_config/dual_config/synthesis/submodules/rtl/alt_dual_boot_avmm.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/arc/repo/Mustang/trunk/cores/dual_config/dual_config/synthesis/submodules/rtl/alt_dual_boot.v"
+       type="VERILOG"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga_lite/16.1/ip/altera/altera_dual_boot/altera_dual_boot/altera_dual_boot_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="dual_config" as="dual_boot_0" />
+  <messages>
+   <message level="Debug" culprit="dual_config">queue size: 0 starting:altera_dual_boot "submodules/altera_dual_boot"</message>
+   <message level="Info" culprit="dual_boot_0">generating top-level entity altera_dual_boot</message>
+   <message level="Info" culprit="dual_boot_0"><![CDATA["<b>dual_config</b>" instantiated <b>altera_dual_boot</b> "<b>dual_boot_0</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>
