@@ -1,4 +1,20 @@
 #! python3
+###############################################################################
+# Copyright (c) 2016, PulseRain Technology LLC 
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+###############################################################################
 
 import sys, getopt
 import struct
@@ -58,11 +74,11 @@ def main():
     
     if (hex_file_name.endswith(".hex") or hex_file_name.endswith(".ihx") or hex_file_name.endswith(".eep")):
         bin_file_name = hex_file_name[0:len(hex_file_name) - 4] + ".dat"
+        bin_file_name = "altera_onchip_flash.dat"
         print ("write ", bin_file_name)
     else:
         print ("known file format")
     
-    bin_file_name = "altera_onchip_flash.dat"
     
     flash_byte_data = load_hex_file (hex_file_name, total_word_size)
     #print (flash_byte_data)
