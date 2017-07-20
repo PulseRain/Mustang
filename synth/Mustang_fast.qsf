@@ -208,23 +208,23 @@ set_location_assignment PIN_47 -to JTAG_PIN8
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to JTAG_PIN8
 set_location_assignment PIN_46 -to JTAG_PIN6
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to JTAG_PIN6
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\submodules\\pulserain_rtl_lib\\i2c
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\submodules\\pulserain_rtl_lib\\PWM
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\submodules\\fp51_fast_core\\source
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\peripherals
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\submodules\\pulserain_rtl_lib\\sram\\m23xx1024
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\submodules\\pulserain_rtl_lib\\timer\\fp51
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\submodules\\pulserain_rtl_lib\\sd
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\submodules\\pulserain_rtl_lib\\interrupt
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\submodules\\pulserain_rtl_lib\\fasm_register
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\submodules\\pulserain_rtl_lib\\debug_counter_led
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_rtl_lib\\codec\\si3000
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\submodules\\pulserain_rtl_lib\\chip_id
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\submodules\\pulserain_rtl_lib\\adc
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\submodules\\pulserain_rtl_lib\\uart\\fp51
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\submodules\\crc\\source
-set_global_assignment -name SEARCH_PATH ..\\submodules\\fp51_ocd\\source
-set_global_assignment -name SEARCH_PATH ..\\submodules\\pulserain_fp51_mcu\\common
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/I2C
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/PWM
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/FP51_fast_core/source
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/peripherals
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/SRAM/M23XX1024
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/timer/FP51
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/SD
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/interrupt
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/FASM_register
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/debug_counter_led
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_rtl_lib/codec/Si3000
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/chip_ID
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/ADC
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/UART/FP51
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/CRC/source
+set_global_assignment -name SEARCH_PATH ../submodules/FP51_OCD/source
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/common
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to I2C_SDA
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to I2C_SCL
 set_location_assignment PIN_101 -to I2C_SDA
