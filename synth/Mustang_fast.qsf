@@ -255,4 +255,5 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_AUX_RXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_AUX_TXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to INTx
 set_location_assignment PIN_54 -to INTx[0]
+
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

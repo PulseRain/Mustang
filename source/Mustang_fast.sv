@@ -216,7 +216,7 @@ module Mustang_fast (
         end : pwm_out_proc
             
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    // voice codec M23xx1024, mode 0
+    // voice codec Si3000, mode 0
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         assign Si3000_SCLK = (Si3000_RESET_N) ? 1'bZ : 1'b0;
         assign Si3000_SDO = (Si3000_FSYNC_N) ? 1'b0 : 1'bZ;
