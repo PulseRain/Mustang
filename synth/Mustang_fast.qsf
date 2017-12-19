@@ -254,4 +254,7 @@ set_location_assignment PIN_52 -to UART_AUX_TXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_AUX_RXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_AUX_TXD
 
+set_global_assignment -name GENERATE_SVF_FILE ON
+set_global_assignment -name GENERATE_JAM_FILE ON
+set_global_assignment -name GENERATE_JBC_FILE ON
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
