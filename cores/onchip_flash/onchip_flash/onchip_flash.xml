@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2017.07.16.21:50:56"
- outputDirectory="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash/">
+ date="2017.12.18.23:09:04"
+ outputDirectory="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -184,13 +184,13 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="onchip_flash:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=10M08SAE144C8G,AUTO_DEVICE_FAMILY=MAX 10,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1500267056,AUTO_UNIQUE_ID=(altera_onchip_flash:16.1:ADDR_RANGE1_END_ADDR=79871,ADDR_RANGE1_OFFSET=512,ADDR_RANGE2_OFFSET=0,AUTO_CLOCK_RATE=0,AVMM_DATA_ADDR_WIDTH=17,AVMM_DATA_BURSTCOUNT_WIDTH=2,AVMM_DATA_DATA_WIDTH=32,CLOCK_FREQUENCY=96.0,CONFIGURATION_MODE=Dual Compressed Images,CONFIGURATION_SCHEME=Internal Configuration,DATA_INTERFACE=Parallel,DEVICE_FAMILY=MAX 10,DEVICE_ID=08,FLASH_ADDR_ALIGNMENT_BITS=1,FLASH_BUSY_TIMEOUT_CYCLE_MAX_INDEX=115,FLASH_ERASE_TIMEOUT_CYCLE_MAX_INDEX=33600000,FLASH_READ_CYCLE_MAX_INDEX=4,FLASH_RESET_CYCLE_MAX_INDEX=24,FLASH_SEQ_READ_DATA_COUNT=2,FLASH_WRITE_TIMEOUT_CYCLE_MAX_INDEX=29280,INIT_FILENAME=altera_onchip_flash.hex,INIT_FILENAME_SIM=altera_onchip_flash.dat,IS_COMPRESSED_IMAGE=True,IS_DUAL_BOOT=True,IS_ERAM_SKIP=True,MAX_UFM_VALID_ADDR=8191,MAX_VALID_ADDR=79871,MIN_UFM_VALID_ADDR=0,MIN_VALID_ADDR=0,PARALLEL_MODE=true,PART_NAME=10M08SAE144C8G,READ_AND_WRITE_MODE=true,READ_BURST_COUNT=2,READ_BURST_MODE=Incrementing,SECTOR1_END_ADDR=4095,SECTOR1_MAP=1,SECTOR1_START_ADDR=0,SECTOR2_END_ADDR=8191,SECTOR2_MAP=2,SECTOR2_START_ADDR=4096,SECTOR3_END_ADDR=29183,SECTOR3_MAP=3,SECTOR3_START_ADDR=8192,SECTOR4_END_ADDR=44031,SECTOR4_MAP=4,SECTOR4_START_ADDR=29184,SECTOR5_END_ADDR=79871,SECTOR5_MAP=5,SECTOR5_START_ADDR=44032,SECTOR_ACCESS_MODE=Read and write,Read and write,Read and write,Read and write,Read and write,SECTOR_ADDRESS_MAPPING=0x00000 - 0x03fff,0x04000 - 0x07fff,0x08000 - 0x1c7ff,0x1c800 - 0x2afff,0x2b000 - 0x4dfff,SECTOR_ID=1,2,3,4,5,SECTOR_READ_PROTECTION_MODE=0,SECTOR_STORAGE_TYPE=UFM,UFM,CFM (Image 2),CFM (Image 2),CFM (Image 1),WRAPPING_BURST_MODE=false,autoInitializationFileName=onchip_flash_onchip_flash_0,initFlashContent=true,initializationFileName=altera_onchip_flash.hex,initializationFileNameForSim=altera_onchip_flash.dat,useNonDefaultInitFile=true)"
+   parameterizationKey="onchip_flash:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=10M08SAE144C8G,AUTO_DEVICE_FAMILY=MAX 10,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1513667343,AUTO_UNIQUE_ID=(altera_onchip_flash:16.1:ADDR_RANGE1_END_ADDR=79871,ADDR_RANGE1_OFFSET=512,ADDR_RANGE2_OFFSET=0,AUTO_CLOCK_RATE=0,AVMM_DATA_ADDR_WIDTH=17,AVMM_DATA_BURSTCOUNT_WIDTH=2,AVMM_DATA_DATA_WIDTH=32,CLOCK_FREQUENCY=96.0,CONFIGURATION_MODE=Dual Compressed Images,CONFIGURATION_SCHEME=Internal Configuration,DATA_INTERFACE=Parallel,DEVICE_FAMILY=MAX 10,DEVICE_ID=08,FLASH_ADDR_ALIGNMENT_BITS=1,FLASH_BUSY_TIMEOUT_CYCLE_MAX_INDEX=115,FLASH_ERASE_TIMEOUT_CYCLE_MAX_INDEX=33600000,FLASH_READ_CYCLE_MAX_INDEX=4,FLASH_RESET_CYCLE_MAX_INDEX=24,FLASH_SEQ_READ_DATA_COUNT=2,FLASH_WRITE_TIMEOUT_CYCLE_MAX_INDEX=29280,INIT_FILENAME=altera_onchip_flash.hex,INIT_FILENAME_SIM=altera_onchip_flash.dat,IS_COMPRESSED_IMAGE=True,IS_DUAL_BOOT=True,IS_ERAM_SKIP=True,MAX_UFM_VALID_ADDR=8191,MAX_VALID_ADDR=79871,MIN_UFM_VALID_ADDR=0,MIN_VALID_ADDR=0,PARALLEL_MODE=true,PART_NAME=10M08SAE144C8G,READ_AND_WRITE_MODE=true,READ_BURST_COUNT=2,READ_BURST_MODE=Incrementing,SECTOR1_END_ADDR=4095,SECTOR1_MAP=1,SECTOR1_START_ADDR=0,SECTOR2_END_ADDR=8191,SECTOR2_MAP=2,SECTOR2_START_ADDR=4096,SECTOR3_END_ADDR=29183,SECTOR3_MAP=3,SECTOR3_START_ADDR=8192,SECTOR4_END_ADDR=44031,SECTOR4_MAP=4,SECTOR4_START_ADDR=29184,SECTOR5_END_ADDR=79871,SECTOR5_MAP=5,SECTOR5_START_ADDR=44032,SECTOR_ACCESS_MODE=Read and write,Read and write,Read and write,Read and write,Read only,SECTOR_ADDRESS_MAPPING=0x00000 - 0x03fff,0x04000 - 0x07fff,0x08000 - 0x1c7ff,0x1c800 - 0x2afff,0x2b000 - 0x4dfff,SECTOR_ID=1,2,3,4,5,SECTOR_READ_PROTECTION_MODE=16,SECTOR_STORAGE_TYPE=UFM,UFM,CFM (Image 2),CFM (Image 2),CFM (Image 1),WRAPPING_BURST_MODE=false,autoInitializationFileName=onchip_flash_onchip_flash_0,initFlashContent=true,initializationFileName=altera_onchip_flash.hex,initializationFileNameForSim=altera_onchip_flash.dat,useNonDefaultInitFile=true)"
    instancePathKey="onchip_flash"
    kind="onchip_flash"
    version="1.0"
    name="onchip_flash">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1500267056" />
+  <parameter name="AUTO_GENERATION_ID" value="1513667343" />
   <parameter name="AUTO_DEVICE" value="10M08SAE144C8G" />
   <parameter name="AUTO_DEVICE_FAMILY" value="MAX 10" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
@@ -199,37 +199,37 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="8" />
   <generatedFiles>
    <file
-       path="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash/synthesis/onchip_flash.v"
+       path="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash/synthesis/onchip_flash.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash_util.v"
+       path="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash_util.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash.v"
+       path="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash_avmm_data_controller.v"
+       path="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash_avmm_data_controller.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash_avmm_csr_controller.v"
+       path="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash_avmm_csr_controller.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash.sdc"
+       path="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash.sdc"
        type="SDC"
        attributes="" />
    <file
-       path="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash/synthesis/submodules/rtl/altera_onchip_flash_block.v"
+       path="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash/synthesis/submodules/rtl/altera_onchip_flash_block.v"
        type="VERILOG"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash.qsys" />
+   <file path="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash.qsys" />
   </sourceFiles>
   <childSourceFiles>
    <file
@@ -257,12 +257,12 @@
  </entity>
  <entity
    path="submodules/"
-   parameterizationKey="altera_onchip_flash:16.1:ADDR_RANGE1_END_ADDR=79871,ADDR_RANGE1_OFFSET=512,ADDR_RANGE2_OFFSET=0,AUTO_CLOCK_RATE=0,AVMM_DATA_ADDR_WIDTH=17,AVMM_DATA_BURSTCOUNT_WIDTH=2,AVMM_DATA_DATA_WIDTH=32,CLOCK_FREQUENCY=96.0,CONFIGURATION_MODE=Dual Compressed Images,CONFIGURATION_SCHEME=Internal Configuration,DATA_INTERFACE=Parallel,DEVICE_FAMILY=MAX 10,DEVICE_ID=08,FLASH_ADDR_ALIGNMENT_BITS=1,FLASH_BUSY_TIMEOUT_CYCLE_MAX_INDEX=115,FLASH_ERASE_TIMEOUT_CYCLE_MAX_INDEX=33600000,FLASH_READ_CYCLE_MAX_INDEX=4,FLASH_RESET_CYCLE_MAX_INDEX=24,FLASH_SEQ_READ_DATA_COUNT=2,FLASH_WRITE_TIMEOUT_CYCLE_MAX_INDEX=29280,INIT_FILENAME=altera_onchip_flash.hex,INIT_FILENAME_SIM=altera_onchip_flash.dat,IS_COMPRESSED_IMAGE=True,IS_DUAL_BOOT=True,IS_ERAM_SKIP=True,MAX_UFM_VALID_ADDR=8191,MAX_VALID_ADDR=79871,MIN_UFM_VALID_ADDR=0,MIN_VALID_ADDR=0,PARALLEL_MODE=true,PART_NAME=10M08SAE144C8G,READ_AND_WRITE_MODE=true,READ_BURST_COUNT=2,READ_BURST_MODE=Incrementing,SECTOR1_END_ADDR=4095,SECTOR1_MAP=1,SECTOR1_START_ADDR=0,SECTOR2_END_ADDR=8191,SECTOR2_MAP=2,SECTOR2_START_ADDR=4096,SECTOR3_END_ADDR=29183,SECTOR3_MAP=3,SECTOR3_START_ADDR=8192,SECTOR4_END_ADDR=44031,SECTOR4_MAP=4,SECTOR4_START_ADDR=29184,SECTOR5_END_ADDR=79871,SECTOR5_MAP=5,SECTOR5_START_ADDR=44032,SECTOR_ACCESS_MODE=Read and write,Read and write,Read and write,Read and write,Read and write,SECTOR_ADDRESS_MAPPING=0x00000 - 0x03fff,0x04000 - 0x07fff,0x08000 - 0x1c7ff,0x1c800 - 0x2afff,0x2b000 - 0x4dfff,SECTOR_ID=1,2,3,4,5,SECTOR_READ_PROTECTION_MODE=0,SECTOR_STORAGE_TYPE=UFM,UFM,CFM (Image 2),CFM (Image 2),CFM (Image 1),WRAPPING_BURST_MODE=false,autoInitializationFileName=onchip_flash_onchip_flash_0,initFlashContent=true,initializationFileName=altera_onchip_flash.hex,initializationFileNameForSim=altera_onchip_flash.dat,useNonDefaultInitFile=true"
+   parameterizationKey="altera_onchip_flash:16.1:ADDR_RANGE1_END_ADDR=79871,ADDR_RANGE1_OFFSET=512,ADDR_RANGE2_OFFSET=0,AUTO_CLOCK_RATE=0,AVMM_DATA_ADDR_WIDTH=17,AVMM_DATA_BURSTCOUNT_WIDTH=2,AVMM_DATA_DATA_WIDTH=32,CLOCK_FREQUENCY=96.0,CONFIGURATION_MODE=Dual Compressed Images,CONFIGURATION_SCHEME=Internal Configuration,DATA_INTERFACE=Parallel,DEVICE_FAMILY=MAX 10,DEVICE_ID=08,FLASH_ADDR_ALIGNMENT_BITS=1,FLASH_BUSY_TIMEOUT_CYCLE_MAX_INDEX=115,FLASH_ERASE_TIMEOUT_CYCLE_MAX_INDEX=33600000,FLASH_READ_CYCLE_MAX_INDEX=4,FLASH_RESET_CYCLE_MAX_INDEX=24,FLASH_SEQ_READ_DATA_COUNT=2,FLASH_WRITE_TIMEOUT_CYCLE_MAX_INDEX=29280,INIT_FILENAME=altera_onchip_flash.hex,INIT_FILENAME_SIM=altera_onchip_flash.dat,IS_COMPRESSED_IMAGE=True,IS_DUAL_BOOT=True,IS_ERAM_SKIP=True,MAX_UFM_VALID_ADDR=8191,MAX_VALID_ADDR=79871,MIN_UFM_VALID_ADDR=0,MIN_VALID_ADDR=0,PARALLEL_MODE=true,PART_NAME=10M08SAE144C8G,READ_AND_WRITE_MODE=true,READ_BURST_COUNT=2,READ_BURST_MODE=Incrementing,SECTOR1_END_ADDR=4095,SECTOR1_MAP=1,SECTOR1_START_ADDR=0,SECTOR2_END_ADDR=8191,SECTOR2_MAP=2,SECTOR2_START_ADDR=4096,SECTOR3_END_ADDR=29183,SECTOR3_MAP=3,SECTOR3_START_ADDR=8192,SECTOR4_END_ADDR=44031,SECTOR4_MAP=4,SECTOR4_START_ADDR=29184,SECTOR5_END_ADDR=79871,SECTOR5_MAP=5,SECTOR5_START_ADDR=44032,SECTOR_ACCESS_MODE=Read and write,Read and write,Read and write,Read and write,Read only,SECTOR_ADDRESS_MAPPING=0x00000 - 0x03fff,0x04000 - 0x07fff,0x08000 - 0x1c7ff,0x1c800 - 0x2afff,0x2b000 - 0x4dfff,SECTOR_ID=1,2,3,4,5,SECTOR_READ_PROTECTION_MODE=16,SECTOR_STORAGE_TYPE=UFM,UFM,CFM (Image 2),CFM (Image 2),CFM (Image 1),WRAPPING_BURST_MODE=false,autoInitializationFileName=onchip_flash_onchip_flash_0,initFlashContent=true,initializationFileName=altera_onchip_flash.hex,initializationFileNameForSim=altera_onchip_flash.dat,useNonDefaultInitFile=true"
    instancePathKey="onchip_flash:.:onchip_flash_0"
    kind="altera_onchip_flash"
    version="16.1"
    name="altera_onchip_flash">
-  <parameter name="SECTOR_READ_PROTECTION_MODE" value="0" />
+  <parameter name="SECTOR_READ_PROTECTION_MODE" value="16" />
   <parameter name="MIN_UFM_VALID_ADDR" value="0" />
   <parameter name="AVMM_DATA_ADDR_WIDTH" value="17" />
   <parameter name="SECTOR3_START_ADDR" value="8192" />
@@ -312,7 +312,7 @@
   <parameter name="FLASH_ADDR_ALIGNMENT_BITS" value="1" />
   <parameter
      name="SECTOR_ACCESS_MODE"
-     value="Read and write,Read and write,Read and write,Read and write,Read and write" />
+     value="Read and write,Read and write,Read and write,Read and write,Read only" />
   <parameter name="initFlashContent" value="true" />
   <parameter name="SECTOR1_START_ADDR" value="0" />
   <parameter name="ADDR_RANGE1_END_ADDR" value="79871" />
@@ -330,27 +330,27 @@
   <parameter name="IS_DUAL_BOOT" value="True" />
   <generatedFiles>
    <file
-       path="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash_util.v"
+       path="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash_util.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash.v"
+       path="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash_avmm_data_controller.v"
+       path="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash_avmm_data_controller.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash_avmm_csr_controller.v"
+       path="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash_avmm_csr_controller.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash.sdc"
+       path="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash/synthesis/submodules/altera_onchip_flash.sdc"
        type="SDC"
        attributes="" />
    <file
-       path="C:/arc/repo/Mustang/trunk/cores/onchip_flash/onchip_flash/synthesis/submodules/rtl/altera_onchip_flash_block.v"
+       path="C:/GitHub/Mustang/cores/onchip_flash/onchip_flash/synthesis/submodules/rtl/altera_onchip_flash_block.v"
        type="VERILOG"
        attributes="" />
   </generatedFiles>

@@ -2,7 +2,7 @@ set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name IP_TO
 set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name IP_TOOL_VERSION "16.1"
 set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "onchip_flash" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../onchip_flash.sopcinfo"]
-set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name SLD_INFO "QSYS_NAME onchip_flash HAS_SOPCINFO 1 GENERATION_ID 1500267056"
+set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name SLD_INFO "QSYS_NAME onchip_flash HAS_SOPCINFO 1 GENERATION_ID 1513667343"
 set_global_assignment -library "onchip_flash" -name MISC_FILE [file join $::quartus(qip_path) "../onchip_flash.cmp"]
 set_global_assignment -library "onchip_flash" -name SLD_FILE [file join $::quartus(qip_path) "onchip_flash.debuginfo"]
 set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name IP_TARGETED_DEVICE_FAMILY "MAX 10"
@@ -15,7 +15,7 @@ set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name IP_CO
 set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTUwMDI2NzA1Ng==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTUxMzY2NzM0Mw==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::TUFYIDEw::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MTBNMDhTQUUxNDRDOEc=::QXV0byBERVZJQ0U="
 set_global_assignment -entity "onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::OA==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -35,7 +35,7 @@ set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -nam
 set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "UkVBRF9CVVJTVF9DT1VOVA==::Mg==::UmVhZCBidXJzdCBjb3VudA=="
 set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "Q0xPQ0tfRlJFUVVFTkNZ::OTYuMA==::Q2xvY2sgZnJlcXVlbmN5"
 set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "Q09ORklHVVJBVElPTl9NT0RF::RHVhbCBDb21wcmVzc2VkIEltYWdlcw==::Q29uZmlndXJhdGlvbiBNb2Rl"
-set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "U0VDVE9SX0FDQ0VTU19NT0RF::UmVhZCBhbmQgd3JpdGUsUmVhZCBhbmQgd3JpdGUsUmVhZCBhbmQgd3JpdGUsUmVhZCBhbmQgd3JpdGUsUmVhZCBhbmQgd3JpdGU=::QWNjZXNzIE1vZGU="
+set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "U0VDVE9SX0FDQ0VTU19NT0RF::UmVhZCBhbmQgd3JpdGUsUmVhZCBhbmQgd3JpdGUsUmVhZCBhbmQgd3JpdGUsUmVhZCBhbmQgd3JpdGUsUmVhZCBvbmx5::QWNjZXNzIE1vZGU="
 set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "aW5pdEZsYXNoQ29udGVudA==::dHJ1ZQ==::SW5pdGlhbGl6ZSBmbGFzaCBjb250ZW50"
 set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "dXNlTm9uRGVmYXVsdEluaXRGaWxl::dHJ1ZQ==::RW5hYmxlIG5vbi1kZWZhdWx0IGluaXRpYWxpemF0aW9uIGZpbGU="
 set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "aW5pdGlhbGl6YXRpb25GaWxlTmFtZQ==::YWx0ZXJhX29uY2hpcF9mbGFzaC5oZXg=::VXNlciBjcmVhdGVkIGhleCBvciBtaWYgZmlsZQ=="
@@ -70,7 +70,7 @@ set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -nam
 set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "QVZNTV9EQVRBX0FERFJfV0lEVEg=::MTc=::QVZNTV9EQVRBX0FERFJfV0lEVEg="
 set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "QVZNTV9EQVRBX0RBVEFfV0lEVEg=::MzI=::QVZNTV9EQVRBX0RBVEFfV0lEVEg="
 set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "QVZNTV9EQVRBX0JVUlNUQ09VTlRfV0lEVEg=::Mg==::QVZNTV9EQVRBX0JVUlNUQ09VTlRfV0lEVEg="
-set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "U0VDVE9SX1JFQURfUFJPVEVDVElPTl9NT0RF::MA==::U0VDVE9SX1JFQURfUFJPVEVDVElPTl9NT0RF"
+set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "U0VDVE9SX1JFQURfUFJPVEVDVElPTl9NT0RF::MTY=::U0VDVE9SX1JFQURfUFJPVEVDVElPTl9NT0RF"
 set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "RkxBU0hfU0VRX1JFQURfREFUQV9DT1VOVA==::Mg==::RkxBU0hfU0VRX1JFQURfREFUQV9DT1VOVA=="
 set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "RkxBU0hfQUREUl9BTElHTk1FTlRfQklUUw==::MQ==::RkxBU0hfQUREUl9BTElHTk1FTlRfQklUUw=="
 set_global_assignment -entity "altera_onchip_flash" -library "onchip_flash" -name IP_COMPONENT_PARAMETER "RkxBU0hfUkVBRF9DWUNMRV9NQVhfSU5ERVg=::NA==::RkxBU0hfUkVBRF9DWUNMRV9NQVhfSU5ERVg="

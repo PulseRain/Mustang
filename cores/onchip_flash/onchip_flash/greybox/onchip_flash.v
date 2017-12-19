@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition"
 
-// DATE "07/16/2017 21:51:13"
+// DATE "12/18/2017 23:09:31"
 
 // 
 // Device: Altera 10M08SAE144C8G Package EQFP144
@@ -1077,7 +1077,6 @@ wire \avmm_csr_controller|csr_wp_mode[0]~q ;
 wire \avmm_csr_controller|csr_wp_mode[1]~q ;
 wire \avmm_csr_controller|csr_wp_mode[2]~q ;
 wire \avmm_csr_controller|csr_wp_mode[3]~q ;
-wire \avmm_csr_controller|csr_wp_mode[4]~q ;
 wire \avmm_csr_controller|csr_erase_state[0]~q ;
 wire \avmm_csr_controller|csr_erase_state[1]~q ;
 wire \avmm_data_controller|flash_arclk~0_combout ;
@@ -1122,6 +1121,32 @@ wire \avmm_csr_controller|csr_sector_page_erase_addr_reg[7]~_wirecell_combout ;
 wire \avmm_csr_controller|csr_sector_page_erase_addr_reg[8]~_wirecell_combout ;
 wire \avmm_data_controller|flash_drshft_neg_reg~_wirecell_combout ;
 
+
+onchip_flash_altera_onchip_flash_block altera_onchip_flash_block_1(
+	.busy(\altera_onchip_flash_block|busy ),
+	.osc(\altera_onchip_flash_block|osc ),
+	.sp_pass(\altera_onchip_flash_block|sp_pass ),
+	.se_pass(\altera_onchip_flash_block|se_pass ),
+	.drdout({\altera_onchip_flash_block|drdout[31] ,\altera_onchip_flash_block|drdout[30] ,\altera_onchip_flash_block|drdout[29] ,\altera_onchip_flash_block|drdout[28] ,\altera_onchip_flash_block|drdout[27] ,\altera_onchip_flash_block|drdout[26] ,
+\altera_onchip_flash_block|drdout[25] ,\altera_onchip_flash_block|drdout[24] ,\altera_onchip_flash_block|drdout[23] ,\altera_onchip_flash_block|drdout[22] ,\altera_onchip_flash_block|drdout[21] ,\altera_onchip_flash_block|drdout[20] ,
+\altera_onchip_flash_block|drdout[19] ,\altera_onchip_flash_block|drdout[18] ,\altera_onchip_flash_block|drdout[17] ,\altera_onchip_flash_block|drdout[16] ,\altera_onchip_flash_block|drdout[15] ,\altera_onchip_flash_block|drdout[14] ,
+\altera_onchip_flash_block|drdout[13] ,\altera_onchip_flash_block|drdout[12] ,\altera_onchip_flash_block|drdout[11] ,\altera_onchip_flash_block|drdout[10] ,\altera_onchip_flash_block|drdout[9] ,\altera_onchip_flash_block|drdout[8] ,
+\altera_onchip_flash_block|drdout[7] ,\altera_onchip_flash_block|drdout[6] ,\altera_onchip_flash_block|drdout[5] ,\altera_onchip_flash_block|drdout[4] ,\altera_onchip_flash_block|drdout[3] ,\altera_onchip_flash_block|drdout[2] ,
+\altera_onchip_flash_block|drdout[1] ,\altera_onchip_flash_block|drdout[0] }),
+	.arclk(\avmm_data_controller|flash_arclk~0_combout ),
+	.drclk(\avmm_data_controller|flash_drclk~0_combout ),
+	.drdin(\avmm_data_controller|flash_drdin_neg_reg~q ),
+	.nprogram(\avmm_data_controller|flash_nprogram~2_combout ),
+	.nerase(\avmm_data_controller|flash_nerase~2_combout ),
+	.xe_ye(\avmm_data_controller|flash_xe_ye~combout ),
+	.se(\avmm_data_controller|flash_se_neg_reg~q ),
+	.ardin({\avmm_data_controller|flash_ardin[22]~22_combout ,\avmm_data_controller|flash_ardin[21]~21_combout ,\avmm_data_controller|flash_ardin[20]~20_combout ,\avmm_data_controller|flash_ardin[19]~19_combout ,\avmm_data_controller|flash_ardin[18]~18_combout ,
+\avmm_data_controller|flash_ardin[17]~17_combout ,\avmm_data_controller|flash_ardin[16]~16_combout ,\avmm_data_controller|flash_ardin[15]~15_combout ,\avmm_data_controller|flash_ardin[14]~14_combout ,\avmm_data_controller|flash_ardin[13]~13_combout ,
+\avmm_data_controller|flash_ardin[12]~12_combout ,\avmm_data_controller|flash_ardin[11]~11_combout ,\avmm_data_controller|flash_ardin[10]~10_combout ,\avmm_data_controller|flash_ardin[9]~9_combout ,\avmm_data_controller|flash_ardin[8]~8_combout ,
+\avmm_data_controller|flash_ardin[7]~7_combout ,\avmm_data_controller|flash_ardin[6]~6_combout ,\avmm_data_controller|flash_ardin[5]~5_combout ,\avmm_data_controller|flash_ardin[4]~4_combout ,\avmm_data_controller|flash_ardin[3]~3_combout ,
+\avmm_data_controller|flash_ardin[2]~2_combout ,\avmm_data_controller|flash_ardin[1]~1_combout ,\avmm_data_controller|flash_ardin[0]~0_combout }),
+	.nosc_ena(GND_port),
+	.drshft(\avmm_data_controller|flash_drshft_neg_reg~_wirecell_combout ));
 
 onchip_flash_altera_onchip_flash_avmm_data_controller avmm_data_controller(
 	.busy(\altera_onchip_flash_block|busy ),
@@ -1184,7 +1209,6 @@ onchip_flash_altera_onchip_flash_avmm_data_controller avmm_data_controller(
 	.csr_wp_mode_1(\avmm_csr_controller|csr_wp_mode[1]~q ),
 	.csr_wp_mode_2(\avmm_csr_controller|csr_wp_mode[2]~q ),
 	.csr_wp_mode_3(\avmm_csr_controller|csr_wp_mode[3]~q ),
-	.csr_wp_mode_4(\avmm_csr_controller|csr_wp_mode[4]~q ),
 	.csr_erase_state_0(\avmm_csr_controller|csr_erase_state[0]~q ),
 	.csr_erase_state_1(\avmm_csr_controller|csr_erase_state[1]~q ),
 	.avmm_readdata_0(avmm_readdata_01),
@@ -1368,7 +1392,6 @@ onchip_flash_altera_onchip_flash_avmm_csr_controller avmm_csr_controller(
 	.avmm_readdata_25(avmm_readdata_25),
 	.csr_wp_mode_3(\avmm_csr_controller|csr_wp_mode[3]~q ),
 	.avmm_readdata_26(avmm_readdata_26),
-	.csr_wp_mode_4(\avmm_csr_controller|csr_wp_mode[4]~q ),
 	.avmm_readdata_27(avmm_readdata_27),
 	.csr_erase_state_0(\avmm_csr_controller|csr_erase_state[0]~q ),
 	.avmm_readdata_30(avmm_readdata_30),
@@ -1417,32 +1440,6 @@ onchip_flash_altera_onchip_flash_avmm_csr_controller avmm_csr_controller(
 	.avmm_csr_writedata_25(avmm_csr_writedata_25),
 	.avmm_csr_writedata_26(avmm_csr_writedata_26),
 	.avmm_csr_writedata_27(avmm_csr_writedata_27));
-
-onchip_flash_altera_onchip_flash_block altera_onchip_flash_block_1(
-	.busy(\altera_onchip_flash_block|busy ),
-	.osc(\altera_onchip_flash_block|osc ),
-	.sp_pass(\altera_onchip_flash_block|sp_pass ),
-	.se_pass(\altera_onchip_flash_block|se_pass ),
-	.drdout({\altera_onchip_flash_block|drdout[31] ,\altera_onchip_flash_block|drdout[30] ,\altera_onchip_flash_block|drdout[29] ,\altera_onchip_flash_block|drdout[28] ,\altera_onchip_flash_block|drdout[27] ,\altera_onchip_flash_block|drdout[26] ,
-\altera_onchip_flash_block|drdout[25] ,\altera_onchip_flash_block|drdout[24] ,\altera_onchip_flash_block|drdout[23] ,\altera_onchip_flash_block|drdout[22] ,\altera_onchip_flash_block|drdout[21] ,\altera_onchip_flash_block|drdout[20] ,
-\altera_onchip_flash_block|drdout[19] ,\altera_onchip_flash_block|drdout[18] ,\altera_onchip_flash_block|drdout[17] ,\altera_onchip_flash_block|drdout[16] ,\altera_onchip_flash_block|drdout[15] ,\altera_onchip_flash_block|drdout[14] ,
-\altera_onchip_flash_block|drdout[13] ,\altera_onchip_flash_block|drdout[12] ,\altera_onchip_flash_block|drdout[11] ,\altera_onchip_flash_block|drdout[10] ,\altera_onchip_flash_block|drdout[9] ,\altera_onchip_flash_block|drdout[8] ,
-\altera_onchip_flash_block|drdout[7] ,\altera_onchip_flash_block|drdout[6] ,\altera_onchip_flash_block|drdout[5] ,\altera_onchip_flash_block|drdout[4] ,\altera_onchip_flash_block|drdout[3] ,\altera_onchip_flash_block|drdout[2] ,
-\altera_onchip_flash_block|drdout[1] ,\altera_onchip_flash_block|drdout[0] }),
-	.arclk(\avmm_data_controller|flash_arclk~0_combout ),
-	.drclk(\avmm_data_controller|flash_drclk~0_combout ),
-	.drdin(\avmm_data_controller|flash_drdin_neg_reg~q ),
-	.nprogram(\avmm_data_controller|flash_nprogram~2_combout ),
-	.nerase(\avmm_data_controller|flash_nerase~2_combout ),
-	.xe_ye(\avmm_data_controller|flash_xe_ye~combout ),
-	.se(\avmm_data_controller|flash_se_neg_reg~q ),
-	.ardin({\avmm_data_controller|flash_ardin[22]~22_combout ,\avmm_data_controller|flash_ardin[21]~21_combout ,\avmm_data_controller|flash_ardin[20]~20_combout ,\avmm_data_controller|flash_ardin[19]~19_combout ,\avmm_data_controller|flash_ardin[18]~18_combout ,
-\avmm_data_controller|flash_ardin[17]~17_combout ,\avmm_data_controller|flash_ardin[16]~16_combout ,\avmm_data_controller|flash_ardin[15]~15_combout ,\avmm_data_controller|flash_ardin[14]~14_combout ,\avmm_data_controller|flash_ardin[13]~13_combout ,
-\avmm_data_controller|flash_ardin[12]~12_combout ,\avmm_data_controller|flash_ardin[11]~11_combout ,\avmm_data_controller|flash_ardin[10]~10_combout ,\avmm_data_controller|flash_ardin[9]~9_combout ,\avmm_data_controller|flash_ardin[8]~8_combout ,
-\avmm_data_controller|flash_ardin[7]~7_combout ,\avmm_data_controller|flash_ardin[6]~6_combout ,\avmm_data_controller|flash_ardin[5]~5_combout ,\avmm_data_controller|flash_ardin[4]~4_combout ,\avmm_data_controller|flash_ardin[3]~3_combout ,
-\avmm_data_controller|flash_ardin[2]~2_combout ,\avmm_data_controller|flash_ardin[1]~1_combout ,\avmm_data_controller|flash_ardin[0]~0_combout }),
-	.nosc_ena(GND_port),
-	.drshft(\avmm_data_controller|flash_drshft_neg_reg~_wirecell_combout ));
 
 endmodule
 
@@ -1497,7 +1494,6 @@ module onchip_flash_altera_onchip_flash_avmm_csr_controller (
 	avmm_readdata_25,
 	csr_wp_mode_3,
 	avmm_readdata_26,
-	csr_wp_mode_4,
 	avmm_readdata_27,
 	csr_erase_state_0,
 	avmm_readdata_30,
@@ -1596,7 +1592,6 @@ output 	csr_wp_mode_2;
 output 	avmm_readdata_25;
 output 	csr_wp_mode_3;
 output 	avmm_readdata_26;
-output 	csr_wp_mode_4;
 output 	avmm_readdata_27;
 output 	csr_erase_state_0;
 output 	avmm_readdata_30;
@@ -1657,26 +1652,30 @@ assign unknown = 1'b0;
 
 wire \csr_control_access~0_combout ;
 wire \csr_control_access~q ;
-wire \csr_sector_page_erase_addr_reg~4_combout ;
-wire \csr_sector_page_erase_addr_reg[1]~6_combout ;
-wire \csr_sector_page_erase_addr_reg[1]~29_combout ;
+wire \csr_sector_page_erase_addr_reg~0_combout ;
+wire \csr_sector_page_erase_addr_reg[20]~1_combout ;
+wire \csr_sector_page_erase_addr_reg[20]~2_combout ;
 wire \csr_sector_page_erase_addr_reg[0]~q ;
-wire \csr_sector_page_erase_addr_reg~7_combout ;
+wire \csr_sector_page_erase_addr_reg~3_combout ;
 wire \csr_sector_page_erase_addr_reg[1]~q ;
-wire \csr_sector_page_erase_addr_reg~8_combout ;
+wire \csr_sector_page_erase_addr_reg~4_combout ;
 wire \csr_sector_page_erase_addr_reg[2]~q ;
-wire \csr_sector_page_erase_addr_reg~9_combout ;
+wire \csr_sector_page_erase_addr_reg~5_combout ;
 wire \csr_sector_page_erase_addr_reg[3]~q ;
-wire \csr_sector_page_erase_addr_reg~10_combout ;
+wire \csr_sector_page_erase_addr_reg~6_combout ;
 wire \csr_sector_page_erase_addr_reg[4]~q ;
-wire \csr_sector_page_erase_addr_reg~11_combout ;
+wire \csr_sector_page_erase_addr_reg~7_combout ;
 wire \csr_sector_page_erase_addr_reg[5]~q ;
-wire \csr_sector_page_erase_addr_reg~12_combout ;
+wire \csr_sector_page_erase_addr_reg~8_combout ;
 wire \csr_sector_page_erase_addr_reg[6]~q ;
-wire \csr_sector_page_erase_addr_reg~13_combout ;
+wire \csr_sector_page_erase_addr_reg~9_combout ;
 wire \csr_sector_page_erase_addr_reg[7]~q ;
-wire \csr_sector_page_erase_addr_reg~14_combout ;
+wire \csr_sector_page_erase_addr_reg~10_combout ;
 wire \csr_sector_page_erase_addr_reg[8]~q ;
+wire \csr_sector_page_erase_addr_reg~11_combout ;
+wire \csr_sector_page_erase_addr_reg~12_combout ;
+wire \csr_sector_page_erase_addr_reg~13_combout ;
+wire \csr_sector_page_erase_addr_reg~14_combout ;
 wire \csr_sector_page_erase_addr_reg~15_combout ;
 wire \csr_sector_page_erase_addr_reg~16_combout ;
 wire \csr_sector_page_erase_addr_reg~17_combout ;
@@ -1687,29 +1686,26 @@ wire \csr_sector_page_erase_addr_reg~21_combout ;
 wire \csr_sector_page_erase_addr_reg~22_combout ;
 wire \csr_sector_page_erase_addr_reg~23_combout ;
 wire \csr_sector_page_erase_addr_reg~24_combout ;
-wire \csr_sector_page_erase_addr_reg~25_combout ;
-wire \csr_sector_page_erase_addr_reg~26_combout ;
-wire \csr_sector_page_erase_addr_reg~27_combout ;
-wire \csr_sector_page_erase_addr_reg~28_combout ;
 wire \csr_wp_mode~0_combout ;
-wire \csr_wp_mode[3]~1_combout ;
+wire \csr_wp_mode[4]~1_combout ;
 wire \csr_wp_mode~2_combout ;
 wire \csr_wp_mode~3_combout ;
 wire \csr_wp_mode~4_combout ;
 wire \csr_wp_mode~5_combout ;
-wire \csr_erase_state[1]~2_combout ;
-wire \csr_erase_state[1]~3_combout ;
-wire \csr_erase_state[1]~4_combout ;
-wire \csr_erase_state[1]~5_combout ;
-wire \csr_erase_state[1]~6_combout ;
-wire \csr_erase_state[1]~7_combout ;
-wire \csr_erase_state[1]~8_combout ;
-wire \csr_sector_page_erase_addr_reg[1]~5_combout ;
-wire \csr_erase_state[1]~9_combout ;
-wire \csr_erase_state[1]~10_combout ;
-wire \csr_erase_state[1]~11_combout ;
+wire \csr_wp_mode[4]~q ;
+wire \csr_erase_state[0]~2_combout ;
+wire \csr_erase_state[0]~3_combout ;
+wire \csr_erase_state[0]~4_combout ;
+wire \csr_erase_state[0]~5_combout ;
+wire \csr_erase_state[0]~6_combout ;
+wire \csr_erase_state[0]~7_combout ;
+wire \csr_erase_state[0]~8_combout ;
+wire \csr_erase_state[0]~9_combout ;
+wire \csr_erase_state[0]~10_combout ;
+wire \csr_erase_state[0]~11_combout ;
 wire \csr_erase_state[0]~12_combout ;
-wire \csr_erase_state[1]~13_combout ;
+wire \csr_erase_state[0]~13_combout ;
+wire \csr_erase_state[1]~14_combout ;
 wire \reset_n_reg1~q ;
 
 
@@ -1814,38 +1810,38 @@ defparam \avmm_readdata[8]~8 .sum_lutc_input = "datac";
 
 dffeas \csr_sector_page_erase_addr_reg[9] (
 	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~15_combout ),
+	.d(\csr_sector_page_erase_addr_reg~11_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
 	.q(csr_sector_page_erase_addr_reg_9),
 	.prn(vcc));
 defparam \csr_sector_page_erase_addr_reg[9] .is_wysiwyg = "true";
 defparam \csr_sector_page_erase_addr_reg[9] .power_up = "low";
 
 fiftyfivenm_lcell_comb \avmm_readdata[9]~9 (
-	.dataa(\csr_control_access~q ),
+	.dataa(gnd),
 	.datab(gnd),
-	.datac(gnd),
+	.datac(\csr_control_access~q ),
 	.datad(csr_sector_page_erase_addr_reg_9),
 	.cin(gnd),
 	.combout(avmm_readdata_9),
 	.cout());
-defparam \avmm_readdata[9]~9 .lut_mask = 16'hAAFF;
+defparam \avmm_readdata[9]~9 .lut_mask = 16'h0FFF;
 defparam \avmm_readdata[9]~9 .sum_lutc_input = "datac";
 
 dffeas \csr_sector_page_erase_addr_reg[10] (
 	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~16_combout ),
+	.d(\csr_sector_page_erase_addr_reg~12_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
 	.q(csr_sector_page_erase_addr_reg_10),
 	.prn(vcc));
 defparam \csr_sector_page_erase_addr_reg[10] .is_wysiwyg = "true";
@@ -1864,13 +1860,13 @@ defparam \avmm_readdata[10]~10 .sum_lutc_input = "datac";
 
 dffeas \csr_sector_page_erase_addr_reg[11] (
 	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~17_combout ),
+	.d(\csr_sector_page_erase_addr_reg~13_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
 	.q(csr_sector_page_erase_addr_reg_11),
 	.prn(vcc));
 defparam \csr_sector_page_erase_addr_reg[11] .is_wysiwyg = "true";
@@ -1889,13 +1885,13 @@ defparam \avmm_readdata[11]~11 .sum_lutc_input = "datac";
 
 dffeas \csr_sector_page_erase_addr_reg[12] (
 	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~18_combout ),
+	.d(\csr_sector_page_erase_addr_reg~14_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
 	.q(csr_sector_page_erase_addr_reg_12),
 	.prn(vcc));
 defparam \csr_sector_page_erase_addr_reg[12] .is_wysiwyg = "true";
@@ -1914,13 +1910,13 @@ defparam \avmm_readdata[12]~12 .sum_lutc_input = "datac";
 
 dffeas \csr_sector_page_erase_addr_reg[13] (
 	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~19_combout ),
+	.d(\csr_sector_page_erase_addr_reg~15_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
 	.q(csr_sector_page_erase_addr_reg_13),
 	.prn(vcc));
 defparam \csr_sector_page_erase_addr_reg[13] .is_wysiwyg = "true";
@@ -1939,13 +1935,13 @@ defparam \avmm_readdata[13]~13 .sum_lutc_input = "datac";
 
 dffeas \csr_sector_page_erase_addr_reg[14] (
 	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~20_combout ),
+	.d(\csr_sector_page_erase_addr_reg~16_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
 	.q(csr_sector_page_erase_addr_reg_14),
 	.prn(vcc));
 defparam \csr_sector_page_erase_addr_reg[14] .is_wysiwyg = "true";
@@ -1964,13 +1960,13 @@ defparam \avmm_readdata[14]~14 .sum_lutc_input = "datac";
 
 dffeas \csr_sector_page_erase_addr_reg[15] (
 	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~21_combout ),
+	.d(\csr_sector_page_erase_addr_reg~17_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
 	.q(csr_sector_page_erase_addr_reg_15),
 	.prn(vcc));
 defparam \csr_sector_page_erase_addr_reg[15] .is_wysiwyg = "true";
@@ -1989,13 +1985,13 @@ defparam \avmm_readdata[15]~15 .sum_lutc_input = "datac";
 
 dffeas \csr_sector_page_erase_addr_reg[16] (
 	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~22_combout ),
+	.d(\csr_sector_page_erase_addr_reg~18_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
 	.q(csr_sector_page_erase_addr_reg_16),
 	.prn(vcc));
 defparam \csr_sector_page_erase_addr_reg[16] .is_wysiwyg = "true";
@@ -2014,13 +2010,13 @@ defparam \avmm_readdata[16]~16 .sum_lutc_input = "datac";
 
 dffeas \csr_sector_page_erase_addr_reg[17] (
 	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~23_combout ),
+	.d(\csr_sector_page_erase_addr_reg~19_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
 	.q(csr_sector_page_erase_addr_reg_17),
 	.prn(vcc));
 defparam \csr_sector_page_erase_addr_reg[17] .is_wysiwyg = "true";
@@ -2039,13 +2035,13 @@ defparam \avmm_readdata[17]~17 .sum_lutc_input = "datac";
 
 dffeas \csr_sector_page_erase_addr_reg[18] (
 	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~24_combout ),
+	.d(\csr_sector_page_erase_addr_reg~20_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
 	.q(csr_sector_page_erase_addr_reg_18),
 	.prn(vcc));
 defparam \csr_sector_page_erase_addr_reg[18] .is_wysiwyg = "true";
@@ -2064,13 +2060,13 @@ defparam \avmm_readdata[18]~18 .sum_lutc_input = "datac";
 
 dffeas \csr_sector_page_erase_addr_reg[19] (
 	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~25_combout ),
+	.d(\csr_sector_page_erase_addr_reg~21_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
 	.q(csr_sector_page_erase_addr_reg_19),
 	.prn(vcc));
 defparam \csr_sector_page_erase_addr_reg[19] .is_wysiwyg = "true";
@@ -2089,13 +2085,13 @@ defparam \avmm_readdata[19]~19 .sum_lutc_input = "datac";
 
 dffeas \csr_sector_page_erase_addr_reg[20] (
 	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~26_combout ),
+	.d(\csr_sector_page_erase_addr_reg~22_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
 	.q(csr_sector_page_erase_addr_reg_20),
 	.prn(vcc));
 defparam \csr_sector_page_erase_addr_reg[20] .is_wysiwyg = "true";
@@ -2114,13 +2110,13 @@ defparam \avmm_readdata[20]~20 .sum_lutc_input = "datac";
 
 dffeas \csr_sector_page_erase_addr_reg[21] (
 	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~27_combout ),
+	.d(\csr_sector_page_erase_addr_reg~23_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
 	.q(csr_sector_page_erase_addr_reg_21),
 	.prn(vcc));
 defparam \csr_sector_page_erase_addr_reg[21] .is_wysiwyg = "true";
@@ -2139,13 +2135,13 @@ defparam \avmm_readdata[21]~21 .sum_lutc_input = "datac";
 
 dffeas \csr_sector_page_erase_addr_reg[22] (
 	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~28_combout ),
+	.d(\csr_sector_page_erase_addr_reg~24_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
 	.q(csr_sector_page_erase_addr_reg_22),
 	.prn(vcc));
 defparam \csr_sector_page_erase_addr_reg[22] .is_wysiwyg = "true";
@@ -2170,7 +2166,7 @@ dffeas \csr_wp_mode[0] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_wp_mode[3]~1_combout ),
+	.ena(\csr_wp_mode[4]~1_combout ),
 	.q(csr_wp_mode_0),
 	.prn(vcc));
 defparam \csr_wp_mode[0] .is_wysiwyg = "true";
@@ -2195,7 +2191,7 @@ dffeas \csr_wp_mode[1] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_wp_mode[3]~1_combout ),
+	.ena(\csr_wp_mode[4]~1_combout ),
 	.q(csr_wp_mode_1),
 	.prn(vcc));
 defparam \csr_wp_mode[1] .is_wysiwyg = "true";
@@ -2220,7 +2216,7 @@ dffeas \csr_wp_mode[2] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_wp_mode[3]~1_combout ),
+	.ena(\csr_wp_mode[4]~1_combout ),
 	.q(csr_wp_mode_2),
 	.prn(vcc));
 defparam \csr_wp_mode[2] .is_wysiwyg = "true";
@@ -2245,7 +2241,7 @@ dffeas \csr_wp_mode[3] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_wp_mode[3]~1_combout ),
+	.ena(\csr_wp_mode[4]~1_combout ),
 	.q(csr_wp_mode_3),
 	.prn(vcc));
 defparam \csr_wp_mode[3] .is_wysiwyg = "true";
@@ -2262,25 +2258,11 @@ fiftyfivenm_lcell_comb \avmm_readdata[26]~26 (
 defparam \avmm_readdata[26]~26 .lut_mask = 16'h0FFF;
 defparam \avmm_readdata[26]~26 .sum_lutc_input = "datac";
 
-dffeas \csr_wp_mode[4] (
-	.clk(clock),
-	.d(\csr_wp_mode~5_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(\csr_wp_mode[3]~1_combout ),
-	.q(csr_wp_mode_4),
-	.prn(vcc));
-defparam \csr_wp_mode[4] .is_wysiwyg = "true";
-defparam \csr_wp_mode[4] .power_up = "low";
-
 fiftyfivenm_lcell_comb \avmm_readdata[27]~27 (
 	.dataa(gnd),
 	.datab(gnd),
 	.datac(\csr_control_access~q ),
-	.datad(csr_wp_mode_4),
+	.datad(\csr_wp_mode[4]~q ),
 	.cin(gnd),
 	.combout(avmm_readdata_27),
 	.cout());
@@ -2289,7 +2271,7 @@ defparam \avmm_readdata[27]~27 .sum_lutc_input = "datac";
 
 dffeas \csr_erase_state[0] (
 	.clk(clock),
-	.d(\csr_erase_state[0]~12_combout ),
+	.d(\csr_erase_state[0]~13_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
@@ -2314,7 +2296,7 @@ defparam \avmm_readdata[30]~28 .sum_lutc_input = "datac";
 
 dffeas \csr_erase_state[1] (
 	.clk(clock),
-	.d(\csr_erase_state[1]~13_combout ),
+	.d(\csr_erase_state[1]~14_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
@@ -2475,8 +2457,80 @@ dffeas csr_control_access(
 defparam csr_control_access.is_wysiwyg = "true";
 defparam csr_control_access.power_up = "low";
 
-fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~4 (
+fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~0 (
 	.dataa(avmm_csr_writedata_0),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(reset_n_reg21),
+	.cin(gnd),
+	.combout(\csr_sector_page_erase_addr_reg~0_combout ),
+	.cout());
+defparam \csr_sector_page_erase_addr_reg~0 .lut_mask = 16'hFF55;
+defparam \csr_sector_page_erase_addr_reg~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg[20]~1 (
+	.dataa(avmm_csr_addr),
+	.datab(avmm_csr_write),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\csr_sector_page_erase_addr_reg[20]~1_combout ),
+	.cout());
+defparam \csr_sector_page_erase_addr_reg[20]~1 .lut_mask = 16'hEEEE;
+defparam \csr_sector_page_erase_addr_reg[20]~1 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg[20]~2 (
+	.dataa(reset_n_reg21),
+	.datab(csr_status_busy_0),
+	.datac(csr_status_busy_1),
+	.datad(\csr_sector_page_erase_addr_reg[20]~1_combout ),
+	.cin(gnd),
+	.combout(\csr_sector_page_erase_addr_reg[20]~2_combout ),
+	.cout());
+defparam \csr_sector_page_erase_addr_reg[20]~2 .lut_mask = 16'hFF7F;
+defparam \csr_sector_page_erase_addr_reg[20]~2 .sum_lutc_input = "datac";
+
+dffeas \csr_sector_page_erase_addr_reg[0] (
+	.clk(clock),
+	.d(\csr_sector_page_erase_addr_reg~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
+	.q(\csr_sector_page_erase_addr_reg[0]~q ),
+	.prn(vcc));
+defparam \csr_sector_page_erase_addr_reg[0] .is_wysiwyg = "true";
+defparam \csr_sector_page_erase_addr_reg[0] .power_up = "low";
+
+fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~3 (
+	.dataa(avmm_csr_writedata_1),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(reset_n_reg21),
+	.cin(gnd),
+	.combout(\csr_sector_page_erase_addr_reg~3_combout ),
+	.cout());
+defparam \csr_sector_page_erase_addr_reg~3 .lut_mask = 16'hFF55;
+defparam \csr_sector_page_erase_addr_reg~3 .sum_lutc_input = "datac";
+
+dffeas \csr_sector_page_erase_addr_reg[1] (
+	.clk(clock),
+	.d(\csr_sector_page_erase_addr_reg~3_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
+	.q(\csr_sector_page_erase_addr_reg[1]~q ),
+	.prn(vcc));
+defparam \csr_sector_page_erase_addr_reg[1] .is_wysiwyg = "true";
+defparam \csr_sector_page_erase_addr_reg[1] .power_up = "low";
+
+fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~4 (
+	.dataa(avmm_csr_writedata_2),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2486,29 +2540,7 @@ fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~4 (
 defparam \csr_sector_page_erase_addr_reg~4 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~4 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg[1]~6 (
-	.dataa(gnd),
-	.datab(gnd),
-	.datac(csr_status_busy_0),
-	.datad(csr_status_busy_1),
-	.cin(gnd),
-	.combout(\csr_sector_page_erase_addr_reg[1]~6_combout ),
-	.cout());
-defparam \csr_sector_page_erase_addr_reg[1]~6 .lut_mask = 16'h0FFF;
-defparam \csr_sector_page_erase_addr_reg[1]~6 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg[1]~29 (
-	.dataa(avmm_csr_addr),
-	.datab(avmm_csr_write),
-	.datac(reset_n_reg21),
-	.datad(\csr_sector_page_erase_addr_reg[1]~6_combout ),
-	.cin(gnd),
-	.combout(\csr_sector_page_erase_addr_reg[1]~29_combout ),
-	.cout());
-defparam \csr_sector_page_erase_addr_reg[1]~29 .lut_mask = 16'hFFEF;
-defparam \csr_sector_page_erase_addr_reg[1]~29 .sum_lutc_input = "datac";
-
-dffeas \csr_sector_page_erase_addr_reg[0] (
+dffeas \csr_sector_page_erase_addr_reg[2] (
 	.clk(clock),
 	.d(\csr_sector_page_erase_addr_reg~4_combout ),
 	.asdata(vcc),
@@ -2516,14 +2548,64 @@ dffeas \csr_sector_page_erase_addr_reg[0] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
-	.q(\csr_sector_page_erase_addr_reg[0]~q ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
+	.q(\csr_sector_page_erase_addr_reg[2]~q ),
 	.prn(vcc));
-defparam \csr_sector_page_erase_addr_reg[0] .is_wysiwyg = "true";
-defparam \csr_sector_page_erase_addr_reg[0] .power_up = "low";
+defparam \csr_sector_page_erase_addr_reg[2] .is_wysiwyg = "true";
+defparam \csr_sector_page_erase_addr_reg[2] .power_up = "low";
+
+fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~5 (
+	.dataa(avmm_csr_writedata_3),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(reset_n_reg21),
+	.cin(gnd),
+	.combout(\csr_sector_page_erase_addr_reg~5_combout ),
+	.cout());
+defparam \csr_sector_page_erase_addr_reg~5 .lut_mask = 16'hFF55;
+defparam \csr_sector_page_erase_addr_reg~5 .sum_lutc_input = "datac";
+
+dffeas \csr_sector_page_erase_addr_reg[3] (
+	.clk(clock),
+	.d(\csr_sector_page_erase_addr_reg~5_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
+	.q(\csr_sector_page_erase_addr_reg[3]~q ),
+	.prn(vcc));
+defparam \csr_sector_page_erase_addr_reg[3] .is_wysiwyg = "true";
+defparam \csr_sector_page_erase_addr_reg[3] .power_up = "low";
+
+fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~6 (
+	.dataa(avmm_csr_writedata_4),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(reset_n_reg21),
+	.cin(gnd),
+	.combout(\csr_sector_page_erase_addr_reg~6_combout ),
+	.cout());
+defparam \csr_sector_page_erase_addr_reg~6 .lut_mask = 16'hFF55;
+defparam \csr_sector_page_erase_addr_reg~6 .sum_lutc_input = "datac";
+
+dffeas \csr_sector_page_erase_addr_reg[4] (
+	.clk(clock),
+	.d(\csr_sector_page_erase_addr_reg~6_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
+	.q(\csr_sector_page_erase_addr_reg[4]~q ),
+	.prn(vcc));
+defparam \csr_sector_page_erase_addr_reg[4] .is_wysiwyg = "true";
+defparam \csr_sector_page_erase_addr_reg[4] .power_up = "low";
 
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~7 (
-	.dataa(avmm_csr_writedata_1),
+	.dataa(avmm_csr_writedata_5),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2533,7 +2615,7 @@ fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~7 (
 defparam \csr_sector_page_erase_addr_reg~7 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~7 .sum_lutc_input = "datac";
 
-dffeas \csr_sector_page_erase_addr_reg[1] (
+dffeas \csr_sector_page_erase_addr_reg[5] (
 	.clk(clock),
 	.d(\csr_sector_page_erase_addr_reg~7_combout ),
 	.asdata(vcc),
@@ -2541,14 +2623,14 @@ dffeas \csr_sector_page_erase_addr_reg[1] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
-	.q(\csr_sector_page_erase_addr_reg[1]~q ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
+	.q(\csr_sector_page_erase_addr_reg[5]~q ),
 	.prn(vcc));
-defparam \csr_sector_page_erase_addr_reg[1] .is_wysiwyg = "true";
-defparam \csr_sector_page_erase_addr_reg[1] .power_up = "low";
+defparam \csr_sector_page_erase_addr_reg[5] .is_wysiwyg = "true";
+defparam \csr_sector_page_erase_addr_reg[5] .power_up = "low";
 
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~8 (
-	.dataa(avmm_csr_writedata_2),
+	.dataa(avmm_csr_writedata_6),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2558,7 +2640,7 @@ fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~8 (
 defparam \csr_sector_page_erase_addr_reg~8 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~8 .sum_lutc_input = "datac";
 
-dffeas \csr_sector_page_erase_addr_reg[2] (
+dffeas \csr_sector_page_erase_addr_reg[6] (
 	.clk(clock),
 	.d(\csr_sector_page_erase_addr_reg~8_combout ),
 	.asdata(vcc),
@@ -2566,14 +2648,14 @@ dffeas \csr_sector_page_erase_addr_reg[2] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
-	.q(\csr_sector_page_erase_addr_reg[2]~q ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
+	.q(\csr_sector_page_erase_addr_reg[6]~q ),
 	.prn(vcc));
-defparam \csr_sector_page_erase_addr_reg[2] .is_wysiwyg = "true";
-defparam \csr_sector_page_erase_addr_reg[2] .power_up = "low";
+defparam \csr_sector_page_erase_addr_reg[6] .is_wysiwyg = "true";
+defparam \csr_sector_page_erase_addr_reg[6] .power_up = "low";
 
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~9 (
-	.dataa(avmm_csr_writedata_3),
+	.dataa(avmm_csr_writedata_7),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2583,7 +2665,7 @@ fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~9 (
 defparam \csr_sector_page_erase_addr_reg~9 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~9 .sum_lutc_input = "datac";
 
-dffeas \csr_sector_page_erase_addr_reg[3] (
+dffeas \csr_sector_page_erase_addr_reg[7] (
 	.clk(clock),
 	.d(\csr_sector_page_erase_addr_reg~9_combout ),
 	.asdata(vcc),
@@ -2591,14 +2673,14 @@ dffeas \csr_sector_page_erase_addr_reg[3] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
-	.q(\csr_sector_page_erase_addr_reg[3]~q ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
+	.q(\csr_sector_page_erase_addr_reg[7]~q ),
 	.prn(vcc));
-defparam \csr_sector_page_erase_addr_reg[3] .is_wysiwyg = "true";
-defparam \csr_sector_page_erase_addr_reg[3] .power_up = "low";
+defparam \csr_sector_page_erase_addr_reg[7] .is_wysiwyg = "true";
+defparam \csr_sector_page_erase_addr_reg[7] .power_up = "low";
 
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~10 (
-	.dataa(avmm_csr_writedata_4),
+	.dataa(avmm_csr_writedata_8),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2608,7 +2690,7 @@ fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~10 (
 defparam \csr_sector_page_erase_addr_reg~10 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~10 .sum_lutc_input = "datac";
 
-dffeas \csr_sector_page_erase_addr_reg[4] (
+dffeas \csr_sector_page_erase_addr_reg[8] (
 	.clk(clock),
 	.d(\csr_sector_page_erase_addr_reg~10_combout ),
 	.asdata(vcc),
@@ -2616,14 +2698,14 @@ dffeas \csr_sector_page_erase_addr_reg[4] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
-	.q(\csr_sector_page_erase_addr_reg[4]~q ),
+	.ena(\csr_sector_page_erase_addr_reg[20]~2_combout ),
+	.q(\csr_sector_page_erase_addr_reg[8]~q ),
 	.prn(vcc));
-defparam \csr_sector_page_erase_addr_reg[4] .is_wysiwyg = "true";
-defparam \csr_sector_page_erase_addr_reg[4] .power_up = "low";
+defparam \csr_sector_page_erase_addr_reg[8] .is_wysiwyg = "true";
+defparam \csr_sector_page_erase_addr_reg[8] .power_up = "low";
 
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~11 (
-	.dataa(avmm_csr_writedata_5),
+	.dataa(avmm_csr_writedata_9),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2633,22 +2715,8 @@ fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~11 (
 defparam \csr_sector_page_erase_addr_reg~11 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~11 .sum_lutc_input = "datac";
 
-dffeas \csr_sector_page_erase_addr_reg[5] (
-	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~11_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
-	.q(\csr_sector_page_erase_addr_reg[5]~q ),
-	.prn(vcc));
-defparam \csr_sector_page_erase_addr_reg[5] .is_wysiwyg = "true";
-defparam \csr_sector_page_erase_addr_reg[5] .power_up = "low";
-
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~12 (
-	.dataa(avmm_csr_writedata_6),
+	.dataa(avmm_csr_writedata_10),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2658,22 +2726,8 @@ fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~12 (
 defparam \csr_sector_page_erase_addr_reg~12 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~12 .sum_lutc_input = "datac";
 
-dffeas \csr_sector_page_erase_addr_reg[6] (
-	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~12_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
-	.q(\csr_sector_page_erase_addr_reg[6]~q ),
-	.prn(vcc));
-defparam \csr_sector_page_erase_addr_reg[6] .is_wysiwyg = "true";
-defparam \csr_sector_page_erase_addr_reg[6] .power_up = "low";
-
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~13 (
-	.dataa(avmm_csr_writedata_7),
+	.dataa(avmm_csr_writedata_11),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2683,22 +2737,8 @@ fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~13 (
 defparam \csr_sector_page_erase_addr_reg~13 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~13 .sum_lutc_input = "datac";
 
-dffeas \csr_sector_page_erase_addr_reg[7] (
-	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~13_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
-	.q(\csr_sector_page_erase_addr_reg[7]~q ),
-	.prn(vcc));
-defparam \csr_sector_page_erase_addr_reg[7] .is_wysiwyg = "true";
-defparam \csr_sector_page_erase_addr_reg[7] .power_up = "low";
-
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~14 (
-	.dataa(avmm_csr_writedata_8),
+	.dataa(avmm_csr_writedata_12),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2708,22 +2748,8 @@ fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~14 (
 defparam \csr_sector_page_erase_addr_reg~14 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~14 .sum_lutc_input = "datac";
 
-dffeas \csr_sector_page_erase_addr_reg[8] (
-	.clk(clock),
-	.d(\csr_sector_page_erase_addr_reg~14_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(\csr_sector_page_erase_addr_reg[1]~29_combout ),
-	.q(\csr_sector_page_erase_addr_reg[8]~q ),
-	.prn(vcc));
-defparam \csr_sector_page_erase_addr_reg[8] .is_wysiwyg = "true";
-defparam \csr_sector_page_erase_addr_reg[8] .power_up = "low";
-
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~15 (
-	.dataa(avmm_csr_writedata_9),
+	.dataa(avmm_csr_writedata_13),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2734,7 +2760,7 @@ defparam \csr_sector_page_erase_addr_reg~15 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~15 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~16 (
-	.dataa(avmm_csr_writedata_10),
+	.dataa(avmm_csr_writedata_14),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2745,7 +2771,7 @@ defparam \csr_sector_page_erase_addr_reg~16 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~16 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~17 (
-	.dataa(avmm_csr_writedata_11),
+	.dataa(avmm_csr_writedata_15),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2756,7 +2782,7 @@ defparam \csr_sector_page_erase_addr_reg~17 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~17 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~18 (
-	.dataa(avmm_csr_writedata_12),
+	.dataa(avmm_csr_writedata_16),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2767,7 +2793,7 @@ defparam \csr_sector_page_erase_addr_reg~18 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~18 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~19 (
-	.dataa(avmm_csr_writedata_13),
+	.dataa(avmm_csr_writedata_17),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2778,7 +2804,7 @@ defparam \csr_sector_page_erase_addr_reg~19 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~19 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~20 (
-	.dataa(avmm_csr_writedata_14),
+	.dataa(avmm_csr_writedata_18),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2789,7 +2815,7 @@ defparam \csr_sector_page_erase_addr_reg~20 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~20 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~21 (
-	.dataa(avmm_csr_writedata_15),
+	.dataa(avmm_csr_writedata_19),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2800,7 +2826,7 @@ defparam \csr_sector_page_erase_addr_reg~21 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~21 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~22 (
-	.dataa(avmm_csr_writedata_16),
+	.dataa(avmm_csr_writedata_20),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2811,7 +2837,7 @@ defparam \csr_sector_page_erase_addr_reg~22 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~22 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~23 (
-	.dataa(avmm_csr_writedata_17),
+	.dataa(avmm_csr_writedata_21),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2822,7 +2848,7 @@ defparam \csr_sector_page_erase_addr_reg~23 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~23 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~24 (
-	.dataa(avmm_csr_writedata_18),
+	.dataa(avmm_csr_writedata_22),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(reset_n_reg21),
@@ -2831,50 +2857,6 @@ fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~24 (
 	.cout());
 defparam \csr_sector_page_erase_addr_reg~24 .lut_mask = 16'hFF55;
 defparam \csr_sector_page_erase_addr_reg~24 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~25 (
-	.dataa(avmm_csr_writedata_19),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(reset_n_reg21),
-	.cin(gnd),
-	.combout(\csr_sector_page_erase_addr_reg~25_combout ),
-	.cout());
-defparam \csr_sector_page_erase_addr_reg~25 .lut_mask = 16'hFF55;
-defparam \csr_sector_page_erase_addr_reg~25 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~26 (
-	.dataa(avmm_csr_writedata_20),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(reset_n_reg21),
-	.cin(gnd),
-	.combout(\csr_sector_page_erase_addr_reg~26_combout ),
-	.cout());
-defparam \csr_sector_page_erase_addr_reg~26 .lut_mask = 16'hFF55;
-defparam \csr_sector_page_erase_addr_reg~26 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~27 (
-	.dataa(avmm_csr_writedata_21),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(reset_n_reg21),
-	.cin(gnd),
-	.combout(\csr_sector_page_erase_addr_reg~27_combout ),
-	.cout());
-defparam \csr_sector_page_erase_addr_reg~27 .lut_mask = 16'hFF55;
-defparam \csr_sector_page_erase_addr_reg~27 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg~28 (
-	.dataa(avmm_csr_writedata_22),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(reset_n_reg21),
-	.cin(gnd),
-	.combout(\csr_sector_page_erase_addr_reg~28_combout ),
-	.cout());
-defparam \csr_sector_page_erase_addr_reg~28 .lut_mask = 16'hFF55;
-defparam \csr_sector_page_erase_addr_reg~28 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \csr_wp_mode~0 (
 	.dataa(avmm_csr_writedata_23),
@@ -2887,16 +2869,16 @@ fiftyfivenm_lcell_comb \csr_wp_mode~0 (
 defparam \csr_wp_mode~0 .lut_mask = 16'hFF55;
 defparam \csr_wp_mode~0 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \csr_wp_mode[3]~1 (
+fiftyfivenm_lcell_comb \csr_wp_mode[4]~1 (
 	.dataa(reset_n_reg21),
 	.datab(gnd),
 	.datac(avmm_csr_addr),
 	.datad(avmm_csr_write),
 	.cin(gnd),
-	.combout(\csr_wp_mode[3]~1_combout ),
+	.combout(\csr_wp_mode[4]~1_combout ),
 	.cout());
-defparam \csr_wp_mode[3]~1 .lut_mask = 16'hFFF5;
-defparam \csr_wp_mode[3]~1 .sum_lutc_input = "datac";
+defparam \csr_wp_mode[4]~1 .lut_mask = 16'hFFF5;
+defparam \csr_wp_mode[4]~1 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \csr_wp_mode~2 (
 	.dataa(avmm_csr_writedata_24),
@@ -2942,148 +2924,162 @@ fiftyfivenm_lcell_comb \csr_wp_mode~5 (
 defparam \csr_wp_mode~5 .lut_mask = 16'hFF55;
 defparam \csr_wp_mode~5 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \csr_erase_state[1]~2 (
+dffeas \csr_wp_mode[4] (
+	.clk(clock),
+	.d(\csr_wp_mode~5_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\csr_wp_mode[4]~1_combout ),
+	.q(\csr_wp_mode[4]~q ),
+	.prn(vcc));
+defparam \csr_wp_mode[4] .is_wysiwyg = "true";
+defparam \csr_wp_mode[4] .power_up = "low";
+
+fiftyfivenm_lcell_comb \csr_erase_state[0]~2 (
+	.dataa(csr_status_busy_1),
+	.datab(csr_status_busy_0),
+	.datac(csr_erase_state_1),
+	.datad(csr_erase_state_0),
+	.cin(gnd),
+	.combout(\csr_erase_state[0]~2_combout ),
+	.cout());
+defparam \csr_erase_state[0]~2 .lut_mask = 16'hEFFF;
+defparam \csr_erase_state[0]~2 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \csr_erase_state[0]~3 (
 	.dataa(avmm_csr_writedata_0),
 	.datab(avmm_csr_writedata_1),
 	.datac(avmm_csr_writedata_2),
 	.datad(avmm_csr_writedata_3),
 	.cin(gnd),
-	.combout(\csr_erase_state[1]~2_combout ),
+	.combout(\csr_erase_state[0]~3_combout ),
 	.cout());
-defparam \csr_erase_state[1]~2 .lut_mask = 16'hFFFE;
-defparam \csr_erase_state[1]~2 .sum_lutc_input = "datac";
+defparam \csr_erase_state[0]~3 .lut_mask = 16'hFFFE;
+defparam \csr_erase_state[0]~3 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \csr_erase_state[1]~3 (
+fiftyfivenm_lcell_comb \csr_erase_state[0]~4 (
 	.dataa(avmm_csr_writedata_4),
 	.datab(avmm_csr_writedata_5),
 	.datac(avmm_csr_writedata_6),
 	.datad(avmm_csr_writedata_7),
 	.cin(gnd),
-	.combout(\csr_erase_state[1]~3_combout ),
+	.combout(\csr_erase_state[0]~4_combout ),
 	.cout());
-defparam \csr_erase_state[1]~3 .lut_mask = 16'hFFFE;
-defparam \csr_erase_state[1]~3 .sum_lutc_input = "datac";
+defparam \csr_erase_state[0]~4 .lut_mask = 16'hFFFE;
+defparam \csr_erase_state[0]~4 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \csr_erase_state[1]~4 (
+fiftyfivenm_lcell_comb \csr_erase_state[0]~5 (
 	.dataa(avmm_csr_writedata_8),
 	.datab(avmm_csr_writedata_9),
 	.datac(avmm_csr_writedata_10),
 	.datad(avmm_csr_writedata_11),
 	.cin(gnd),
-	.combout(\csr_erase_state[1]~4_combout ),
+	.combout(\csr_erase_state[0]~5_combout ),
 	.cout());
-defparam \csr_erase_state[1]~4 .lut_mask = 16'hFFFE;
-defparam \csr_erase_state[1]~4 .sum_lutc_input = "datac";
+defparam \csr_erase_state[0]~5 .lut_mask = 16'hFFFE;
+defparam \csr_erase_state[0]~5 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \csr_erase_state[1]~5 (
+fiftyfivenm_lcell_comb \csr_erase_state[0]~6 (
 	.dataa(avmm_csr_writedata_12),
 	.datab(avmm_csr_writedata_13),
 	.datac(avmm_csr_writedata_14),
 	.datad(avmm_csr_writedata_15),
 	.cin(gnd),
-	.combout(\csr_erase_state[1]~5_combout ),
+	.combout(\csr_erase_state[0]~6_combout ),
 	.cout());
-defparam \csr_erase_state[1]~5 .lut_mask = 16'hFFFE;
-defparam \csr_erase_state[1]~5 .sum_lutc_input = "datac";
+defparam \csr_erase_state[0]~6 .lut_mask = 16'hFFFE;
+defparam \csr_erase_state[0]~6 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \csr_erase_state[1]~6 (
-	.dataa(\csr_erase_state[1]~2_combout ),
-	.datab(\csr_erase_state[1]~3_combout ),
-	.datac(\csr_erase_state[1]~4_combout ),
-	.datad(\csr_erase_state[1]~5_combout ),
+fiftyfivenm_lcell_comb \csr_erase_state[0]~7 (
+	.dataa(\csr_erase_state[0]~3_combout ),
+	.datab(\csr_erase_state[0]~4_combout ),
+	.datac(\csr_erase_state[0]~5_combout ),
+	.datad(\csr_erase_state[0]~6_combout ),
 	.cin(gnd),
-	.combout(\csr_erase_state[1]~6_combout ),
+	.combout(\csr_erase_state[0]~7_combout ),
 	.cout());
-defparam \csr_erase_state[1]~6 .lut_mask = 16'hFFFE;
-defparam \csr_erase_state[1]~6 .sum_lutc_input = "datac";
+defparam \csr_erase_state[0]~7 .lut_mask = 16'hFFFE;
+defparam \csr_erase_state[0]~7 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \csr_erase_state[1]~7 (
+fiftyfivenm_lcell_comb \csr_erase_state[0]~8 (
 	.dataa(avmm_csr_writedata_16),
 	.datab(avmm_csr_writedata_17),
 	.datac(avmm_csr_writedata_18),
 	.datad(avmm_csr_writedata_19),
 	.cin(gnd),
-	.combout(\csr_erase_state[1]~7_combout ),
+	.combout(\csr_erase_state[0]~8_combout ),
 	.cout());
-defparam \csr_erase_state[1]~7 .lut_mask = 16'hFFFE;
-defparam \csr_erase_state[1]~7 .sum_lutc_input = "datac";
+defparam \csr_erase_state[0]~8 .lut_mask = 16'hFFFE;
+defparam \csr_erase_state[0]~8 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \csr_erase_state[1]~8 (
+fiftyfivenm_lcell_comb \csr_erase_state[0]~9 (
 	.dataa(avmm_csr_writedata_20),
 	.datab(avmm_csr_writedata_21),
 	.datac(avmm_csr_writedata_22),
-	.datad(\csr_erase_state[1]~7_combout ),
+	.datad(\csr_erase_state[0]~8_combout ),
 	.cin(gnd),
-	.combout(\csr_erase_state[1]~8_combout ),
+	.combout(\csr_erase_state[0]~9_combout ),
 	.cout());
-defparam \csr_erase_state[1]~8 .lut_mask = 16'hFFFE;
-defparam \csr_erase_state[1]~8 .sum_lutc_input = "datac";
+defparam \csr_erase_state[0]~9 .lut_mask = 16'hFFFE;
+defparam \csr_erase_state[0]~9 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \csr_sector_page_erase_addr_reg[1]~5 (
-	.dataa(avmm_csr_addr),
-	.datab(avmm_csr_write),
-	.datac(gnd),
-	.datad(gnd),
-	.cin(gnd),
-	.combout(\csr_sector_page_erase_addr_reg[1]~5_combout ),
-	.cout());
-defparam \csr_sector_page_erase_addr_reg[1]~5 .lut_mask = 16'hEEEE;
-defparam \csr_sector_page_erase_addr_reg[1]~5 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \csr_erase_state[1]~9 (
+fiftyfivenm_lcell_comb \csr_erase_state[0]~10 (
 	.dataa(csr_erase_state_0),
-	.datab(\csr_erase_state[1]~6_combout ),
-	.datac(\csr_erase_state[1]~8_combout ),
-	.datad(\csr_sector_page_erase_addr_reg[1]~5_combout ),
+	.datab(\csr_erase_state[0]~7_combout ),
+	.datac(\csr_erase_state[0]~9_combout ),
+	.datad(\csr_sector_page_erase_addr_reg[20]~1_combout ),
 	.cin(gnd),
-	.combout(\csr_erase_state[1]~9_combout ),
+	.combout(\csr_erase_state[0]~10_combout ),
 	.cout());
-defparam \csr_erase_state[1]~9 .lut_mask = 16'hFEFF;
-defparam \csr_erase_state[1]~9 .sum_lutc_input = "datac";
+defparam \csr_erase_state[0]~10 .lut_mask = 16'hFEFF;
+defparam \csr_erase_state[0]~10 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \csr_erase_state[1]~10 (
-	.dataa(csr_status_busy_1),
-	.datab(\csr_erase_state[1]~9_combout ),
+fiftyfivenm_lcell_comb \csr_erase_state[0]~11 (
+	.dataa(gnd),
+	.datab(gnd),
 	.datac(csr_status_busy_0),
 	.datad(csr_erase_state_1),
 	.cin(gnd),
-	.combout(\csr_erase_state[1]~10_combout ),
+	.combout(\csr_erase_state[0]~11_combout ),
 	.cout());
-defparam \csr_erase_state[1]~10 .lut_mask = 16'hEFFF;
-defparam \csr_erase_state[1]~10 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \csr_erase_state[1]~11 (
-	.dataa(reset_n_reg21),
-	.datab(\csr_erase_state[1]~10_combout ),
-	.datac(csr_erase_state_0),
-	.datad(\csr_sector_page_erase_addr_reg[1]~6_combout ),
-	.cin(gnd),
-	.combout(\csr_erase_state[1]~11_combout ),
-	.cout());
-defparam \csr_erase_state[1]~11 .lut_mask = 16'hEFFF;
-defparam \csr_erase_state[1]~11 .sum_lutc_input = "datac";
+defparam \csr_erase_state[0]~11 .lut_mask = 16'h0FFF;
+defparam \csr_erase_state[0]~11 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \csr_erase_state[0]~12 (
-	.dataa(csr_erase_state_0),
-	.datab(\csr_erase_state[1]~11_combout ),
-	.datac(reset_n_reg21),
-	.datad(csr_erase_state_1),
+	.dataa(reset_n_reg21),
+	.datab(\csr_erase_state[0]~2_combout ),
+	.datac(\csr_erase_state[0]~10_combout ),
+	.datad(\csr_erase_state[0]~11_combout ),
 	.cin(gnd),
 	.combout(\csr_erase_state[0]~12_combout ),
 	.cout());
-defparam \csr_erase_state[0]~12 .lut_mask = 16'hF6FF;
+defparam \csr_erase_state[0]~12 .lut_mask = 16'hFFFE;
 defparam \csr_erase_state[0]~12 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \csr_erase_state[1]~13 (
+fiftyfivenm_lcell_comb \csr_erase_state[0]~13 (
+	.dataa(csr_erase_state_0),
+	.datab(\csr_erase_state[0]~12_combout ),
+	.datac(reset_n_reg21),
+	.datad(csr_erase_state_1),
+	.cin(gnd),
+	.combout(\csr_erase_state[0]~13_combout ),
+	.cout());
+defparam \csr_erase_state[0]~13 .lut_mask = 16'hF6FF;
+defparam \csr_erase_state[0]~13 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \csr_erase_state[1]~14 (
 	.dataa(csr_erase_state_0),
 	.datab(csr_erase_state_1),
 	.datac(reset_n_reg21),
-	.datad(\csr_erase_state[1]~11_combout ),
+	.datad(\csr_erase_state[0]~12_combout ),
 	.cin(gnd),
-	.combout(\csr_erase_state[1]~13_combout ),
+	.combout(\csr_erase_state[1]~14_combout ),
 	.cout());
-defparam \csr_erase_state[1]~13 .lut_mask = 16'hFBFE;
-defparam \csr_erase_state[1]~13 .sum_lutc_input = "datac";
+defparam \csr_erase_state[1]~14 .lut_mask = 16'hFBFE;
+defparam \csr_erase_state[1]~14 .sum_lutc_input = "datac";
 
 dffeas reset_n_reg1(
 	.clk(clock),
@@ -3162,7 +3158,6 @@ module onchip_flash_altera_onchip_flash_avmm_data_controller (
 	csr_wp_mode_1,
 	csr_wp_mode_2,
 	csr_wp_mode_3,
-	csr_wp_mode_4,
 	csr_erase_state_0,
 	csr_erase_state_1,
 	avmm_readdata_0,
@@ -3354,7 +3349,6 @@ input 	csr_wp_mode_0;
 input 	csr_wp_mode_1;
 input 	csr_wp_mode_2;
 input 	csr_wp_mode_3;
-input 	csr_wp_mode_4;
 input 	csr_erase_state_0;
 input 	csr_erase_state_1;
 output 	avmm_readdata_0;
@@ -3508,16 +3502,18 @@ wire \address_convertor|Add0~16_combout ;
 wire \address_convertor|Add0~18_combout ;
 wire \address_convertor|Add0~20_combout ;
 wire \address_convertor|Add0~22_combout ;
-wire \access_address_write_protection_checker|LessThan9~1_combout ;
-wire \access_address_write_protection_checker|LessThan9~2_combout ;
-wire \access_address_write_protection_checker|LessThan9~3_combout ;
+wire \cur_a_addr[15]~9_combout ;
 wire \access_address_write_protection_checker|is_addr_writable~9_combout ;
+wire \address_convertor|LessThan0~0_combout ;
+wire \access_address_write_protection_checker|is_addr_writable~10_combout ;
 wire \ufm_data_shiftreg|dffs[31]~q ;
 wire \stdsync_busy_clear|dreg[0]~q ;
 wire \stdsync_busy|dreg[0]~q ;
+wire \access_address_write_protection_checker|is_addr_writable~13_combout ;
+wire \address_convertor|LessThan0~2_combout ;
+wire \address_convertor|LessThan0~3_combout ;
 wire \sector_convertor|flash_sector[0]~0_combout ;
 wire \sector_convertor|flash_sector~1_combout ;
-wire \sector_convertor|Equal3~0_combout ;
 wire \Equal7~0_combout ;
 wire \flash_busy_clear_reg~q ;
 wire \flash_busy_reg~q ;
@@ -3555,28 +3551,26 @@ wire \read_state.READ_STATE_IDLE~q ;
 wire \erase_state~26_combout ;
 wire \erase_state~40_combout ;
 wire \erase_state.ERASE_STATE_ADDR~q ;
-wire \is_sector4_writable_reg~0_combout ;
-wire \is_sector4_writable_reg~q ;
-wire \is_sector3_writable_reg~0_combout ;
-wire \is_sector3_writable_reg~q ;
 wire \is_sector2_writable_reg~0_combout ;
 wire \is_sector2_writable_reg~q ;
-wire \is_erase_addr_writable~0_combout ;
-wire \is_sector5_writable_reg~0_combout ;
-wire \is_sector5_writable_reg~q ;
-wire \is_sector1_writable_reg~0_combout ;
-wire \is_sector1_writable_reg~q ;
-wire \is_erase_addr_writable~1_combout ;
-wire \is_erase_addr_writable~2_combout ;
 wire \Equal2~0_combout ;
 wire \flash_addr_wire~0_combout ;
+wire \is_sector1_writable_reg~0_combout ;
+wire \is_sector1_writable_reg~q ;
+wire \is_sector3_writable_reg~0_combout ;
+wire \is_sector3_writable_reg~q ;
+wire \is_erase_addr_writable~0_combout ;
+wire \is_sector4_writable_reg~0_combout ;
+wire \is_sector4_writable_reg~q ;
+wire \is_erase_addr_writable~1_combout ;
+wire \is_erase_addr_writable~2_combout ;
 wire \erase_state~29_combout ;
 wire \Add2~0_combout ;
-wire \erase_state~24_combout ;
 wire \erase_count[5]~1_combout ;
 wire \erase_count~2_combout ;
 wire \Selector53~0_combout ;
 wire \erase_state~31_combout ;
+wire \is_erase_addr_writable~4_combout ;
 wire \erase_state~37_combout ;
 wire \erase_state.ERASE_STATE_ERROR~q ;
 wire \erase_state~35_combout ;
@@ -3592,7 +3586,6 @@ wire \Selector52~0_combout ;
 wire \erase_count[1]~q ;
 wire \Add2~3 ;
 wire \Add2~4_combout ;
-wire \erase_count[7]~3_combout ;
 wire \Selector51~0_combout ;
 wire \erase_count[2]~q ;
 wire \erase_state~30_combout ;
@@ -3603,10 +3596,12 @@ wire \Add2~6_combout ;
 wire \Selector50~2_combout ;
 wire \erase_count[3]~q ;
 wire \Equal5~0_combout ;
+wire \erase_state~24_combout ;
+wire \erase_count[5]~3_combout ;
 wire \Add2~7 ;
 wire \Add2~8_combout ;
-wire \Selector49~2_combout ;
-wire \Selector49~3_combout ;
+wire \Selector49~0_combout ;
+wire \Selector49~1_combout ;
 wire \erase_count[4]~q ;
 wire \Add2~9 ;
 wire \Add2~10_combout ;
@@ -3712,38 +3707,38 @@ wire \erase_state~22_combout ;
 wire \erase_state~33_combout ;
 wire \erase_state~34_combout ;
 wire \erase_state.ERASE_STATE_IDLE~q ;
-wire \write_state~19_combout ;
-wire \write_state~27_combout ;
+wire \write_state~17_combout ;
+wire \write_state~26_combout ;
 wire \write_state.WRITE_STATE_ADDR~q ;
-wire \write_state~22_combout ;
-wire \write_state~23_combout ;
-wire \Selector26~7_combout ;
-wire \write_state~29_combout ;
+wire \write_state~20_combout ;
+wire \write_state~21_combout ;
+wire \Selector26~4_combout ;
+wire \Selector26~5_combout ;
+wire \write_state~27_combout ;
 wire \write_state.WRITE_STATE_WRITE~q ;
 wire \Selector22~0_combout ;
 wire \write_state.WRITE_STATE_WAIT_BUSY~q ;
-wire \write_state~24_combout ;
-wire \write_state~25_combout ;
+wire \write_state~22_combout ;
+wire \write_state~23_combout ;
 wire \write_state.WRITE_STATE_WAIT_DONE~q ;
-wire \write_state~26_combout ;
-wire \write_state~28_combout ;
+wire \write_state~25_combout ;
+wire \write_state~24_combout ;
 wire \Selector24~0_combout ;
 wire \Selector24~1_combout ;
 wire \write_state.WRITE_STATE_RESET~q ;
 wire \write_state.WRITE_STATE_ERROR~q ;
 wire \write_count[0]~1_combout ;
 wire \Add1~0_combout ;
-wire \write_count~2_combout ;
-wire \write_count[7]~0_combout ;
-wire \write_count~4_combout ;
-wire \write_count[0]~5_combout ;
+wire \write_count~3_combout ;
+wire \write_count[2]~0_combout ;
+wire \write_count~5_combout ;
 wire \write_count[0]~6_combout ;
+wire \write_count[0]~7_combout ;
 wire \write_count[0]~q ;
-wire \Selector14~0_combout ;
 wire \Add1~1 ;
 wire \Add1~3 ;
 wire \Add1~4_combout ;
-wire \write_count[7]~3_combout ;
+wire \write_count[2]~4_combout ;
 wire \Selector13~2_combout ;
 wire \write_count[2]~q ;
 wire \Add1~5 ;
@@ -3757,14 +3752,16 @@ wire \Selector11~0_combout ;
 wire \write_count[4]~q ;
 wire \Add1~9 ;
 wire \Add1~10_combout ;
+wire \Selector16~2_combout ;
 wire \Selector10~0_combout ;
 wire \Selector10~1_combout ;
 wire \Selector10~2_combout ;
 wire \write_count[5]~q ;
 wire \Selector22~1_combout ;
 wire \Add1~2_combout ;
+wire \write_count~2_combout ;
+wire \Selector14~0_combout ;
 wire \Selector14~1_combout ;
-wire \Selector14~2_combout ;
 wire \write_count[1]~q ;
 wire \Equal3~0_combout ;
 wire \Add1~11 ;
@@ -3812,8 +3809,8 @@ wire \write_count[15]~q ;
 wire \Equal3~3_combout ;
 wire \Equal3~4_combout ;
 wire \Equal3~5_combout ;
-wire \write_state~20_combout ;
-wire \write_state~21_combout ;
+wire \write_state~18_combout ;
+wire \write_state~19_combout ;
 wire \write_state.WRITE_STATE_IDLE~q ;
 wire \read_wait~0_combout ;
 wire \read_state~19_combout ;
@@ -3839,9 +3836,9 @@ wire \avmm_read_valid_state~q ;
 wire \Add5~0_combout ;
 wire \data_count~7_combout ;
 wire \data_count~2_combout ;
-wire \data_count[0]~8_combout ;
+wire \data_count[2]~8_combout ;
 wire \data_count[2]~q ;
-wire \data_count[0]~4_combout ;
+wire \data_count[2]~4_combout ;
 wire \data_count~6_combout ;
 wire \data_count[0]~q ;
 wire \data_count~5_combout ;
@@ -3891,10 +3888,10 @@ wire \read_wait~q ;
 wire \read_wait_neg~0_combout ;
 wire \read_wait_neg~q ;
 wire \avmm_waitrequest~0_combout ;
+wire \Selector26~0_combout ;
+wire \Selector26~1_combout ;
 wire \Selector26~2_combout ;
 wire \Selector26~3_combout ;
-wire \Selector26~4_combout ;
-wire \Selector26~5_combout ;
 wire \Selector26~6_combout ;
 wire \write_wait~q ;
 wire \write_wait_neg~0_combout ;
@@ -3924,14 +3921,12 @@ wire \flash_page_addr[0]~q ;
 wire \Add0~0_combout ;
 wire \Add0~1 ;
 wire \Add0~2_combout ;
-wire \flash_seq_read_ardin[7]~1_combout ;
-wire \flash_seq_read_ardin[7]~2_combout ;
-wire \flash_seq_read_ardin[7]~4_combout ;
 wire \Selector100~0_combout ;
-wire \flash_seq_read_ardin[15]~3_combout ;
+wire \flash_seq_read_ardin[10]~4_combout ;
 wire \flash_seq_read_ardin[2]~q ;
 wire \Add0~3 ;
 wire \Add0~4_combout ;
+wire \Selector90~0_combout ;
 wire \Selector99~0_combout ;
 wire \flash_seq_read_ardin[3]~q ;
 wire \Add0~5 ;
@@ -3964,34 +3959,36 @@ wire \Selector92~0_combout ;
 wire \flash_seq_read_ardin[10]~q ;
 wire \Add0~19 ;
 wire \Add0~20_combout ;
-wire \Selector91~1_combout ;
+wire \Selector91~0_combout ;
 wire \flash_seq_read_ardin[11]~q ;
 wire \Add0~21 ;
 wire \Add0~22_combout ;
-wire \Selector90~0_combout ;
+wire \Selector90~1_combout ;
 wire \flash_seq_read_ardin[12]~q ;
 wire \Add0~23 ;
 wire \Add0~24_combout ;
 wire \Selector89~0_combout ;
 wire \flash_seq_read_ardin[13]~q ;
 wire \Add0~25 ;
-wire \Add0~26_combout ;
-wire \Selector88~0_combout ;
-wire \Selector88~1_combout ;
-wire \flash_seq_read_ardin[14]~q ;
 wire \Add0~27 ;
 wire \Add0~28_combout ;
 wire \Selector87~0_combout ;
 wire \Selector87~1_combout ;
 wire \flash_seq_read_ardin[15]~q ;
 wire \Add0~29 ;
-wire \Add0~31 ;
-wire \Add0~32_combout ;
+wire \Add0~30_combout ;
+wire \Selector88~0_combout ;
+wire \Selector88~1_combout ;
+wire \flash_seq_read_ardin[14]~q ;
+wire \Add0~26_combout ;
+wire \flash_seq_read_ardin[16]~1_combout ;
+wire \flash_seq_read_ardin[16]~2_combout ;
 wire \Selector86~0_combout ;
 wire \Selector86~1_combout ;
 wire \flash_seq_read_ardin[16]~q ;
-wire \Add0~30_combout ;
-wire \Selector91~0_combout ;
+wire \Add0~31 ;
+wire \Add0~32_combout ;
+wire \flash_seq_read_ardin[16]~3_combout ;
 wire \Selector101~0_combout ;
 wire \flash_seq_read_ardin[1]~q ;
 wire \flash_page_addr[1]~1_combout ;
@@ -4010,55 +4007,89 @@ wire \flash_page_addr[7]~7_combout ;
 wire \flash_page_addr[7]~q ;
 wire \flash_page_addr[8]~8_combout ;
 wire \flash_page_addr[8]~q ;
-wire \cur_a_addr[9]~19_combout ;
-wire \cur_a_addr[9]~20_combout ;
+wire \cur_a_addr[9]~17_combout ;
+wire \cur_a_addr[9]~18_combout ;
 wire \flash_page_addr~9_combout ;
 wire \flash_page_addr[9]~q ;
-wire \cur_a_addr[10]~18_combout ;
-wire \cur_a_addr[10]~27_combout ;
+wire \cur_a_addr[10]~13_combout ;
+wire \cur_a_addr[10]~14_combout ;
 wire \flash_page_addr~10_combout ;
 wire \flash_page_addr[10]~q ;
+wire \cur_a_addr[11]~15_combout ;
 wire \cur_a_addr[11]~16_combout ;
-wire \cur_a_addr[11]~17_combout ;
 wire \flash_page_addr~11_combout ;
 wire \flash_page_addr[11]~q ;
-wire \cur_a_addr[12]~15_combout ;
-wire \cur_a_addr[12]~26_combout ;
+wire \cur_a_addr[12]~10_combout ;
+wire \cur_a_addr[12]~11_combout ;
 wire \flash_page_addr~12_combout ;
 wire \flash_page_addr[12]~q ;
-wire \cur_a_addr[13]~13_combout ;
-wire \cur_a_addr[13]~24_combout ;
+wire \cur_a_addr[13]~8_combout ;
+wire \cur_a_addr[13]~22_combout ;
 wire \flash_page_addr~13_combout ;
 wire \flash_page_addr[13]~q ;
-wire \cur_a_addr[14]~21_combout ;
-wire \cur_a_addr[14]~28_combout ;
+wire \cur_a_addr[14]~12_combout ;
+wire \cur_a_addr[14]~23_combout ;
 wire \flash_page_addr~14_combout ;
 wire \flash_page_addr[14]~q ;
-wire \cur_a_addr[15]~14_combout ;
-wire \cur_a_addr[15]~25_combout ;
+wire \cur_a_addr[15]~19_combout ;
+wire \cur_a_addr[15]~24_combout ;
 wire \flash_page_addr~15_combout ;
 wire \flash_page_addr[15]~q ;
-wire \cur_a_addr[16]~12_combout ;
-wire \cur_a_addr[16]~23_combout ;
+wire \cur_a_addr[16]~20_combout ;
+wire \cur_a_addr[16]~25_combout ;
 wire \flash_page_addr~16_combout ;
 wire \flash_page_addr[16]~q ;
 wire \flash_page_addr~17_combout ;
 wire \flash_page_addr[17]~q ;
 wire \flash_page_addr~18_combout ;
 wire \flash_page_addr[18]~q ;
-wire \cur_a_addr[19]~22_combout ;
+wire \cur_a_addr[19]~21_combout ;
 wire \flash_page_addr~19_combout ;
 wire \flash_page_addr[19]~q ;
 wire \flash_sector_addr[0]~q ;
 wire \flash_page_addr~20_combout ;
 wire \flash_page_addr[20]~q ;
 wire \flash_sector_addr[1]~q ;
+wire \is_erase_addr_writable~3_combout ;
 wire \flash_sector_addr[2]~q ;
 wire \Selector71~0_combout ;
 wire \flash_drshft_reg~q ;
 wire \flash_drshft_neg_reg~0_combout ;
 wire \flash_drshft_neg_reg~q ;
 
+
+onchip_flash_altera_onchip_flash_convert_sector sector_convertor(
+	.csr_sector_page_erase_addr_reg_20(csr_sector_page_erase_addr_reg_20),
+	.csr_sector_page_erase_addr_reg_21(csr_sector_page_erase_addr_reg_21),
+	.csr_sector_page_erase_addr_reg_22(csr_sector_page_erase_addr_reg_22),
+	.flash_sector_0(\sector_convertor|flash_sector[0]~0_combout ),
+	.flash_sector(\sector_convertor|flash_sector~1_combout ));
+
+onchip_flash_altera_onchip_flash_a_address_write_protection_check access_address_write_protection_checker(
+	.csr_sector_page_erase_addr_reg_14(csr_sector_page_erase_addr_reg_14),
+	.csr_sector_page_erase_addr_reg_15(csr_sector_page_erase_addr_reg_15),
+	.csr_sector_page_erase_addr_reg_19(csr_sector_page_erase_addr_reg_19),
+	.csr_erase_state_0(csr_erase_state_0),
+	.csr_erase_state_1(csr_erase_state_1),
+	.Equal2(\Equal2~0_combout ),
+	.cur_a_addr_15(\cur_a_addr[15]~9_combout ),
+	.is_sector4_writable_reg(\is_sector4_writable_reg~q ),
+	.is_sector3_writable_reg(\is_sector3_writable_reg~q ),
+	.cur_a_addr_12(\cur_a_addr[12]~11_combout ),
+	.cur_a_addr_14(\cur_a_addr[14]~12_combout ),
+	.cur_a_addr_10(\cur_a_addr[10]~14_combout ),
+	.cur_a_addr_11(\cur_a_addr[11]~16_combout ),
+	.cur_a_addr_9(\cur_a_addr[9]~18_combout ),
+	.is_sector2_writable_reg(\is_sector2_writable_reg~q ),
+	.is_sector1_writable_reg(\is_sector1_writable_reg~q ),
+	.is_addr_writable(\access_address_write_protection_checker|is_addr_writable~9_combout ),
+	.LessThan0(\address_convertor|LessThan0~0_combout ),
+	.is_addr_writable1(\access_address_write_protection_checker|is_addr_writable~10_combout ),
+	.is_addr_writable2(\access_address_write_protection_checker|is_addr_writable~13_combout ),
+	.cur_a_addr_13(\cur_a_addr[13]~22_combout ),
+	.cur_a_addr_141(\cur_a_addr[14]~23_combout ),
+	.cur_a_addr_151(\cur_a_addr[15]~24_combout ),
+	.cur_a_addr_16(\cur_a_addr[16]~25_combout ));
 
 onchip_flash_altera_onchip_flash_convert_address address_convertor(
 	.Add0(\address_convertor|Add0~0_combout ),
@@ -4076,15 +4107,20 @@ onchip_flash_altera_onchip_flash_convert_address address_convertor(
 	.csr_sector_page_erase_addr_reg_17(csr_sector_page_erase_addr_reg_17),
 	.csr_sector_page_erase_addr_reg_18(csr_sector_page_erase_addr_reg_18),
 	.csr_sector_page_erase_addr_reg_19(csr_sector_page_erase_addr_reg_19),
+	.csr_erase_state_0(csr_erase_state_0),
+	.csr_erase_state_1(csr_erase_state_1),
 	.Equal2(\Equal2~0_combout ),
-	.cur_a_addr_11(\cur_a_addr[11]~17_combout ),
-	.cur_a_addr_9(\cur_a_addr[9]~20_combout ),
-	.cur_a_addr_16(\cur_a_addr[16]~23_combout ),
-	.cur_a_addr_13(\cur_a_addr[13]~24_combout ),
-	.cur_a_addr_15(\cur_a_addr[15]~25_combout ),
-	.cur_a_addr_12(\cur_a_addr[12]~26_combout ),
-	.cur_a_addr_10(\cur_a_addr[10]~27_combout ),
-	.cur_a_addr_14(\cur_a_addr[14]~28_combout ));
+	.cur_a_addr_12(\cur_a_addr[12]~11_combout ),
+	.cur_a_addr_10(\cur_a_addr[10]~14_combout ),
+	.cur_a_addr_11(\cur_a_addr[11]~16_combout ),
+	.cur_a_addr_9(\cur_a_addr[9]~18_combout ),
+	.LessThan0(\address_convertor|LessThan0~0_combout ),
+	.LessThan01(\address_convertor|LessThan0~2_combout ),
+	.LessThan02(\address_convertor|LessThan0~3_combout ),
+	.cur_a_addr_13(\cur_a_addr[13]~22_combout ),
+	.cur_a_addr_14(\cur_a_addr[14]~23_combout ),
+	.cur_a_addr_15(\cur_a_addr[15]~24_combout ),
+	.cur_a_addr_16(\cur_a_addr[16]~25_combout ));
 
 onchip_flash_lpm_shiftreg_1 ufm_data_shiftreg(
 	.enable(\write_state.WRITE_STATE_WRITE~q ),
@@ -4140,40 +4176,16 @@ onchip_flash_altera_std_synchronizer_1 stdsync_busy_clear(
 	.reset_n(reset_n),
 	.clk(clock));
 
-onchip_flash_altera_onchip_flash_convert_sector sector_convertor(
-	.csr_sector_page_erase_addr_reg_20(csr_sector_page_erase_addr_reg_20),
-	.csr_sector_page_erase_addr_reg_21(csr_sector_page_erase_addr_reg_21),
-	.csr_sector_page_erase_addr_reg_22(csr_sector_page_erase_addr_reg_22),
-	.flash_sector_0(\sector_convertor|flash_sector[0]~0_combout ),
-	.flash_sector(\sector_convertor|flash_sector~1_combout ),
-	.Equal3(\sector_convertor|Equal3~0_combout ));
-
-onchip_flash_altera_onchip_flash_a_address_write_protection_check access_address_write_protection_checker(
-	.csr_sector_page_erase_addr_reg_10(csr_sector_page_erase_addr_reg_10),
-	.csr_sector_page_erase_addr_reg_17(csr_sector_page_erase_addr_reg_17),
-	.csr_sector_page_erase_addr_reg_18(csr_sector_page_erase_addr_reg_18),
-	.csr_sector_page_erase_addr_reg_19(csr_sector_page_erase_addr_reg_19),
-	.csr_erase_state_0(csr_erase_state_0),
-	.csr_erase_state_1(csr_erase_state_1),
-	.Equal2(\Equal2~0_combout ),
-	.is_sector4_writable_reg(\is_sector4_writable_reg~q ),
-	.is_sector3_writable_reg(\is_sector3_writable_reg~q ),
-	.cur_a_addr_11(\cur_a_addr[11]~17_combout ),
-	.cur_a_addr_10(\cur_a_addr[10]~18_combout ),
-	.cur_a_addr_9(\cur_a_addr[9]~20_combout ),
-	.is_sector2_writable_reg(\is_sector2_writable_reg~q ),
-	.is_sector1_writable_reg(\is_sector1_writable_reg~q ),
-	.is_sector5_writable_reg(\is_sector5_writable_reg~q ),
-	.LessThan9(\access_address_write_protection_checker|LessThan9~1_combout ),
-	.LessThan91(\access_address_write_protection_checker|LessThan9~2_combout ),
-	.LessThan92(\access_address_write_protection_checker|LessThan9~3_combout ),
-	.is_addr_writable(\access_address_write_protection_checker|is_addr_writable~9_combout ),
-	.cur_a_addr_16(\cur_a_addr[16]~23_combout ),
-	.cur_a_addr_13(\cur_a_addr[13]~24_combout ),
-	.cur_a_addr_15(\cur_a_addr[15]~25_combout ),
-	.cur_a_addr_12(\cur_a_addr[12]~26_combout ),
-	.cur_a_addr_101(\cur_a_addr[10]~27_combout ),
-	.cur_a_addr_14(\cur_a_addr[14]~28_combout ));
+fiftyfivenm_lcell_comb \cur_a_addr[15]~9 (
+	.dataa(\flash_seq_read_ardin[15]~q ),
+	.datab(avmm_data_addr_15),
+	.datac(\read_state.READ_STATE_IDLE~q ),
+	.datad(\Equal2~0_combout ),
+	.cin(gnd),
+	.combout(\cur_a_addr[15]~9_combout ),
+	.cout());
+defparam \cur_a_addr[15]~9 .lut_mask = 16'hACFF;
+defparam \cur_a_addr[15]~9 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Equal7~0 (
 	.dataa(\Equal3~4_combout ),
@@ -4287,14 +4299,14 @@ defparam \Selector55~0 .lut_mask = 16'h7FFF;
 defparam \Selector55~0 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Selector55~1 (
-	.dataa(\erase_state~29_combout ),
-	.datab(\erase_busy_scan~q ),
-	.datac(gnd),
+	.dataa(\erase_state.ERASE_STATE_ADDR~q ),
+	.datab(\is_erase_addr_writable~4_combout ),
+	.datac(\erase_busy_scan~q ),
 	.datad(\Selector55~0_combout ),
 	.cin(gnd),
 	.combout(\Selector55~1_combout ),
 	.cout());
-defparam \Selector55~1 .lut_mask = 16'hEEFF;
+defparam \Selector55~1 .lut_mask = 16'hFEFF;
 defparam \Selector55~1 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Selector17~0 (
@@ -5415,56 +5427,6 @@ dffeas \erase_state.ERASE_STATE_ADDR (
 defparam \erase_state.ERASE_STATE_ADDR .is_wysiwyg = "true";
 defparam \erase_state.ERASE_STATE_ADDR .power_up = "low";
 
-fiftyfivenm_lcell_comb \is_sector4_writable_reg~0 (
-	.dataa(gnd),
-	.datab(gnd),
-	.datac(csr_wp_mode_3),
-	.datad(reset_n_reg2),
-	.cin(gnd),
-	.combout(\is_sector4_writable_reg~0_combout ),
-	.cout());
-defparam \is_sector4_writable_reg~0 .lut_mask = 16'hFFF0;
-defparam \is_sector4_writable_reg~0 .sum_lutc_input = "datac";
-
-dffeas is_sector4_writable_reg(
-	.clk(clock),
-	.d(\is_sector4_writable_reg~0_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.q(\is_sector4_writable_reg~q ),
-	.prn(vcc));
-defparam is_sector4_writable_reg.is_wysiwyg = "true";
-defparam is_sector4_writable_reg.power_up = "low";
-
-fiftyfivenm_lcell_comb \is_sector3_writable_reg~0 (
-	.dataa(gnd),
-	.datab(gnd),
-	.datac(csr_wp_mode_2),
-	.datad(reset_n_reg2),
-	.cin(gnd),
-	.combout(\is_sector3_writable_reg~0_combout ),
-	.cout());
-defparam \is_sector3_writable_reg~0 .lut_mask = 16'hFFF0;
-defparam \is_sector3_writable_reg~0 .sum_lutc_input = "datac";
-
-dffeas is_sector3_writable_reg(
-	.clk(clock),
-	.d(\is_sector3_writable_reg~0_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.q(\is_sector3_writable_reg~q ),
-	.prn(vcc));
-defparam is_sector3_writable_reg.is_wysiwyg = "true";
-defparam is_sector3_writable_reg.power_up = "low";
-
 fiftyfivenm_lcell_comb \is_sector2_writable_reg~0 (
 	.dataa(gnd),
 	.datab(gnd),
@@ -5490,41 +5452,27 @@ dffeas is_sector2_writable_reg(
 defparam is_sector2_writable_reg.is_wysiwyg = "true";
 defparam is_sector2_writable_reg.power_up = "low";
 
-fiftyfivenm_lcell_comb \is_erase_addr_writable~0 (
-	.dataa(csr_sector_page_erase_addr_reg_20),
-	.datab(csr_sector_page_erase_addr_reg_21),
-	.datac(\is_sector3_writable_reg~q ),
-	.datad(\is_sector2_writable_reg~q ),
-	.cin(gnd),
-	.combout(\is_erase_addr_writable~0_combout ),
-	.cout());
-defparam \is_erase_addr_writable~0 .lut_mask = 16'hFFF6;
-defparam \is_erase_addr_writable~0 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \is_sector5_writable_reg~0 (
-	.dataa(gnd),
+fiftyfivenm_lcell_comb \Equal2~0 (
+	.dataa(csr_erase_state_0),
 	.datab(gnd),
-	.datac(csr_wp_mode_4),
-	.datad(reset_n_reg2),
+	.datac(gnd),
+	.datad(csr_erase_state_1),
 	.cin(gnd),
-	.combout(\is_sector5_writable_reg~0_combout ),
+	.combout(\Equal2~0_combout ),
 	.cout());
-defparam \is_sector5_writable_reg~0 .lut_mask = 16'hFFF0;
-defparam \is_sector5_writable_reg~0 .sum_lutc_input = "datac";
+defparam \Equal2~0 .lut_mask = 16'hAAFF;
+defparam \Equal2~0 .sum_lutc_input = "datac";
 
-dffeas is_sector5_writable_reg(
-	.clk(clock),
-	.d(\is_sector5_writable_reg~0_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.q(\is_sector5_writable_reg~q ),
-	.prn(vcc));
-defparam is_sector5_writable_reg.is_wysiwyg = "true";
-defparam is_sector5_writable_reg.power_up = "low";
+fiftyfivenm_lcell_comb \flash_addr_wire~0 (
+	.dataa(\Equal2~0_combout ),
+	.datab(csr_sector_page_erase_addr_reg_20),
+	.datac(csr_sector_page_erase_addr_reg_21),
+	.datad(csr_sector_page_erase_addr_reg_22),
+	.cin(gnd),
+	.combout(\flash_addr_wire~0_combout ),
+	.cout());
+defparam \flash_addr_wire~0 .lut_mask = 16'hFFFE;
+defparam \flash_addr_wire~0 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \is_sector1_writable_reg~0 (
 	.dataa(gnd),
@@ -5551,59 +5499,98 @@ dffeas is_sector1_writable_reg(
 defparam is_sector1_writable_reg.is_wysiwyg = "true";
 defparam is_sector1_writable_reg.power_up = "low";
 
-fiftyfivenm_lcell_comb \is_erase_addr_writable~1 (
-	.dataa(csr_sector_page_erase_addr_reg_22),
-	.datab(\is_sector5_writable_reg~q ),
+fiftyfivenm_lcell_comb \is_sector3_writable_reg~0 (
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(csr_wp_mode_2),
+	.datad(reset_n_reg2),
+	.cin(gnd),
+	.combout(\is_sector3_writable_reg~0_combout ),
+	.cout());
+defparam \is_sector3_writable_reg~0 .lut_mask = 16'hFFF0;
+defparam \is_sector3_writable_reg~0 .sum_lutc_input = "datac";
+
+dffeas is_sector3_writable_reg(
+	.clk(clock),
+	.d(\is_sector3_writable_reg~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.q(\is_sector3_writable_reg~q ),
+	.prn(vcc));
+defparam is_sector3_writable_reg.is_wysiwyg = "true";
+defparam is_sector3_writable_reg.power_up = "low";
+
+fiftyfivenm_lcell_comb \is_erase_addr_writable~0 (
+	.dataa(csr_sector_page_erase_addr_reg_20),
+	.datab(csr_sector_page_erase_addr_reg_21),
 	.datac(\is_sector1_writable_reg~q ),
+	.datad(\is_sector3_writable_reg~q ),
+	.cin(gnd),
+	.combout(\is_erase_addr_writable~0_combout ),
+	.cout());
+defparam \is_erase_addr_writable~0 .lut_mask = 16'hFFF6;
+defparam \is_erase_addr_writable~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \is_sector4_writable_reg~0 (
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(csr_wp_mode_3),
+	.datad(reset_n_reg2),
+	.cin(gnd),
+	.combout(\is_sector4_writable_reg~0_combout ),
+	.cout());
+defparam \is_sector4_writable_reg~0 .lut_mask = 16'hFFF0;
+defparam \is_sector4_writable_reg~0 .sum_lutc_input = "datac";
+
+dffeas is_sector4_writable_reg(
+	.clk(clock),
+	.d(\is_sector4_writable_reg~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.q(\is_sector4_writable_reg~q ),
+	.prn(vcc));
+defparam is_sector4_writable_reg.is_wysiwyg = "true";
+defparam is_sector4_writable_reg.power_up = "low";
+
+fiftyfivenm_lcell_comb \is_erase_addr_writable~1 (
+	.dataa(\is_sector4_writable_reg~q ),
+	.datab(csr_sector_page_erase_addr_reg_22),
+	.datac(csr_sector_page_erase_addr_reg_20),
 	.datad(\is_erase_addr_writable~0_combout ),
 	.cin(gnd),
 	.combout(\is_erase_addr_writable~1_combout ),
 	.cout());
-defparam \is_erase_addr_writable~1 .lut_mask = 16'hFDFE;
+defparam \is_erase_addr_writable~1 .lut_mask = 16'hEBBE;
 defparam \is_erase_addr_writable~1 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \is_erase_addr_writable~2 (
-	.dataa(\is_sector4_writable_reg~q ),
-	.datab(csr_sector_page_erase_addr_reg_21),
+	.dataa(\is_sector2_writable_reg~q ),
+	.datab(\flash_addr_wire~0_combout ),
 	.datac(\is_erase_addr_writable~0_combout ),
 	.datad(\is_erase_addr_writable~1_combout ),
 	.cin(gnd),
 	.combout(\is_erase_addr_writable~2_combout ),
 	.cout());
-defparam \is_erase_addr_writable~2 .lut_mask = 16'hEBBE;
+defparam \is_erase_addr_writable~2 .lut_mask = 16'hFFFE;
 defparam \is_erase_addr_writable~2 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \Equal2~0 (
-	.dataa(csr_erase_state_0),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(csr_erase_state_1),
-	.cin(gnd),
-	.combout(\Equal2~0_combout ),
-	.cout());
-defparam \Equal2~0 .lut_mask = 16'hAAFF;
-defparam \Equal2~0 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \flash_addr_wire~0 (
-	.dataa(\Equal2~0_combout ),
-	.datab(csr_sector_page_erase_addr_reg_20),
-	.datac(csr_sector_page_erase_addr_reg_21),
-	.datad(csr_sector_page_erase_addr_reg_22),
-	.cin(gnd),
-	.combout(\flash_addr_wire~0_combout ),
-	.cout());
-defparam \flash_addr_wire~0 .lut_mask = 16'hFFFE;
-defparam \flash_addr_wire~0 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \erase_state~29 (
 	.dataa(\erase_state.ERASE_STATE_ADDR~q ),
 	.datab(\is_erase_addr_writable~2_combout ),
-	.datac(\access_address_write_protection_checker|is_addr_writable~9_combout ),
+	.datac(\access_address_write_protection_checker|is_addr_writable~13_combout ),
 	.datad(\flash_addr_wire~0_combout ),
 	.cin(gnd),
 	.combout(\erase_state~29_combout ),
 	.cout());
-defparam \erase_state~29 .lut_mask = 16'hFAFC;
+defparam \erase_state~29 .lut_mask = 16'hFEFF;
 defparam \erase_state~29 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Add2~0 (
@@ -5617,37 +5604,26 @@ fiftyfivenm_lcell_comb \Add2~0 (
 defparam \Add2~0 .lut_mask = 16'h55AA;
 defparam \Add2~0 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \erase_state~24 (
-	.dataa(\erase_state.ERASE_STATE_WAIT_BUSY~q ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\stdsync_busy|dreg[0]~q ),
-	.cin(gnd),
-	.combout(\erase_state~24_combout ),
-	.cout());
-defparam \erase_state~24 .lut_mask = 16'hAAFF;
-defparam \erase_state~24 .sum_lutc_input = "datac";
-
 fiftyfivenm_lcell_comb \erase_count[5]~1 (
-	.dataa(\Equal5~8_combout ),
-	.datab(\erase_state~24_combout ),
+	.dataa(\stdsync_busy|dreg[0]~q ),
+	.datab(\stdsync_busy_clear|dreg[0]~q ),
 	.datac(\erase_state.ERASE_STATE_WAIT_DONE~q ),
-	.datad(\stdsync_busy_clear|dreg[0]~q ),
+	.datad(\erase_state.ERASE_STATE_WAIT_BUSY~q ),
 	.cin(gnd),
 	.combout(\erase_count[5]~1_combout ),
 	.cout());
-defparam \erase_count[5]~1 .lut_mask = 16'hFEFF;
+defparam \erase_count[5]~1 .lut_mask = 16'hEFFF;
 defparam \erase_count[5]~1 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \erase_count~2 (
 	.dataa(\erase_state.ERASE_STATE_IDLE~q ),
-	.datab(gnd),
-	.datac(\erase_state.ERASE_STATE_ADDR~q ),
-	.datad(\erase_count[5]~1_combout ),
+	.datab(\erase_count[5]~1_combout ),
+	.datac(\Equal5~8_combout ),
+	.datad(\erase_state.ERASE_STATE_ADDR~q ),
 	.cin(gnd),
 	.combout(\erase_count~2_combout ),
 	.cout());
-defparam \erase_count~2 .lut_mask = 16'hAFFF;
+defparam \erase_count~2 .lut_mask = 16'hEFFF;
 defparam \erase_count~2 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Selector53~0 (
@@ -5672,15 +5648,26 @@ fiftyfivenm_lcell_comb \erase_state~31 (
 defparam \erase_state~31 .lut_mask = 16'hBFFF;
 defparam \erase_state~31 .sum_lutc_input = "datac";
 
+fiftyfivenm_lcell_comb \is_erase_addr_writable~4 (
+	.dataa(\is_erase_addr_writable~2_combout ),
+	.datab(\access_address_write_protection_checker|is_addr_writable~9_combout ),
+	.datac(\access_address_write_protection_checker|is_addr_writable~10_combout ),
+	.datad(\flash_addr_wire~0_combout ),
+	.cin(gnd),
+	.combout(\is_erase_addr_writable~4_combout ),
+	.cout());
+defparam \is_erase_addr_writable~4 .lut_mask = 16'hFEFF;
+defparam \is_erase_addr_writable~4 .sum_lutc_input = "datac";
+
 fiftyfivenm_lcell_comb \erase_state~37 (
 	.dataa(\erase_state.ERASE_STATE_ADDR~q ),
-	.datab(\flash_addr_wire~0_combout ),
-	.datac(\access_address_write_protection_checker|is_addr_writable~9_combout ),
-	.datad(\is_erase_addr_writable~2_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\is_erase_addr_writable~4_combout ),
 	.cin(gnd),
 	.combout(\erase_state~37_combout ),
 	.cout());
-defparam \erase_state~37 .lut_mask = 16'h8BFF;
+defparam \erase_state~37 .lut_mask = 16'hAAFF;
 defparam \erase_state~37 .sum_lutc_input = "datac";
 
 dffeas \erase_state.ERASE_STATE_ERROR (
@@ -5827,26 +5814,15 @@ fiftyfivenm_lcell_comb \Add2~4 (
 defparam \Add2~4 .lut_mask = 16'h5AAF;
 defparam \Add2~4 .sum_lutc_input = "cin";
 
-fiftyfivenm_lcell_comb \erase_count[7]~3 (
-	.dataa(\erase_state.ERASE_STATE_ADDR~q ),
-	.datab(\erase_count[5]~1_combout ),
-	.datac(\erase_state.ERASE_STATE_IDLE~q ),
-	.datad(\erase_state~22_combout ),
-	.cin(gnd),
-	.combout(\erase_count[7]~3_combout ),
-	.cout());
-defparam \erase_count[7]~3 .lut_mask = 16'hEFFF;
-defparam \erase_count[7]~3 .sum_lutc_input = "datac";
-
 fiftyfivenm_lcell_comb \Selector51~0 (
-	.dataa(\Add2~4_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~4_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector51~0_combout ),
 	.cout());
-defparam \Selector51~0 .lut_mask = 16'hAAFF;
+defparam \Selector51~0 .lut_mask = 16'hFEFE;
 defparam \Selector51~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[2] (
@@ -5909,13 +5885,13 @@ defparam \Add2~6 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector50~2 (
 	.dataa(\Selector50~1_combout ),
-	.datab(\erase_count[7]~3_combout ),
-	.datac(\Add2~6_combout ),
-	.datad(gnd),
+	.datab(\Add2~6_combout ),
+	.datac(\erase_state~22_combout ),
+	.datad(\erase_count~2_combout ),
 	.cin(gnd),
 	.combout(\Selector50~2_combout ),
 	.cout());
-defparam \Selector50~2 .lut_mask = 16'hFEFE;
+defparam \Selector50~2 .lut_mask = 16'hEFFF;
 defparam \Selector50~2 .sum_lutc_input = "datac";
 
 dffeas \erase_count[3] (
@@ -5943,6 +5919,28 @@ fiftyfivenm_lcell_comb \Equal5~0 (
 defparam \Equal5~0 .lut_mask = 16'h7FFF;
 defparam \Equal5~0 .sum_lutc_input = "datac";
 
+fiftyfivenm_lcell_comb \erase_state~24 (
+	.dataa(\erase_state.ERASE_STATE_WAIT_BUSY~q ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\stdsync_busy|dreg[0]~q ),
+	.cin(gnd),
+	.combout(\erase_state~24_combout ),
+	.cout());
+defparam \erase_state~24 .lut_mask = 16'hAAFF;
+defparam \erase_state~24 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \erase_count[5]~3 (
+	.dataa(\Equal5~8_combout ),
+	.datab(\erase_state~24_combout ),
+	.datac(\erase_state.ERASE_STATE_WAIT_DONE~q ),
+	.datad(\stdsync_busy_clear|dreg[0]~q ),
+	.cin(gnd),
+	.combout(\erase_count[5]~3_combout ),
+	.cout());
+defparam \erase_count[5]~3 .lut_mask = 16'hFEFF;
+defparam \erase_count[5]~3 .sum_lutc_input = "datac";
+
 fiftyfivenm_lcell_comb \Add2~8 (
 	.dataa(\erase_count[4]~q ),
 	.datab(gnd),
@@ -5954,31 +5952,31 @@ fiftyfivenm_lcell_comb \Add2~8 (
 defparam \Add2~8 .lut_mask = 16'h5AAF;
 defparam \Add2~8 .sum_lutc_input = "cin";
 
-fiftyfivenm_lcell_comb \Selector49~2 (
+fiftyfivenm_lcell_comb \Selector49~0 (
 	.dataa(\erase_state~30_combout ),
 	.datab(\Selector50~0_combout ),
-	.datac(\erase_count[5]~1_combout ),
+	.datac(\erase_count[5]~3_combout ),
 	.datad(\Add2~8_combout ),
 	.cin(gnd),
-	.combout(\Selector49~2_combout ),
+	.combout(\Selector49~0_combout ),
 	.cout());
-defparam \Selector49~2 .lut_mask = 16'hFFFE;
-defparam \Selector49~2 .sum_lutc_input = "datac";
+defparam \Selector49~0 .lut_mask = 16'hFFFE;
+defparam \Selector49~0 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \Selector49~3 (
-	.dataa(\erase_state.ERASE_STATE_WAIT_BUSY~q ),
-	.datab(\stdsync_busy|dreg[0]~q ),
-	.datac(\Selector49~2_combout ),
-	.datad(\erase_state~29_combout ),
+fiftyfivenm_lcell_comb \Selector49~1 (
+	.dataa(\Selector49~0_combout ),
+	.datab(\erase_state.ERASE_STATE_ADDR~q ),
+	.datac(\is_erase_addr_writable~4_combout ),
+	.datad(\erase_state~21_combout ),
 	.cin(gnd),
-	.combout(\Selector49~3_combout ),
+	.combout(\Selector49~1_combout ),
 	.cout());
-defparam \Selector49~3 .lut_mask = 16'hFFF7;
-defparam \Selector49~3 .sum_lutc_input = "datac";
+defparam \Selector49~1 .lut_mask = 16'hFEFF;
+defparam \Selector49~1 .sum_lutc_input = "datac";
 
 dffeas \erase_count[4] (
 	.clk(clock),
-	.d(\Selector49~3_combout ),
+	.d(\Selector49~1_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
@@ -6074,14 +6072,14 @@ defparam \Add2~14 .lut_mask = 16'h5A5F;
 defparam \Add2~14 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector46~0 (
-	.dataa(\Add2~14_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~14_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector46~0_combout ),
 	.cout());
-defparam \Selector46~0 .lut_mask = 16'hAAFF;
+defparam \Selector46~0 .lut_mask = 16'hFEFE;
 defparam \Selector46~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[7] (
@@ -6121,14 +6119,14 @@ defparam \Add2~16 .lut_mask = 16'h5AAF;
 defparam \Add2~16 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector45~0 (
-	.dataa(\Add2~16_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~16_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector45~0_combout ),
 	.cout());
-defparam \Selector45~0 .lut_mask = 16'hAAFF;
+defparam \Selector45~0 .lut_mask = 16'hFEFE;
 defparam \Selector45~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[8] (
@@ -6193,14 +6191,14 @@ defparam \Add2~20 .lut_mask = 16'h5AAF;
 defparam \Add2~20 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector43~0 (
-	.dataa(\Add2~20_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~20_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector43~0_combout ),
 	.cout());
-defparam \Selector43~0 .lut_mask = 16'hAAFF;
+defparam \Selector43~0 .lut_mask = 16'hFEFE;
 defparam \Selector43~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[10] (
@@ -6229,14 +6227,14 @@ defparam \Add2~22 .lut_mask = 16'h5A5F;
 defparam \Add2~22 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector42~0 (
-	.dataa(\Add2~22_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~22_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector42~0_combout ),
 	.cout());
-defparam \Selector42~0 .lut_mask = 16'hAAFF;
+defparam \Selector42~0 .lut_mask = 16'hFEFE;
 defparam \Selector42~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[11] (
@@ -6348,14 +6346,14 @@ defparam \Add2~28 .lut_mask = 16'h5AAF;
 defparam \Add2~28 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector39~0 (
-	.dataa(\Add2~28_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~28_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector39~0_combout ),
 	.cout());
-defparam \Selector39~0 .lut_mask = 16'hAAFF;
+defparam \Selector39~0 .lut_mask = 16'hFEFE;
 defparam \Selector39~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[14] (
@@ -6442,14 +6440,14 @@ defparam \Add2~32 .lut_mask = 16'h5AAF;
 defparam \Add2~32 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector37~0 (
-	.dataa(\Add2~32_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~32_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector37~0_combout ),
 	.cout());
-defparam \Selector37~0 .lut_mask = 16'hAAFF;
+defparam \Selector37~0 .lut_mask = 16'hFEFE;
 defparam \Selector37~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[16] (
@@ -6478,14 +6476,14 @@ defparam \Add2~34 .lut_mask = 16'h5A5F;
 defparam \Add2~34 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector36~0 (
-	.dataa(\Add2~34_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~34_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector36~0_combout ),
 	.cout());
-defparam \Selector36~0 .lut_mask = 16'hAAFF;
+defparam \Selector36~0 .lut_mask = 16'hFEFE;
 defparam \Selector36~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[17] (
@@ -6514,14 +6512,14 @@ defparam \Add2~36 .lut_mask = 16'h5AAF;
 defparam \Add2~36 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector35~0 (
-	.dataa(\Add2~36_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~36_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector35~0_combout ),
 	.cout());
-defparam \Selector35~0 .lut_mask = 16'hAAFF;
+defparam \Selector35~0 .lut_mask = 16'hFEFE;
 defparam \Selector35~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[18] (
@@ -6550,14 +6548,14 @@ defparam \Add2~38 .lut_mask = 16'h5A5F;
 defparam \Add2~38 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector34~0 (
-	.dataa(\Add2~38_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~38_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector34~0_combout ),
 	.cout());
-defparam \Selector34~0 .lut_mask = 16'hAAFF;
+defparam \Selector34~0 .lut_mask = 16'hFEFE;
 defparam \Selector34~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[19] (
@@ -6597,14 +6595,14 @@ defparam \Add2~40 .lut_mask = 16'h5AAF;
 defparam \Add2~40 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector33~0 (
-	.dataa(\Add2~40_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~40_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector33~0_combout ),
 	.cout());
-defparam \Selector33~0 .lut_mask = 16'hAAFF;
+defparam \Selector33~0 .lut_mask = 16'hFEFE;
 defparam \Selector33~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[20] (
@@ -6633,14 +6631,14 @@ defparam \Add2~42 .lut_mask = 16'h5A5F;
 defparam \Add2~42 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector32~0 (
-	.dataa(\Add2~42_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~42_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector32~0_combout ),
 	.cout());
-defparam \Selector32~0 .lut_mask = 16'hAAFF;
+defparam \Selector32~0 .lut_mask = 16'hFEFE;
 defparam \Selector32~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[21] (
@@ -6669,14 +6667,14 @@ defparam \Add2~44 .lut_mask = 16'h5AAF;
 defparam \Add2~44 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector31~0 (
-	.dataa(\Add2~44_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~44_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector31~0_combout ),
 	.cout());
-defparam \Selector31~0 .lut_mask = 16'hAAFF;
+defparam \Selector31~0 .lut_mask = 16'hFEFE;
 defparam \Selector31~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[22] (
@@ -6705,14 +6703,14 @@ defparam \Add2~46 .lut_mask = 16'h5A5F;
 defparam \Add2~46 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector30~0 (
-	.dataa(\Add2~46_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~46_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector30~0_combout ),
 	.cout());
-defparam \Selector30~0 .lut_mask = 16'hAAFF;
+defparam \Selector30~0 .lut_mask = 16'hFEFE;
 defparam \Selector30~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[23] (
@@ -6752,14 +6750,14 @@ defparam \Add2~48 .lut_mask = 16'h5AAF;
 defparam \Add2~48 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector29~0 (
-	.dataa(\Add2~48_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\erase_count[7]~3_combout ),
+	.dataa(\erase_state~22_combout ),
+	.datab(\erase_count~2_combout ),
+	.datac(\Add2~48_combout ),
+	.datad(gnd),
 	.cin(gnd),
 	.combout(\Selector29~0_combout ),
 	.cout());
-defparam \Selector29~0 .lut_mask = 16'hAAFF;
+defparam \Selector29~0 .lut_mask = 16'hFEFE;
 defparam \Selector29~0 .sum_lutc_input = "datac";
 
 dffeas \erase_count[24] (
@@ -6975,31 +6973,31 @@ dffeas \erase_state.ERASE_STATE_IDLE (
 defparam \erase_state.ERASE_STATE_IDLE .is_wysiwyg = "true";
 defparam \erase_state.ERASE_STATE_IDLE .power_up = "low";
 
-fiftyfivenm_lcell_comb \write_state~19 (
+fiftyfivenm_lcell_comb \write_state~17 (
 	.dataa(avmm_data_write),
 	.datab(\read_state.READ_STATE_IDLE~q ),
 	.datac(\erase_state.ERASE_STATE_IDLE~q ),
 	.datad(\Equal2~0_combout ),
 	.cin(gnd),
-	.combout(\write_state~19_combout ),
+	.combout(\write_state~17_combout ),
 	.cout());
-defparam \write_state~19 .lut_mask = 16'hBFFF;
-defparam \write_state~19 .sum_lutc_input = "datac";
+defparam \write_state~17 .lut_mask = 16'hBFFF;
+defparam \write_state~17 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \write_state~27 (
+fiftyfivenm_lcell_comb \write_state~26 (
 	.dataa(reset_n_reg2),
-	.datab(\write_state~19_combout ),
+	.datab(\write_state~17_combout ),
 	.datac(gnd),
 	.datad(\write_state.WRITE_STATE_IDLE~q ),
 	.cin(gnd),
-	.combout(\write_state~27_combout ),
+	.combout(\write_state~26_combout ),
 	.cout());
-defparam \write_state~27 .lut_mask = 16'hEEFF;
-defparam \write_state~27 .sum_lutc_input = "datac";
+defparam \write_state~26 .lut_mask = 16'hEEFF;
+defparam \write_state~26 .sum_lutc_input = "datac";
 
 dffeas \write_state.WRITE_STATE_ADDR (
 	.clk(clock),
-	.d(\write_state~27_combout ),
+	.d(\write_state~26_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
@@ -7011,59 +7009,70 @@ dffeas \write_state.WRITE_STATE_ADDR (
 defparam \write_state.WRITE_STATE_ADDR .is_wysiwyg = "true";
 defparam \write_state.WRITE_STATE_ADDR .power_up = "low";
 
-fiftyfivenm_lcell_comb \write_state~22 (
+fiftyfivenm_lcell_comb \write_state~20 (
 	.dataa(reset_n_reg2),
 	.datab(\write_state.WRITE_STATE_WAIT_DONE~q ),
 	.datac(\stdsync_busy_clear|dreg[0]~q ),
 	.datad(\write_state.WRITE_STATE_ADDR~q ),
 	.cin(gnd),
-	.combout(\write_state~22_combout ),
+	.combout(\write_state~20_combout ),
 	.cout());
-defparam \write_state~22 .lut_mask = 16'hBFFF;
-defparam \write_state~22 .sum_lutc_input = "datac";
+defparam \write_state~20 .lut_mask = 16'hBFFF;
+defparam \write_state~20 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \write_state~23 (
-	.dataa(\write_state~22_combout ),
+fiftyfivenm_lcell_comb \write_state~21 (
+	.dataa(\write_state~20_combout ),
 	.datab(\write_state.WRITE_STATE_IDLE~q ),
-	.datac(\write_state~19_combout ),
+	.datac(\write_state~17_combout ),
 	.datad(\Equal3~5_combout ),
 	.cin(gnd),
-	.combout(\write_state~23_combout ),
+	.combout(\write_state~21_combout ),
 	.cout());
-defparam \write_state~23 .lut_mask = 16'h8BFF;
-defparam \write_state~23 .sum_lutc_input = "datac";
+defparam \write_state~21 .lut_mask = 16'h8BFF;
+defparam \write_state~21 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \Selector26~7 (
+fiftyfivenm_lcell_comb \Selector26~4 (
 	.dataa(avmm_data_burstcount_0),
-	.datab(avmm_data_burstcount_1),
-	.datac(\write_state.WRITE_STATE_ADDR~q ),
-	.datad(\access_address_write_protection_checker|is_addr_writable~9_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(avmm_data_burstcount_1),
 	.cin(gnd),
-	.combout(\Selector26~7_combout ),
+	.combout(\Selector26~4_combout ),
 	.cout());
-defparam \Selector26~7 .lut_mask = 16'hFFFB;
-defparam \Selector26~7 .sum_lutc_input = "datac";
+defparam \Selector26~4 .lut_mask = 16'hAAFF;
+defparam \Selector26~4 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \write_state~29 (
+fiftyfivenm_lcell_comb \Selector26~5 (
+	.dataa(\write_state.WRITE_STATE_ADDR~q ),
+	.datab(\access_address_write_protection_checker|is_addr_writable~9_combout ),
+	.datac(\access_address_write_protection_checker|is_addr_writable~10_combout ),
+	.datad(\Selector26~4_combout ),
+	.cin(gnd),
+	.combout(\Selector26~5_combout ),
+	.cout());
+defparam \Selector26~5 .lut_mask = 16'hFFFE;
+defparam \Selector26~5 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \write_state~27 (
 	.dataa(\write_state.WRITE_STATE_WAIT_BUSY~q ),
 	.datab(\stdsync_busy|dreg[0]~q ),
 	.datac(\write_state.WRITE_STATE_WAIT_DONE~q ),
-	.datad(\write_state~23_combout ),
+	.datad(\write_state~21_combout ),
 	.cin(gnd),
-	.combout(\write_state~29_combout ),
+	.combout(\write_state~27_combout ),
 	.cout());
-defparam \write_state~29 .lut_mask = 16'hEFFF;
-defparam \write_state~29 .sum_lutc_input = "datac";
+defparam \write_state~27 .lut_mask = 16'hEFFF;
+defparam \write_state~27 .sum_lutc_input = "datac";
 
 dffeas \write_state.WRITE_STATE_WRITE (
 	.clk(clock),
-	.d(\Selector26~7_combout ),
+	.d(\Selector26~5_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(!reset_n_reg2),
 	.sload(gnd),
-	.ena(\write_state~29_combout ),
+	.ena(\write_state~27_combout ),
 	.q(\write_state.WRITE_STATE_WRITE~q ),
 	.prn(vcc));
 defparam \write_state.WRITE_STATE_WRITE .is_wysiwyg = "true";
@@ -7094,31 +7103,31 @@ dffeas \write_state.WRITE_STATE_WAIT_BUSY (
 defparam \write_state.WRITE_STATE_WAIT_BUSY .is_wysiwyg = "true";
 defparam \write_state.WRITE_STATE_WAIT_BUSY .power_up = "low";
 
-fiftyfivenm_lcell_comb \write_state~24 (
+fiftyfivenm_lcell_comb \write_state~22 (
 	.dataa(\write_state.WRITE_STATE_WAIT_BUSY~q ),
 	.datab(\stdsync_busy|dreg[0]~q ),
 	.datac(gnd),
 	.datad(gnd),
 	.cin(gnd),
-	.combout(\write_state~24_combout ),
+	.combout(\write_state~22_combout ),
 	.cout());
-defparam \write_state~24 .lut_mask = 16'hEEEE;
-defparam \write_state~24 .sum_lutc_input = "datac";
+defparam \write_state~22 .lut_mask = 16'hEEEE;
+defparam \write_state~22 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \write_state~25 (
+fiftyfivenm_lcell_comb \write_state~23 (
 	.dataa(reset_n_reg2),
 	.datab(\write_state.WRITE_STATE_WAIT_DONE~q ),
-	.datac(\write_state~23_combout ),
-	.datad(\write_state~24_combout ),
+	.datac(\write_state~21_combout ),
+	.datad(\write_state~22_combout ),
 	.cin(gnd),
-	.combout(\write_state~25_combout ),
+	.combout(\write_state~23_combout ),
 	.cout());
-defparam \write_state~25 .lut_mask = 16'hFAFC;
-defparam \write_state~25 .sum_lutc_input = "datac";
+defparam \write_state~23 .lut_mask = 16'hFAFC;
+defparam \write_state~23 .sum_lutc_input = "datac";
 
 dffeas \write_state.WRITE_STATE_WAIT_DONE (
 	.clk(clock),
-	.d(\write_state~25_combout ),
+	.d(\write_state~23_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
@@ -7130,27 +7139,27 @@ dffeas \write_state.WRITE_STATE_WAIT_DONE (
 defparam \write_state.WRITE_STATE_WAIT_DONE .is_wysiwyg = "true";
 defparam \write_state.WRITE_STATE_WAIT_DONE .power_up = "low";
 
-fiftyfivenm_lcell_comb \write_state~26 (
+fiftyfivenm_lcell_comb \write_state~25 (
 	.dataa(gnd),
 	.datab(gnd),
 	.datac(\write_state.WRITE_STATE_WAIT_DONE~q ),
 	.datad(\stdsync_busy_clear|dreg[0]~q ),
 	.cin(gnd),
-	.combout(\write_state~26_combout ),
+	.combout(\write_state~25_combout ),
 	.cout());
-defparam \write_state~26 .lut_mask = 16'h0FFF;
-defparam \write_state~26 .sum_lutc_input = "datac";
+defparam \write_state~25 .lut_mask = 16'h0FFF;
+defparam \write_state~25 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \write_state~28 (
-	.dataa(avmm_data_burstcount_0),
-	.datab(avmm_data_burstcount_1),
-	.datac(\write_state.WRITE_STATE_ADDR~q ),
-	.datad(\access_address_write_protection_checker|is_addr_writable~9_combout ),
+fiftyfivenm_lcell_comb \write_state~24 (
+	.dataa(\write_state.WRITE_STATE_ADDR~q ),
+	.datab(\access_address_write_protection_checker|is_addr_writable~9_combout ),
+	.datac(\access_address_write_protection_checker|is_addr_writable~10_combout ),
+	.datad(\Selector26~4_combout ),
 	.cin(gnd),
-	.combout(\write_state~28_combout ),
+	.combout(\write_state~24_combout ),
 	.cout());
-defparam \write_state~28 .lut_mask = 16'hFDFF;
-defparam \write_state~28 .sum_lutc_input = "datac";
+defparam \write_state~24 .lut_mask = 16'hBFFF;
+defparam \write_state~24 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Selector24~0 (
 	.dataa(\write_state.WRITE_STATE_RESET~q ),
@@ -7190,13 +7199,13 @@ defparam \write_state.WRITE_STATE_RESET .power_up = "low";
 
 dffeas \write_state.WRITE_STATE_ERROR (
 	.clk(clock),
-	.d(\write_state~28_combout ),
+	.d(\write_state~24_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(!reset_n_reg2),
 	.sload(gnd),
-	.ena(\write_state~29_combout ),
+	.ena(\write_state~27_combout ),
 	.q(\write_state.WRITE_STATE_ERROR~q ),
 	.prn(vcc));
 defparam \write_state.WRITE_STATE_ERROR .is_wysiwyg = "true";
@@ -7224,64 +7233,64 @@ fiftyfivenm_lcell_comb \Add1~0 (
 defparam \Add1~0 .lut_mask = 16'h55AA;
 defparam \Add1~0 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \write_count~2 (
+fiftyfivenm_lcell_comb \write_count~3 (
 	.dataa(\write_state.WRITE_STATE_IDLE~q ),
 	.datab(\write_state.WRITE_STATE_WAIT_BUSY~q ),
 	.datac(\stdsync_busy|dreg[0]~q ),
 	.datad(\write_state.WRITE_STATE_ADDR~q ),
 	.cin(gnd),
-	.combout(\write_count~2_combout ),
+	.combout(\write_count~3_combout ),
 	.cout());
-defparam \write_count~2 .lut_mask = 16'hBFFF;
-defparam \write_count~2 .sum_lutc_input = "datac";
+defparam \write_count~3 .lut_mask = 16'hBFFF;
+defparam \write_count~3 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \write_count[7]~0 (
+fiftyfivenm_lcell_comb \write_count[2]~0 (
 	.dataa(\stdsync_busy|dreg[0]~q ),
 	.datab(\stdsync_busy_clear|dreg[0]~q ),
 	.datac(\write_state.WRITE_STATE_WAIT_DONE~q ),
 	.datad(\write_state.WRITE_STATE_WAIT_BUSY~q ),
 	.cin(gnd),
-	.combout(\write_count[7]~0_combout ),
+	.combout(\write_count[2]~0_combout ),
 	.cout());
-defparam \write_count[7]~0 .lut_mask = 16'hEFFF;
-defparam \write_count[7]~0 .sum_lutc_input = "datac";
+defparam \write_count[2]~0 .lut_mask = 16'hEFFF;
+defparam \write_count[2]~0 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \write_count~4 (
-	.dataa(\write_count~2_combout ),
-	.datab(\write_count[7]~0_combout ),
+fiftyfivenm_lcell_comb \write_count~5 (
+	.dataa(\write_count~3_combout ),
+	.datab(\write_count[2]~0_combout ),
 	.datac(\write_state.WRITE_STATE_WRITE~q ),
 	.datad(\Equal3~5_combout ),
 	.cin(gnd),
-	.combout(\write_count~4_combout ),
+	.combout(\write_count~5_combout ),
 	.cout());
-defparam \write_count~4 .lut_mask = 16'hEFFF;
-defparam \write_count~4 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \write_count[0]~5 (
-	.dataa(\write_state~26_combout ),
-	.datab(\Add1~0_combout ),
-	.datac(\Selector22~1_combout ),
-	.datad(\write_count~4_combout ),
-	.cin(gnd),
-	.combout(\write_count[0]~5_combout ),
-	.cout());
-defparam \write_count[0]~5 .lut_mask = 16'hFAFC;
-defparam \write_count[0]~5 .sum_lutc_input = "datac";
+defparam \write_count~5 .lut_mask = 16'hEFFF;
+defparam \write_count~5 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \write_count[0]~6 (
-	.dataa(\write_count[0]~1_combout ),
-	.datab(\write_count[0]~5_combout ),
-	.datac(\write_count[0]~q ),
-	.datad(reset_n_reg2),
+	.dataa(\write_state~25_combout ),
+	.datab(\Add1~0_combout ),
+	.datac(\Selector22~1_combout ),
+	.datad(\write_count~5_combout ),
 	.cin(gnd),
 	.combout(\write_count[0]~6_combout ),
 	.cout());
-defparam \write_count[0]~6 .lut_mask = 16'hFEFF;
+defparam \write_count[0]~6 .lut_mask = 16'hFAFC;
 defparam \write_count[0]~6 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \write_count[0]~7 (
+	.dataa(\write_count[0]~1_combout ),
+	.datab(\write_count[0]~6_combout ),
+	.datac(\write_count[0]~q ),
+	.datad(reset_n_reg2),
+	.cin(gnd),
+	.combout(\write_count[0]~7_combout ),
+	.cout());
+defparam \write_count[0]~7 .lut_mask = 16'hFEFF;
+defparam \write_count[0]~7 .sum_lutc_input = "datac";
 
 dffeas \write_count[0] (
 	.clk(clock),
-	.d(\write_count[0]~6_combout ),
+	.d(\write_count[0]~7_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
@@ -7292,17 +7301,6 @@ dffeas \write_count[0] (
 	.prn(vcc));
 defparam \write_count[0] .is_wysiwyg = "true";
 defparam \write_count[0] .power_up = "low";
-
-fiftyfivenm_lcell_comb \Selector14~0 (
-	.dataa(\write_state.WRITE_STATE_IDLE~q ),
-	.datab(\write_count[7]~0_combout ),
-	.datac(\Equal3~5_combout ),
-	.datad(\write_state.WRITE_STATE_ADDR~q ),
-	.cin(gnd),
-	.combout(\Selector14~0_combout ),
-	.cout());
-defparam \Selector14~0 .lut_mask = 16'hEFFF;
-defparam \Selector14~0 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Add1~2 (
 	.dataa(\write_count[1]~q ),
@@ -7326,22 +7324,22 @@ fiftyfivenm_lcell_comb \Add1~4 (
 defparam \Add1~4 .lut_mask = 16'h5AAF;
 defparam \Add1~4 .sum_lutc_input = "cin";
 
-fiftyfivenm_lcell_comb \write_count[7]~3 (
+fiftyfivenm_lcell_comb \write_count[2]~4 (
 	.dataa(\Equal3~5_combout ),
 	.datab(\write_state.WRITE_STATE_WRITE~q ),
-	.datac(\write_count[7]~0_combout ),
-	.datad(\write_count~2_combout ),
+	.datac(\write_count[2]~0_combout ),
+	.datad(\write_count~3_combout ),
 	.cin(gnd),
-	.combout(\write_count[7]~3_combout ),
+	.combout(\write_count[2]~4_combout ),
 	.cout());
-defparam \write_count[7]~3 .lut_mask = 16'hEFFF;
-defparam \write_count[7]~3 .sum_lutc_input = "datac";
+defparam \write_count[2]~4 .lut_mask = 16'hEFFF;
+defparam \write_count[2]~4 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Selector13~2 (
 	.dataa(\write_state.WRITE_STATE_WAIT_DONE~q ),
 	.datab(\stdsync_busy_clear|dreg[0]~q ),
 	.datac(\Add1~4_combout ),
-	.datad(\write_count[7]~3_combout ),
+	.datad(\write_count[2]~4_combout ),
 	.cin(gnd),
 	.combout(\Selector13~2_combout ),
 	.cout());
@@ -7374,7 +7372,7 @@ defparam \Add1~6 .lut_mask = 16'h5A5F;
 defparam \Add1~6 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector12~0 (
-	.dataa(\write_count~2_combout ),
+	.dataa(\write_count~3_combout ),
 	.datab(gnd),
 	.datac(\write_state.WRITE_STATE_WRITE~q ),
 	.datad(\Equal3~5_combout ),
@@ -7387,8 +7385,8 @@ defparam \Selector12~0 .sum_lutc_input = "datac";
 fiftyfivenm_lcell_comb \Selector12~1 (
 	.dataa(\Add1~6_combout ),
 	.datab(\Selector12~0_combout ),
-	.datac(\write_count~4_combout ),
-	.datad(\write_state~26_combout ),
+	.datac(\write_count~5_combout ),
+	.datad(\write_state~25_combout ),
 	.cin(gnd),
 	.combout(\Selector12~1_combout ),
 	.cout());
@@ -7421,10 +7419,10 @@ defparam \Add1~8 .lut_mask = 16'h5AAF;
 defparam \Add1~8 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector11~0 (
-	.dataa(\write_count~2_combout ),
+	.dataa(\write_count~3_combout ),
 	.datab(\Add1~8_combout ),
-	.datac(\write_count[7]~3_combout ),
-	.datad(\write_state~26_combout ),
+	.datac(\write_count[2]~4_combout ),
+	.datad(\write_state~25_combout ),
 	.cin(gnd),
 	.combout(\Selector11~0_combout ),
 	.cout());
@@ -7456,15 +7454,26 @@ fiftyfivenm_lcell_comb \Add1~10 (
 defparam \Add1~10 .lut_mask = 16'h5A5F;
 defparam \Add1~10 .sum_lutc_input = "cin";
 
+fiftyfivenm_lcell_comb \Selector16~2 (
+	.dataa(\Equal3~4_combout ),
+	.datab(\write_count[0]~q ),
+	.datac(\write_count[5]~q ),
+	.datad(\write_count[2]~0_combout ),
+	.cin(gnd),
+	.combout(\Selector16~2_combout ),
+	.cout());
+defparam \Selector16~2 .lut_mask = 16'hBFFF;
+defparam \Selector16~2 .sum_lutc_input = "datac";
+
 fiftyfivenm_lcell_comb \Selector10~0 (
-	.dataa(\Selector14~0_combout ),
+	.dataa(\write_state.WRITE_STATE_IDLE~q ),
 	.datab(\Add1~10_combout ),
-	.datac(gnd),
-	.datad(gnd),
+	.datac(\write_state.WRITE_STATE_ADDR~q ),
+	.datad(\Selector16~2_combout ),
 	.cin(gnd),
 	.combout(\Selector10~0_combout ),
 	.cout());
-defparam \Selector10~0 .lut_mask = 16'hEEEE;
+defparam \Selector10~0 .lut_mask = 16'hEFFF;
 defparam \Selector10~0 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Selector10~1 (
@@ -7479,8 +7488,8 @@ defparam \Selector10~1 .lut_mask = 16'h7FFF;
 defparam \Selector10~1 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Selector10~2 (
-	.dataa(\write_state~26_combout ),
-	.datab(\Selector26~7_combout ),
+	.dataa(\write_state~25_combout ),
+	.datab(\Selector26~5_combout ),
 	.datac(\Selector10~0_combout ),
 	.datad(\Selector10~1_combout ),
 	.cin(gnd),
@@ -7514,31 +7523,42 @@ fiftyfivenm_lcell_comb \Selector22~1 (
 defparam \Selector22~1 .lut_mask = 16'hEFFF;
 defparam \Selector22~1 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \Selector14~1 (
+fiftyfivenm_lcell_comb \write_count~2 (
+	.dataa(\write_state.WRITE_STATE_IDLE~q ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\write_state.WRITE_STATE_ADDR~q ),
+	.cin(gnd),
+	.combout(\write_count~2_combout ),
+	.cout());
+defparam \write_count~2 .lut_mask = 16'hAAFF;
+defparam \write_count~2 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \Selector14~0 (
 	.dataa(\Selector22~1_combout ),
 	.datab(\Add1~2_combout ),
+	.datac(\write_count~2_combout ),
+	.datad(\Selector16~2_combout ),
+	.cin(gnd),
+	.combout(\Selector14~0_combout ),
+	.cout());
+defparam \Selector14~0 .lut_mask = 16'hFEFF;
+defparam \Selector14~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \Selector14~1 (
+	.dataa(\write_state~25_combout ),
+	.datab(\write_state~24_combout ),
 	.datac(\Selector14~0_combout ),
-	.datad(gnd),
+	.datad(\write_state~22_combout ),
 	.cin(gnd),
 	.combout(\Selector14~1_combout ),
 	.cout());
-defparam \Selector14~1 .lut_mask = 16'hFEFE;
+defparam \Selector14~1 .lut_mask = 16'hFEFF;
 defparam \Selector14~1 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \Selector14~2 (
-	.dataa(\write_state~26_combout ),
-	.datab(\write_state~28_combout ),
-	.datac(\Selector14~1_combout ),
-	.datad(\write_state~24_combout ),
-	.cin(gnd),
-	.combout(\Selector14~2_combout ),
-	.cout());
-defparam \Selector14~2 .lut_mask = 16'hFEFF;
-defparam \Selector14~2 .sum_lutc_input = "datac";
 
 dffeas \write_count[1] (
 	.clk(clock),
-	.d(\Selector14~2_combout ),
+	.d(\Selector14~1_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
@@ -7573,9 +7593,9 @@ defparam \Add1~12 .lut_mask = 16'h5AAF;
 defparam \Add1~12 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector9~0 (
-	.dataa(\write_state~26_combout ),
+	.dataa(\write_state~25_combout ),
 	.datab(\Add1~12_combout ),
-	.datac(\write_count~4_combout ),
+	.datac(\write_count~5_combout ),
 	.datad(\Selector10~1_combout ),
 	.cin(gnd),
 	.combout(\Selector9~0_combout ),
@@ -7612,7 +7632,7 @@ fiftyfivenm_lcell_comb \Selector8~2 (
 	.dataa(\write_state.WRITE_STATE_WAIT_DONE~q ),
 	.datab(\stdsync_busy_clear|dreg[0]~q ),
 	.datac(\Add1~14_combout ),
-	.datad(\write_count[7]~3_combout ),
+	.datad(\write_count[2]~4_combout ),
 	.cin(gnd),
 	.combout(\Selector8~2_combout ),
 	.cout());
@@ -7648,7 +7668,7 @@ fiftyfivenm_lcell_comb \Selector7~2 (
 	.dataa(\write_state.WRITE_STATE_WAIT_DONE~q ),
 	.datab(\stdsync_busy_clear|dreg[0]~q ),
 	.datac(\Add1~16_combout ),
-	.datad(\write_count[7]~3_combout ),
+	.datad(\write_count[2]~4_combout ),
 	.cin(gnd),
 	.combout(\Selector7~2_combout ),
 	.cout());
@@ -7681,10 +7701,10 @@ defparam \Add1~18 .lut_mask = 16'h5A5F;
 defparam \Add1~18 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector6~0 (
-	.dataa(\write_state~26_combout ),
-	.datab(\write_state~24_combout ),
+	.dataa(\write_state~25_combout ),
+	.datab(\write_state~22_combout ),
 	.datac(\Add1~18_combout ),
-	.datad(\write_count[7]~3_combout ),
+	.datad(\write_count[2]~4_combout ),
 	.cin(gnd),
 	.combout(\Selector6~0_combout ),
 	.cout());
@@ -7731,7 +7751,7 @@ fiftyfivenm_lcell_comb \Selector5~2 (
 	.dataa(\write_state.WRITE_STATE_WAIT_DONE~q ),
 	.datab(\stdsync_busy_clear|dreg[0]~q ),
 	.datac(\Add1~20_combout ),
-	.datad(\write_count[7]~3_combout ),
+	.datad(\write_count[2]~4_combout ),
 	.cin(gnd),
 	.combout(\Selector5~2_combout ),
 	.cout());
@@ -7767,7 +7787,7 @@ fiftyfivenm_lcell_comb \Selector4~2 (
 	.dataa(\write_state.WRITE_STATE_WAIT_DONE~q ),
 	.datab(\stdsync_busy_clear|dreg[0]~q ),
 	.datac(\Add1~22_combout ),
-	.datad(\write_count[7]~3_combout ),
+	.datad(\write_count[2]~4_combout ),
 	.cin(gnd),
 	.combout(\Selector4~2_combout ),
 	.cout());
@@ -7800,10 +7820,10 @@ defparam \Add1~24 .lut_mask = 16'h5AAF;
 defparam \Add1~24 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector3~0 (
-	.dataa(\write_state~26_combout ),
-	.datab(\write_state~24_combout ),
+	.dataa(\write_state~25_combout ),
+	.datab(\write_state~22_combout ),
 	.datac(\Add1~24_combout ),
-	.datad(\write_count[7]~3_combout ),
+	.datad(\write_count[2]~4_combout ),
 	.cin(gnd),
 	.combout(\Selector3~0_combout ),
 	.cout());
@@ -7836,10 +7856,10 @@ defparam \Add1~26 .lut_mask = 16'h5A5F;
 defparam \Add1~26 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector2~0 (
-	.dataa(\write_state~26_combout ),
-	.datab(\write_state~24_combout ),
+	.dataa(\write_state~25_combout ),
+	.datab(\write_state~22_combout ),
 	.datac(\Add1~26_combout ),
-	.datad(\write_count[7]~3_combout ),
+	.datad(\write_count[2]~4_combout ),
 	.cin(gnd),
 	.combout(\Selector2~0_combout ),
 	.cout());
@@ -7883,10 +7903,10 @@ defparam \Add1~28 .lut_mask = 16'h5AAF;
 defparam \Add1~28 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Selector1~0 (
-	.dataa(\write_state~26_combout ),
-	.datab(\write_state~24_combout ),
+	.dataa(\write_state~25_combout ),
+	.datab(\write_state~22_combout ),
 	.datac(\Add1~28_combout ),
-	.datad(\write_count[7]~3_combout ),
+	.datad(\write_count[2]~4_combout ),
 	.cin(gnd),
 	.combout(\Selector1~0_combout ),
 	.cout());
@@ -7922,7 +7942,7 @@ fiftyfivenm_lcell_comb \Selector0~2 (
 	.dataa(\write_state.WRITE_STATE_WAIT_DONE~q ),
 	.datab(\stdsync_busy_clear|dreg[0]~q ),
 	.datac(\Add1~30_combout ),
-	.datad(\write_count[7]~3_combout ),
+	.datad(\write_count[2]~4_combout ),
 	.cin(gnd),
 	.combout(\Selector0~2_combout ),
 	.cout());
@@ -7976,31 +7996,31 @@ fiftyfivenm_lcell_comb \Equal3~5 (
 defparam \Equal3~5 .lut_mask = 16'hAFFF;
 defparam \Equal3~5 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \write_state~20 (
+fiftyfivenm_lcell_comb \write_state~18 (
 	.dataa(\Equal3~5_combout ),
 	.datab(\write_state.WRITE_STATE_RESET~q ),
 	.datac(\write_state.WRITE_STATE_ERROR~q ),
 	.datad(\write_state.WRITE_STATE_IDLE~q ),
 	.cin(gnd),
-	.combout(\write_state~20_combout ),
+	.combout(\write_state~18_combout ),
 	.cout());
-defparam \write_state~20 .lut_mask = 16'hFEFF;
-defparam \write_state~20 .sum_lutc_input = "datac";
+defparam \write_state~18 .lut_mask = 16'hFEFF;
+defparam \write_state~18 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \write_state~21 (
-	.dataa(\write_state~20_combout ),
+fiftyfivenm_lcell_comb \write_state~19 (
+	.dataa(\write_state~18_combout ),
 	.datab(\write_state.WRITE_STATE_IDLE~q ),
-	.datac(\write_state~19_combout ),
+	.datac(\write_state~17_combout ),
 	.datad(reset_n_reg2),
 	.cin(gnd),
-	.combout(\write_state~21_combout ),
+	.combout(\write_state~19_combout ),
 	.cout());
-defparam \write_state~21 .lut_mask = 16'hFFFD;
-defparam \write_state~21 .sum_lutc_input = "datac";
+defparam \write_state~19 .lut_mask = 16'hFFFD;
+defparam \write_state~19 .sum_lutc_input = "datac";
 
 dffeas \write_state.WRITE_STATE_IDLE (
 	.clk(clock),
-	.d(\write_state~21_combout ),
+	.d(\write_state~19_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
@@ -8300,16 +8320,16 @@ fiftyfivenm_lcell_comb \data_count~2 (
 defparam \data_count~2 .lut_mask = 16'hFEFE;
 defparam \data_count~2 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \data_count[0]~8 (
+fiftyfivenm_lcell_comb \data_count[2]~8 (
 	.dataa(\avmm_readdata_ready~q ),
 	.datab(\avmm_read_valid_state~q ),
 	.datac(\data_count~2_combout ),
 	.datad(reset_n_reg2),
 	.cin(gnd),
-	.combout(\data_count[0]~8_combout ),
+	.combout(\data_count[2]~8_combout ),
 	.cout());
-defparam \data_count[0]~8 .lut_mask = 16'hFBFF;
-defparam \data_count[0]~8 .sum_lutc_input = "datac";
+defparam \data_count[2]~8 .lut_mask = 16'hFBFF;
+defparam \data_count[2]~8 .sum_lutc_input = "datac";
 
 dffeas \data_count[2] (
 	.clk(clock),
@@ -8319,28 +8339,28 @@ dffeas \data_count[2] (
 	.aload(gnd),
 	.sclr(!reset_n_reg2),
 	.sload(gnd),
-	.ena(\data_count[0]~8_combout ),
+	.ena(\data_count[2]~8_combout ),
 	.q(\data_count[2]~q ),
 	.prn(vcc));
 defparam \data_count[2] .is_wysiwyg = "true";
 defparam \data_count[2] .power_up = "low";
 
-fiftyfivenm_lcell_comb \data_count[0]~4 (
+fiftyfivenm_lcell_comb \data_count[2]~4 (
 	.dataa(reset_n_reg2),
 	.datab(\avmm_read_valid_state~q ),
 	.datac(\Add5~0_combout ),
 	.datad(\data_count[2]~q ),
 	.cin(gnd),
-	.combout(\data_count[0]~4_combout ),
+	.combout(\data_count[2]~4_combout ),
 	.cout());
-defparam \data_count[0]~4 .lut_mask = 16'hFFFE;
-defparam \data_count[0]~4 .sum_lutc_input = "datac";
+defparam \data_count[2]~4 .lut_mask = 16'hFFFE;
+defparam \data_count[2]~4 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \data_count~6 (
 	.dataa(\data_count[0]~q ),
 	.datab(gnd),
 	.datac(gnd),
-	.datad(\data_count[0]~4_combout ),
+	.datad(\data_count[2]~4_combout ),
 	.cin(gnd),
 	.combout(\data_count~6_combout ),
 	.cout());
@@ -8355,7 +8375,7 @@ dffeas \data_count[0] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\data_count[0]~8_combout ),
+	.ena(\data_count[2]~8_combout ),
 	.q(\data_count[0]~q ),
 	.prn(vcc));
 defparam \data_count[0] .is_wysiwyg = "true";
@@ -8365,7 +8385,7 @@ fiftyfivenm_lcell_comb \data_count~5 (
 	.dataa(gnd),
 	.datab(\data_count[1]~q ),
 	.datac(\data_count[0]~q ),
-	.datad(\data_count[0]~4_combout ),
+	.datad(\data_count[2]~4_combout ),
 	.cin(gnd),
 	.combout(\data_count~5_combout ),
 	.cout());
@@ -8380,7 +8400,7 @@ dffeas \data_count[1] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\data_count[0]~8_combout ),
+	.ena(\data_count[2]~8_combout ),
 	.q(\data_count[1]~q ),
 	.prn(vcc));
 defparam \data_count[1] .is_wysiwyg = "true";
@@ -8688,7 +8708,7 @@ fiftyfivenm_lcell_comb \Selector16~1 (
 	.dataa(\Selector16~0_combout ),
 	.datab(\Equal3~5_combout ),
 	.datac(gnd),
-	.datad(\write_count[7]~0_combout ),
+	.datad(\write_count[2]~0_combout ),
 	.cin(gnd),
 	.combout(\Selector16~1_combout ),
 	.cout());
@@ -8768,14 +8788,14 @@ defparam \Selector54~0 .lut_mask = 16'hFEFF;
 defparam \Selector54~0 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Selector54~1 (
-	.dataa(\erase_count[5]~1_combout ),
-	.datab(\erase_timeout~q ),
-	.datac(\Selector54~0_combout ),
-	.datad(gnd),
+	.dataa(\erase_timeout~q ),
+	.datab(\Selector54~0_combout ),
+	.datac(\Equal5~8_combout ),
+	.datad(\erase_count[5]~1_combout ),
 	.cin(gnd),
 	.combout(\Selector54~1_combout ),
 	.cout());
-defparam \Selector54~1 .lut_mask = 16'hFEFE;
+defparam \Selector54~1 .lut_mask = 16'hFEFF;
 defparam \Selector54~1 .sum_lutc_input = "datac";
 
 dffeas erase_timeout(
@@ -8875,55 +8895,55 @@ fiftyfivenm_lcell_comb \avmm_waitrequest~0 (
 defparam \avmm_waitrequest~0 .lut_mask = 16'hFEFF;
 defparam \avmm_waitrequest~0 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \Selector26~2 (
+fiftyfivenm_lcell_comb \Selector26~0 (
 	.dataa(\write_wait~q ),
 	.datab(\write_state.WRITE_STATE_WAIT_DONE~q ),
 	.datac(\write_state.WRITE_STATE_WAIT_BUSY~q ),
 	.datad(\write_state.WRITE_STATE_WRITE~q ),
 	.cin(gnd),
-	.combout(\Selector26~2_combout ),
+	.combout(\Selector26~0_combout ),
 	.cout());
-defparam \Selector26~2 .lut_mask = 16'hFFFE;
-defparam \Selector26~2 .sum_lutc_input = "datac";
+defparam \Selector26~0 .lut_mask = 16'hFFFE;
+defparam \Selector26~0 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \Selector26~3 (
+fiftyfivenm_lcell_comb \Selector26~1 (
 	.dataa(\write_wait~q ),
 	.datab(\write_state.WRITE_STATE_RESET~q ),
 	.datac(\write_state.WRITE_STATE_ERROR~q ),
 	.datad(gnd),
 	.cin(gnd),
-	.combout(\Selector26~3_combout ),
+	.combout(\Selector26~1_combout ),
 	.cout());
-defparam \Selector26~3 .lut_mask = 16'hFEFE;
-defparam \Selector26~3 .sum_lutc_input = "datac";
+defparam \Selector26~1 .lut_mask = 16'hFEFE;
+defparam \Selector26~1 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \Selector26~4 (
-	.dataa(\Selector26~3_combout ),
+fiftyfivenm_lcell_comb \Selector26~2 (
+	.dataa(\Selector26~1_combout ),
 	.datab(\write_count[5]~q ),
 	.datac(\Equal3~4_combout ),
 	.datad(\write_count[0]~q ),
 	.cin(gnd),
-	.combout(\Selector26~4_combout ),
+	.combout(\Selector26~2_combout ),
 	.cout());
-defparam \Selector26~4 .lut_mask = 16'hEFFF;
-defparam \Selector26~4 .sum_lutc_input = "datac";
+defparam \Selector26~2 .lut_mask = 16'hEFFF;
+defparam \Selector26~2 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \Selector26~5 (
-	.dataa(\Selector26~4_combout ),
+fiftyfivenm_lcell_comb \Selector26~3 (
+	.dataa(\Selector26~2_combout ),
 	.datab(\write_wait~q ),
-	.datac(\write_state~19_combout ),
+	.datac(\write_state~17_combout ),
 	.datad(\write_state.WRITE_STATE_IDLE~q ),
 	.cin(gnd),
-	.combout(\Selector26~5_combout ),
+	.combout(\Selector26~3_combout ),
 	.cout());
-defparam \Selector26~5 .lut_mask = 16'hFEFF;
-defparam \Selector26~5 .sum_lutc_input = "datac";
+defparam \Selector26~3 .lut_mask = 16'hFEFF;
+defparam \Selector26~3 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Selector26~6 (
-	.dataa(\Selector26~2_combout ),
-	.datab(\Selector26~5_combout ),
+	.dataa(\Selector26~0_combout ),
+	.datab(\Selector26~3_combout ),
 	.datac(\write_wait~q ),
-	.datad(\Selector26~7_combout ),
+	.datad(\Selector26~5_combout ),
 	.cin(gnd),
 	.combout(\Selector26~6_combout ),
 	.cout());
@@ -9260,60 +9280,27 @@ fiftyfivenm_lcell_comb \Add0~2 (
 defparam \Add0~2 .lut_mask = 16'h5A5F;
 defparam \Add0~2 .sum_lutc_input = "cin";
 
-fiftyfivenm_lcell_comb \flash_seq_read_ardin[7]~1 (
-	.dataa(\Add0~22_combout ),
-	.datab(\Add0~24_combout ),
-	.datac(gnd),
-	.datad(gnd),
-	.cin(gnd),
-	.combout(\flash_seq_read_ardin[7]~1_combout ),
-	.cout());
-defparam \flash_seq_read_ardin[7]~1 .lut_mask = 16'hEEEE;
-defparam \flash_seq_read_ardin[7]~1 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \flash_seq_read_ardin[7]~2 (
-	.dataa(\Add0~26_combout ),
-	.datab(\Add0~28_combout ),
-	.datac(\Add0~20_combout ),
-	.datad(\flash_seq_read_ardin[7]~1_combout ),
-	.cin(gnd),
-	.combout(\flash_seq_read_ardin[7]~2_combout ),
-	.cout());
-defparam \flash_seq_read_ardin[7]~2 .lut_mask = 16'hFFFE;
-defparam \flash_seq_read_ardin[7]~2 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \flash_seq_read_ardin[7]~4 (
-	.dataa(\read_state.READ_STATE_SETUP~q ),
-	.datab(\Add0~32_combout ),
-	.datac(\Add0~30_combout ),
-	.datad(\flash_seq_read_ardin[7]~2_combout ),
-	.cin(gnd),
-	.combout(\flash_seq_read_ardin[7]~4_combout ),
-	.cout());
-defparam \flash_seq_read_ardin[7]~4 .lut_mask = 16'hFFFE;
-defparam \flash_seq_read_ardin[7]~4 .sum_lutc_input = "datac";
-
 fiftyfivenm_lcell_comb \Selector100~0 (
 	.dataa(\Add0~2_combout ),
 	.datab(avmm_data_addr_2),
 	.datac(\read_state.READ_STATE_SETUP~q ),
-	.datad(\flash_seq_read_ardin[7]~4_combout ),
+	.datad(\flash_seq_read_ardin[16]~3_combout ),
 	.cin(gnd),
 	.combout(\Selector100~0_combout ),
 	.cout());
 defparam \Selector100~0 .lut_mask = 16'hACFF;
 defparam \Selector100~0 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \flash_seq_read_ardin[15]~3 (
+fiftyfivenm_lcell_comb \flash_seq_read_ardin[10]~4 (
 	.dataa(reset_n_reg2),
 	.datab(\read_state.READ_STATE_SETUP~q ),
 	.datac(\read_wait~0_combout ),
 	.datad(\read_state.READ_STATE_IDLE~q ),
 	.cin(gnd),
-	.combout(\flash_seq_read_ardin[15]~3_combout ),
+	.combout(\flash_seq_read_ardin[10]~4_combout ),
 	.cout());
-defparam \flash_seq_read_ardin[15]~3 .lut_mask = 16'hFAFC;
-defparam \flash_seq_read_ardin[15]~3 .sum_lutc_input = "datac";
+defparam \flash_seq_read_ardin[10]~4 .lut_mask = 16'hFAFC;
+defparam \flash_seq_read_ardin[10]~4 .sum_lutc_input = "datac";
 
 dffeas \flash_seq_read_ardin[2] (
 	.clk(clock),
@@ -9323,7 +9310,7 @@ dffeas \flash_seq_read_ardin[2] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[2]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[2] .is_wysiwyg = "true";
@@ -9340,11 +9327,22 @@ fiftyfivenm_lcell_comb \Add0~4 (
 defparam \Add0~4 .lut_mask = 16'h5AAF;
 defparam \Add0~4 .sum_lutc_input = "cin";
 
+fiftyfivenm_lcell_comb \Selector90~0 (
+	.dataa(\Add0~30_combout ),
+	.datab(\flash_seq_read_ardin[16]~2_combout ),
+	.datac(\Add0~32_combout ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\Selector90~0_combout ),
+	.cout());
+defparam \Selector90~0 .lut_mask = 16'hFEFE;
+defparam \Selector90~0 .sum_lutc_input = "datac";
+
 fiftyfivenm_lcell_comb \Selector99~0 (
 	.dataa(\Add0~4_combout ),
 	.datab(avmm_data_addr_3),
 	.datac(\read_state.READ_STATE_SETUP~q ),
-	.datad(\flash_seq_read_ardin[7]~4_combout ),
+	.datad(\Selector90~0_combout ),
 	.cin(gnd),
 	.combout(\Selector99~0_combout ),
 	.cout());
@@ -9359,7 +9357,7 @@ dffeas \flash_seq_read_ardin[3] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[3]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[3] .is_wysiwyg = "true";
@@ -9380,7 +9378,7 @@ fiftyfivenm_lcell_comb \Selector98~0 (
 	.dataa(\Add0~6_combout ),
 	.datab(avmm_data_addr_4),
 	.datac(\read_state.READ_STATE_SETUP~q ),
-	.datad(\flash_seq_read_ardin[7]~4_combout ),
+	.datad(\Selector90~0_combout ),
 	.cin(gnd),
 	.combout(\Selector98~0_combout ),
 	.cout());
@@ -9395,7 +9393,7 @@ dffeas \flash_seq_read_ardin[4] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[4]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[4] .is_wysiwyg = "true";
@@ -9416,7 +9414,7 @@ fiftyfivenm_lcell_comb \Selector97~0 (
 	.dataa(\Add0~8_combout ),
 	.datab(avmm_data_addr_5),
 	.datac(\read_state.READ_STATE_SETUP~q ),
-	.datad(\Selector91~0_combout ),
+	.datad(\Selector90~0_combout ),
 	.cin(gnd),
 	.combout(\Selector97~0_combout ),
 	.cout());
@@ -9431,7 +9429,7 @@ dffeas \flash_seq_read_ardin[5] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[5]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[5] .is_wysiwyg = "true";
@@ -9452,7 +9450,7 @@ fiftyfivenm_lcell_comb \Selector96~0 (
 	.dataa(\Add0~10_combout ),
 	.datab(avmm_data_addr_6),
 	.datac(\read_state.READ_STATE_SETUP~q ),
-	.datad(\Selector91~0_combout ),
+	.datad(\flash_seq_read_ardin[16]~3_combout ),
 	.cin(gnd),
 	.combout(\Selector96~0_combout ),
 	.cout());
@@ -9467,7 +9465,7 @@ dffeas \flash_seq_read_ardin[6] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[6]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[6] .is_wysiwyg = "true";
@@ -9488,7 +9486,7 @@ fiftyfivenm_lcell_comb \Selector95~0 (
 	.dataa(\Add0~12_combout ),
 	.datab(avmm_data_addr_7),
 	.datac(\read_state.READ_STATE_SETUP~q ),
-	.datad(\Selector91~0_combout ),
+	.datad(\Selector90~0_combout ),
 	.cin(gnd),
 	.combout(\Selector95~0_combout ),
 	.cout());
@@ -9503,7 +9501,7 @@ dffeas \flash_seq_read_ardin[7] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[7]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[7] .is_wysiwyg = "true";
@@ -9524,7 +9522,7 @@ fiftyfivenm_lcell_comb \Selector94~0 (
 	.dataa(\Add0~14_combout ),
 	.datab(avmm_data_addr_8),
 	.datac(\read_state.READ_STATE_SETUP~q ),
-	.datad(\Selector91~0_combout ),
+	.datad(\Selector90~0_combout ),
 	.cin(gnd),
 	.combout(\Selector94~0_combout ),
 	.cout());
@@ -9539,7 +9537,7 @@ dffeas \flash_seq_read_ardin[8] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[8]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[8] .is_wysiwyg = "true";
@@ -9560,7 +9558,7 @@ fiftyfivenm_lcell_comb \Selector93~0 (
 	.dataa(\Add0~16_combout ),
 	.datab(avmm_data_addr_9),
 	.datac(\read_state.READ_STATE_SETUP~q ),
-	.datad(\Selector91~0_combout ),
+	.datad(\Selector90~0_combout ),
 	.cin(gnd),
 	.combout(\Selector93~0_combout ),
 	.cout());
@@ -9575,7 +9573,7 @@ dffeas \flash_seq_read_ardin[9] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[9]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[9] .is_wysiwyg = "true";
@@ -9596,7 +9594,7 @@ fiftyfivenm_lcell_comb \Selector92~0 (
 	.dataa(\Add0~18_combout ),
 	.datab(avmm_data_addr_10),
 	.datac(\read_state.READ_STATE_SETUP~q ),
-	.datad(\Selector91~0_combout ),
+	.datad(\flash_seq_read_ardin[16]~3_combout ),
 	.cin(gnd),
 	.combout(\Selector92~0_combout ),
 	.cout());
@@ -9611,7 +9609,7 @@ dffeas \flash_seq_read_ardin[10] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[10]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[10] .is_wysiwyg = "true";
@@ -9628,26 +9626,26 @@ fiftyfivenm_lcell_comb \Add0~20 (
 defparam \Add0~20 .lut_mask = 16'h5AAF;
 defparam \Add0~20 .sum_lutc_input = "cin";
 
-fiftyfivenm_lcell_comb \Selector91~1 (
+fiftyfivenm_lcell_comb \Selector91~0 (
 	.dataa(\Add0~20_combout ),
 	.datab(avmm_data_addr_11),
 	.datac(\read_state.READ_STATE_SETUP~q ),
-	.datad(\Selector91~0_combout ),
+	.datad(\flash_seq_read_ardin[16]~3_combout ),
 	.cin(gnd),
-	.combout(\Selector91~1_combout ),
+	.combout(\Selector91~0_combout ),
 	.cout());
-defparam \Selector91~1 .lut_mask = 16'hACFF;
-defparam \Selector91~1 .sum_lutc_input = "datac";
+defparam \Selector91~0 .lut_mask = 16'hACFF;
+defparam \Selector91~0 .sum_lutc_input = "datac";
 
 dffeas \flash_seq_read_ardin[11] (
 	.clk(clock),
-	.d(\Selector91~1_combout ),
+	.d(\Selector91~0_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[11]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[11] .is_wysiwyg = "true";
@@ -9664,26 +9662,26 @@ fiftyfivenm_lcell_comb \Add0~22 (
 defparam \Add0~22 .lut_mask = 16'h5A5F;
 defparam \Add0~22 .sum_lutc_input = "cin";
 
-fiftyfivenm_lcell_comb \Selector90~0 (
+fiftyfivenm_lcell_comb \Selector90~1 (
 	.dataa(\Add0~22_combout ),
 	.datab(avmm_data_addr_12),
 	.datac(\read_state.READ_STATE_SETUP~q ),
-	.datad(\flash_seq_read_ardin[7]~4_combout ),
+	.datad(\Selector90~0_combout ),
 	.cin(gnd),
-	.combout(\Selector90~0_combout ),
+	.combout(\Selector90~1_combout ),
 	.cout());
-defparam \Selector90~0 .lut_mask = 16'hACFF;
-defparam \Selector90~0 .sum_lutc_input = "datac";
+defparam \Selector90~1 .lut_mask = 16'hACFF;
+defparam \Selector90~1 .sum_lutc_input = "datac";
 
 dffeas \flash_seq_read_ardin[12] (
 	.clk(clock),
-	.d(\Selector90~0_combout ),
+	.d(\Selector90~1_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[12]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[12] .is_wysiwyg = "true";
@@ -9704,7 +9702,7 @@ fiftyfivenm_lcell_comb \Selector89~0 (
 	.dataa(\Add0~24_combout ),
 	.datab(avmm_data_addr_13),
 	.datac(\read_state.READ_STATE_SETUP~q ),
-	.datad(\flash_seq_read_ardin[7]~4_combout ),
+	.datad(\flash_seq_read_ardin[16]~3_combout ),
 	.cin(gnd),
 	.combout(\Selector89~0_combout ),
 	.cout());
@@ -9719,7 +9717,7 @@ dffeas \flash_seq_read_ardin[13] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[13]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[13] .is_wysiwyg = "true";
@@ -9735,42 +9733,6 @@ fiftyfivenm_lcell_comb \Add0~26 (
 	.cout(\Add0~27 ));
 defparam \Add0~26 .lut_mask = 16'h5A5F;
 defparam \Add0~26 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Selector88~0 (
-	.dataa(\Add0~26_combout ),
-	.datab(avmm_data_addr_14),
-	.datac(\read_state.READ_STATE_SETUP~q ),
-	.datad(gnd),
-	.cin(gnd),
-	.combout(\Selector88~0_combout ),
-	.cout());
-defparam \Selector88~0 .lut_mask = 16'hACAC;
-defparam \Selector88~0 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \Selector88~1 (
-	.dataa(\read_state.READ_STATE_SETUP~q ),
-	.datab(\Add0~30_combout ),
-	.datac(\Add0~32_combout ),
-	.datad(\Selector88~0_combout ),
-	.cin(gnd),
-	.combout(\Selector88~1_combout ),
-	.cout());
-defparam \Selector88~1 .lut_mask = 16'hFF7F;
-defparam \Selector88~1 .sum_lutc_input = "datac";
-
-dffeas \flash_seq_read_ardin[14] (
-	.clk(clock),
-	.d(\Selector88~1_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
-	.q(\flash_seq_read_ardin[14]~q ),
-	.prn(vcc));
-defparam \flash_seq_read_ardin[14] .is_wysiwyg = "true";
-defparam \flash_seq_read_ardin[14] .power_up = "low";
 
 fiftyfivenm_lcell_comb \Add0~28 (
 	.dataa(\flash_seq_read_ardin[15]~q ),
@@ -9813,7 +9775,7 @@ dffeas \flash_seq_read_ardin[15] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[15]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[15] .is_wysiwyg = "true";
@@ -9830,16 +9792,63 @@ fiftyfivenm_lcell_comb \Add0~30 (
 defparam \Add0~30 .lut_mask = 16'h5A5F;
 defparam \Add0~30 .sum_lutc_input = "cin";
 
-fiftyfivenm_lcell_comb \Add0~32 (
-	.dataa(gnd),
-	.datab(gnd),
+fiftyfivenm_lcell_comb \Selector88~0 (
+	.dataa(\Add0~26_combout ),
+	.datab(avmm_data_addr_14),
+	.datac(\read_state.READ_STATE_SETUP~q ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\Selector88~0_combout ),
+	.cout());
+defparam \Selector88~0 .lut_mask = 16'hACAC;
+defparam \Selector88~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \Selector88~1 (
+	.dataa(\read_state.READ_STATE_SETUP~q ),
+	.datab(\Add0~30_combout ),
+	.datac(\Add0~32_combout ),
+	.datad(\Selector88~0_combout ),
+	.cin(gnd),
+	.combout(\Selector88~1_combout ),
+	.cout());
+defparam \Selector88~1 .lut_mask = 16'hFF7F;
+defparam \Selector88~1 .sum_lutc_input = "datac";
+
+dffeas \flash_seq_read_ardin[14] (
+	.clk(clock),
+	.d(\Selector88~1_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
+	.q(\flash_seq_read_ardin[14]~q ),
+	.prn(vcc));
+defparam \flash_seq_read_ardin[14] .is_wysiwyg = "true";
+defparam \flash_seq_read_ardin[14] .power_up = "low";
+
+fiftyfivenm_lcell_comb \flash_seq_read_ardin[16]~1 (
+	.dataa(\Add0~22_combout ),
+	.datab(\Add0~24_combout ),
 	.datac(gnd),
 	.datad(gnd),
-	.cin(\Add0~31 ),
-	.combout(\Add0~32_combout ),
+	.cin(gnd),
+	.combout(\flash_seq_read_ardin[16]~1_combout ),
 	.cout());
-defparam \Add0~32 .lut_mask = 16'h0F0F;
-defparam \Add0~32 .sum_lutc_input = "cin";
+defparam \flash_seq_read_ardin[16]~1 .lut_mask = 16'hEEEE;
+defparam \flash_seq_read_ardin[16]~1 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \flash_seq_read_ardin[16]~2 (
+	.dataa(\Add0~26_combout ),
+	.datab(\Add0~28_combout ),
+	.datac(\Add0~20_combout ),
+	.datad(\flash_seq_read_ardin[16]~1_combout ),
+	.cin(gnd),
+	.combout(\flash_seq_read_ardin[16]~2_combout ),
+	.cout());
+defparam \flash_seq_read_ardin[16]~2 .lut_mask = 16'hFFFE;
+defparam \flash_seq_read_ardin[16]~2 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Selector86~0 (
 	.dataa(\Add0~30_combout ),
@@ -9855,7 +9864,7 @@ defparam \Selector86~0 .sum_lutc_input = "datac";
 fiftyfivenm_lcell_comb \Selector86~1 (
 	.dataa(\read_state.READ_STATE_SETUP~q ),
 	.datab(\Add0~32_combout ),
-	.datac(\flash_seq_read_ardin[7]~2_combout ),
+	.datac(\flash_seq_read_ardin[16]~2_combout ),
 	.datad(\Selector86~0_combout ),
 	.cin(gnd),
 	.combout(\Selector86~1_combout ),
@@ -9871,28 +9880,39 @@ dffeas \flash_seq_read_ardin[16] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[16]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[16] .is_wysiwyg = "true";
 defparam \flash_seq_read_ardin[16] .power_up = "low";
 
-fiftyfivenm_lcell_comb \Selector91~0 (
-	.dataa(\Add0~30_combout ),
-	.datab(\flash_seq_read_ardin[7]~2_combout ),
-	.datac(\Add0~32_combout ),
+fiftyfivenm_lcell_comb \Add0~32 (
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
 	.datad(gnd),
-	.cin(gnd),
-	.combout(\Selector91~0_combout ),
+	.cin(\Add0~31 ),
+	.combout(\Add0~32_combout ),
 	.cout());
-defparam \Selector91~0 .lut_mask = 16'hFEFE;
-defparam \Selector91~0 .sum_lutc_input = "datac";
+defparam \Add0~32 .lut_mask = 16'h0F0F;
+defparam \Add0~32 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \flash_seq_read_ardin[16]~3 (
+	.dataa(\read_state.READ_STATE_SETUP~q ),
+	.datab(\Add0~32_combout ),
+	.datac(\Add0~30_combout ),
+	.datad(\flash_seq_read_ardin[16]~2_combout ),
+	.cin(gnd),
+	.combout(\flash_seq_read_ardin[16]~3_combout ),
+	.cout());
+defparam \flash_seq_read_ardin[16]~3 .lut_mask = 16'hFFFE;
+defparam \flash_seq_read_ardin[16]~3 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Selector101~0 (
 	.dataa(\Add0~0_combout ),
 	.datab(avmm_data_addr_1),
 	.datac(\read_state.READ_STATE_SETUP~q ),
-	.datad(\Selector91~0_combout ),
+	.datad(\flash_seq_read_ardin[16]~3_combout ),
 	.cin(gnd),
 	.combout(\Selector101~0_combout ),
 	.cout());
@@ -9907,7 +9927,7 @@ dffeas \flash_seq_read_ardin[1] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\flash_seq_read_ardin[15]~3_combout ),
+	.ena(\flash_seq_read_ardin[10]~4_combout ),
 	.q(\flash_seq_read_ardin[1]~q ),
 	.prn(vcc));
 defparam \flash_seq_read_ardin[1] .is_wysiwyg = "true";
@@ -10113,33 +10133,33 @@ dffeas \flash_page_addr[8] (
 defparam \flash_page_addr[8] .is_wysiwyg = "true";
 defparam \flash_page_addr[8] .power_up = "low";
 
-fiftyfivenm_lcell_comb \cur_a_addr[9]~19 (
+fiftyfivenm_lcell_comb \cur_a_addr[9]~17 (
 	.dataa(\flash_seq_read_ardin[9]~q ),
 	.datab(avmm_data_addr_9),
 	.datac(\read_state.READ_STATE_IDLE~q ),
 	.datad(gnd),
 	.cin(gnd),
-	.combout(\cur_a_addr[9]~19_combout ),
+	.combout(\cur_a_addr[9]~17_combout ),
 	.cout());
-defparam \cur_a_addr[9]~19 .lut_mask = 16'hACAC;
-defparam \cur_a_addr[9]~19 .sum_lutc_input = "datac";
+defparam \cur_a_addr[9]~17 .lut_mask = 16'hACAC;
+defparam \cur_a_addr[9]~17 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \cur_a_addr[9]~20 (
+fiftyfivenm_lcell_comb \cur_a_addr[9]~18 (
 	.dataa(csr_sector_page_erase_addr_reg_9),
 	.datab(csr_erase_state_0),
 	.datac(csr_erase_state_1),
-	.datad(\cur_a_addr[9]~19_combout ),
+	.datad(\cur_a_addr[9]~17_combout ),
 	.cin(gnd),
-	.combout(\cur_a_addr[9]~20_combout ),
+	.combout(\cur_a_addr[9]~18_combout ),
 	.cout());
-defparam \cur_a_addr[9]~20 .lut_mask = 16'hFF7D;
-defparam \cur_a_addr[9]~20 .sum_lutc_input = "datac";
+defparam \cur_a_addr[9]~18 .lut_mask = 16'hFF7D;
+defparam \cur_a_addr[9]~18 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \flash_page_addr~9 (
-	.dataa(\cur_a_addr[9]~20_combout ),
+	.dataa(\cur_a_addr[9]~18_combout ),
 	.datab(\address_convertor|Add0~0_combout ),
 	.datac(gnd),
-	.datad(\access_address_write_protection_checker|LessThan9~3_combout ),
+	.datad(\address_convertor|LessThan0~3_combout ),
 	.cin(gnd),
 	.combout(\flash_page_addr~9_combout ),
 	.cout());
@@ -10160,33 +10180,33 @@ dffeas \flash_page_addr[9] (
 defparam \flash_page_addr[9] .is_wysiwyg = "true";
 defparam \flash_page_addr[9] .power_up = "low";
 
-fiftyfivenm_lcell_comb \cur_a_addr[10]~18 (
+fiftyfivenm_lcell_comb \cur_a_addr[10]~13 (
 	.dataa(\flash_seq_read_ardin[10]~q ),
 	.datab(avmm_data_addr_10),
-	.datac(gnd),
-	.datad(\read_state.READ_STATE_IDLE~q ),
+	.datac(\read_state.READ_STATE_IDLE~q ),
+	.datad(gnd),
 	.cin(gnd),
-	.combout(\cur_a_addr[10]~18_combout ),
+	.combout(\cur_a_addr[10]~13_combout ),
 	.cout());
-defparam \cur_a_addr[10]~18 .lut_mask = 16'hAACC;
-defparam \cur_a_addr[10]~18 .sum_lutc_input = "datac";
+defparam \cur_a_addr[10]~13 .lut_mask = 16'hACAC;
+defparam \cur_a_addr[10]~13 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \cur_a_addr[10]~27 (
-	.dataa(csr_erase_state_0),
-	.datab(csr_erase_state_1),
-	.datac(\cur_a_addr[10]~18_combout ),
-	.datad(csr_sector_page_erase_addr_reg_10),
+fiftyfivenm_lcell_comb \cur_a_addr[10]~14 (
+	.dataa(csr_sector_page_erase_addr_reg_10),
+	.datab(csr_erase_state_0),
+	.datac(csr_erase_state_1),
+	.datad(\cur_a_addr[10]~13_combout ),
 	.cin(gnd),
-	.combout(\cur_a_addr[10]~27_combout ),
+	.combout(\cur_a_addr[10]~14_combout ),
 	.cout());
-defparam \cur_a_addr[10]~27 .lut_mask = 16'hF6FF;
-defparam \cur_a_addr[10]~27 .sum_lutc_input = "datac";
+defparam \cur_a_addr[10]~14 .lut_mask = 16'hFF7D;
+defparam \cur_a_addr[10]~14 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \flash_page_addr~10 (
-	.dataa(\cur_a_addr[10]~27_combout ),
+	.dataa(\cur_a_addr[10]~14_combout ),
 	.datab(\address_convertor|Add0~2_combout ),
 	.datac(gnd),
-	.datad(\access_address_write_protection_checker|LessThan9~3_combout ),
+	.datad(\address_convertor|LessThan0~3_combout ),
 	.cin(gnd),
 	.combout(\flash_page_addr~10_combout ),
 	.cout());
@@ -10207,33 +10227,33 @@ dffeas \flash_page_addr[10] (
 defparam \flash_page_addr[10] .is_wysiwyg = "true";
 defparam \flash_page_addr[10] .power_up = "low";
 
-fiftyfivenm_lcell_comb \cur_a_addr[11]~16 (
+fiftyfivenm_lcell_comb \cur_a_addr[11]~15 (
 	.dataa(\flash_seq_read_ardin[11]~q ),
 	.datab(avmm_data_addr_11),
 	.datac(\read_state.READ_STATE_IDLE~q ),
 	.datad(gnd),
 	.cin(gnd),
-	.combout(\cur_a_addr[11]~16_combout ),
+	.combout(\cur_a_addr[11]~15_combout ),
 	.cout());
-defparam \cur_a_addr[11]~16 .lut_mask = 16'hACAC;
-defparam \cur_a_addr[11]~16 .sum_lutc_input = "datac";
+defparam \cur_a_addr[11]~15 .lut_mask = 16'hACAC;
+defparam \cur_a_addr[11]~15 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \cur_a_addr[11]~17 (
+fiftyfivenm_lcell_comb \cur_a_addr[11]~16 (
 	.dataa(csr_sector_page_erase_addr_reg_11),
 	.datab(csr_erase_state_0),
 	.datac(csr_erase_state_1),
-	.datad(\cur_a_addr[11]~16_combout ),
+	.datad(\cur_a_addr[11]~15_combout ),
 	.cin(gnd),
-	.combout(\cur_a_addr[11]~17_combout ),
+	.combout(\cur_a_addr[11]~16_combout ),
 	.cout());
-defparam \cur_a_addr[11]~17 .lut_mask = 16'hFF7D;
-defparam \cur_a_addr[11]~17 .sum_lutc_input = "datac";
+defparam \cur_a_addr[11]~16 .lut_mask = 16'hFF7D;
+defparam \cur_a_addr[11]~16 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \flash_page_addr~11 (
-	.dataa(\cur_a_addr[11]~17_combout ),
+	.dataa(\cur_a_addr[11]~16_combout ),
 	.datab(\address_convertor|Add0~4_combout ),
 	.datac(gnd),
-	.datad(\access_address_write_protection_checker|LessThan9~3_combout ),
+	.datad(\address_convertor|LessThan0~3_combout ),
 	.cin(gnd),
 	.combout(\flash_page_addr~11_combout ),
 	.cout());
@@ -10254,33 +10274,33 @@ dffeas \flash_page_addr[11] (
 defparam \flash_page_addr[11] .is_wysiwyg = "true";
 defparam \flash_page_addr[11] .power_up = "low";
 
-fiftyfivenm_lcell_comb \cur_a_addr[12]~15 (
+fiftyfivenm_lcell_comb \cur_a_addr[12]~10 (
 	.dataa(\flash_seq_read_ardin[12]~q ),
 	.datab(avmm_data_addr_12),
 	.datac(gnd),
 	.datad(\read_state.READ_STATE_IDLE~q ),
 	.cin(gnd),
-	.combout(\cur_a_addr[12]~15_combout ),
+	.combout(\cur_a_addr[12]~10_combout ),
 	.cout());
-defparam \cur_a_addr[12]~15 .lut_mask = 16'hAACC;
-defparam \cur_a_addr[12]~15 .sum_lutc_input = "datac";
+defparam \cur_a_addr[12]~10 .lut_mask = 16'hAACC;
+defparam \cur_a_addr[12]~10 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \cur_a_addr[12]~26 (
-	.dataa(csr_erase_state_0),
+fiftyfivenm_lcell_comb \cur_a_addr[12]~11 (
+	.dataa(\cur_a_addr[12]~10_combout ),
 	.datab(csr_erase_state_1),
-	.datac(\cur_a_addr[12]~15_combout ),
+	.datac(csr_erase_state_0),
 	.datad(csr_sector_page_erase_addr_reg_12),
 	.cin(gnd),
-	.combout(\cur_a_addr[12]~26_combout ),
+	.combout(\cur_a_addr[12]~11_combout ),
 	.cout());
-defparam \cur_a_addr[12]~26 .lut_mask = 16'hF6FF;
-defparam \cur_a_addr[12]~26 .sum_lutc_input = "datac";
+defparam \cur_a_addr[12]~11 .lut_mask = 16'hBEFF;
+defparam \cur_a_addr[12]~11 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \flash_page_addr~12 (
-	.dataa(\cur_a_addr[12]~26_combout ),
+	.dataa(\cur_a_addr[12]~11_combout ),
 	.datab(\address_convertor|Add0~6_combout ),
 	.datac(gnd),
-	.datad(\access_address_write_protection_checker|LessThan9~3_combout ),
+	.datad(\address_convertor|LessThan0~3_combout ),
 	.cin(gnd),
 	.combout(\flash_page_addr~12_combout ),
 	.cout());
@@ -10301,33 +10321,33 @@ dffeas \flash_page_addr[12] (
 defparam \flash_page_addr[12] .is_wysiwyg = "true";
 defparam \flash_page_addr[12] .power_up = "low";
 
-fiftyfivenm_lcell_comb \cur_a_addr[13]~13 (
+fiftyfivenm_lcell_comb \cur_a_addr[13]~8 (
 	.dataa(\flash_seq_read_ardin[13]~q ),
 	.datab(avmm_data_addr_13),
 	.datac(gnd),
 	.datad(\read_state.READ_STATE_IDLE~q ),
 	.cin(gnd),
-	.combout(\cur_a_addr[13]~13_combout ),
+	.combout(\cur_a_addr[13]~8_combout ),
 	.cout());
-defparam \cur_a_addr[13]~13 .lut_mask = 16'hAACC;
-defparam \cur_a_addr[13]~13 .sum_lutc_input = "datac";
+defparam \cur_a_addr[13]~8 .lut_mask = 16'hAACC;
+defparam \cur_a_addr[13]~8 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \cur_a_addr[13]~24 (
+fiftyfivenm_lcell_comb \cur_a_addr[13]~22 (
 	.dataa(csr_erase_state_0),
 	.datab(csr_erase_state_1),
-	.datac(\cur_a_addr[13]~13_combout ),
+	.datac(\cur_a_addr[13]~8_combout ),
 	.datad(csr_sector_page_erase_addr_reg_13),
 	.cin(gnd),
-	.combout(\cur_a_addr[13]~24_combout ),
+	.combout(\cur_a_addr[13]~22_combout ),
 	.cout());
-defparam \cur_a_addr[13]~24 .lut_mask = 16'hF6FF;
-defparam \cur_a_addr[13]~24 .sum_lutc_input = "datac";
+defparam \cur_a_addr[13]~22 .lut_mask = 16'hF6FF;
+defparam \cur_a_addr[13]~22 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \flash_page_addr~13 (
-	.dataa(\cur_a_addr[13]~24_combout ),
+	.dataa(\cur_a_addr[13]~22_combout ),
 	.datab(\address_convertor|Add0~8_combout ),
 	.datac(gnd),
-	.datad(\access_address_write_protection_checker|LessThan9~3_combout ),
+	.datad(\address_convertor|LessThan0~3_combout ),
 	.cin(gnd),
 	.combout(\flash_page_addr~13_combout ),
 	.cout());
@@ -10348,33 +10368,33 @@ dffeas \flash_page_addr[13] (
 defparam \flash_page_addr[13] .is_wysiwyg = "true";
 defparam \flash_page_addr[13] .power_up = "low";
 
-fiftyfivenm_lcell_comb \cur_a_addr[14]~21 (
+fiftyfivenm_lcell_comb \cur_a_addr[14]~12 (
 	.dataa(\flash_seq_read_ardin[14]~q ),
 	.datab(avmm_data_addr_14),
 	.datac(gnd),
 	.datad(\read_state.READ_STATE_IDLE~q ),
 	.cin(gnd),
-	.combout(\cur_a_addr[14]~21_combout ),
+	.combout(\cur_a_addr[14]~12_combout ),
 	.cout());
-defparam \cur_a_addr[14]~21 .lut_mask = 16'hAACC;
-defparam \cur_a_addr[14]~21 .sum_lutc_input = "datac";
+defparam \cur_a_addr[14]~12 .lut_mask = 16'hAACC;
+defparam \cur_a_addr[14]~12 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \cur_a_addr[14]~28 (
+fiftyfivenm_lcell_comb \cur_a_addr[14]~23 (
 	.dataa(csr_erase_state_0),
 	.datab(csr_erase_state_1),
-	.datac(\cur_a_addr[14]~21_combout ),
+	.datac(\cur_a_addr[14]~12_combout ),
 	.datad(csr_sector_page_erase_addr_reg_14),
 	.cin(gnd),
-	.combout(\cur_a_addr[14]~28_combout ),
+	.combout(\cur_a_addr[14]~23_combout ),
 	.cout());
-defparam \cur_a_addr[14]~28 .lut_mask = 16'hF6FF;
-defparam \cur_a_addr[14]~28 .sum_lutc_input = "datac";
+defparam \cur_a_addr[14]~23 .lut_mask = 16'hF6FF;
+defparam \cur_a_addr[14]~23 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \flash_page_addr~14 (
-	.dataa(\cur_a_addr[14]~28_combout ),
+	.dataa(\cur_a_addr[14]~23_combout ),
 	.datab(\address_convertor|Add0~10_combout ),
 	.datac(gnd),
-	.datad(\access_address_write_protection_checker|LessThan9~3_combout ),
+	.datad(\address_convertor|LessThan0~3_combout ),
 	.cin(gnd),
 	.combout(\flash_page_addr~14_combout ),
 	.cout());
@@ -10395,33 +10415,33 @@ dffeas \flash_page_addr[14] (
 defparam \flash_page_addr[14] .is_wysiwyg = "true";
 defparam \flash_page_addr[14] .power_up = "low";
 
-fiftyfivenm_lcell_comb \cur_a_addr[15]~14 (
+fiftyfivenm_lcell_comb \cur_a_addr[15]~19 (
 	.dataa(\flash_seq_read_ardin[15]~q ),
 	.datab(avmm_data_addr_15),
 	.datac(gnd),
 	.datad(\read_state.READ_STATE_IDLE~q ),
 	.cin(gnd),
-	.combout(\cur_a_addr[15]~14_combout ),
+	.combout(\cur_a_addr[15]~19_combout ),
 	.cout());
-defparam \cur_a_addr[15]~14 .lut_mask = 16'hAACC;
-defparam \cur_a_addr[15]~14 .sum_lutc_input = "datac";
+defparam \cur_a_addr[15]~19 .lut_mask = 16'hAACC;
+defparam \cur_a_addr[15]~19 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \cur_a_addr[15]~25 (
+fiftyfivenm_lcell_comb \cur_a_addr[15]~24 (
 	.dataa(csr_erase_state_0),
 	.datab(csr_erase_state_1),
-	.datac(\cur_a_addr[15]~14_combout ),
+	.datac(\cur_a_addr[15]~19_combout ),
 	.datad(csr_sector_page_erase_addr_reg_15),
 	.cin(gnd),
-	.combout(\cur_a_addr[15]~25_combout ),
+	.combout(\cur_a_addr[15]~24_combout ),
 	.cout());
-defparam \cur_a_addr[15]~25 .lut_mask = 16'hF6FF;
-defparam \cur_a_addr[15]~25 .sum_lutc_input = "datac";
+defparam \cur_a_addr[15]~24 .lut_mask = 16'hF6FF;
+defparam \cur_a_addr[15]~24 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \flash_page_addr~15 (
-	.dataa(\cur_a_addr[15]~25_combout ),
+	.dataa(\cur_a_addr[15]~24_combout ),
 	.datab(\address_convertor|Add0~12_combout ),
 	.datac(gnd),
-	.datad(\access_address_write_protection_checker|LessThan9~3_combout ),
+	.datad(\address_convertor|LessThan0~3_combout ),
 	.cin(gnd),
 	.combout(\flash_page_addr~15_combout ),
 	.cout());
@@ -10442,33 +10462,33 @@ dffeas \flash_page_addr[15] (
 defparam \flash_page_addr[15] .is_wysiwyg = "true";
 defparam \flash_page_addr[15] .power_up = "low";
 
-fiftyfivenm_lcell_comb \cur_a_addr[16]~12 (
+fiftyfivenm_lcell_comb \cur_a_addr[16]~20 (
 	.dataa(\flash_seq_read_ardin[16]~q ),
 	.datab(avmm_data_addr_16),
 	.datac(gnd),
 	.datad(\read_state.READ_STATE_IDLE~q ),
 	.cin(gnd),
-	.combout(\cur_a_addr[16]~12_combout ),
+	.combout(\cur_a_addr[16]~20_combout ),
 	.cout());
-defparam \cur_a_addr[16]~12 .lut_mask = 16'hAACC;
-defparam \cur_a_addr[16]~12 .sum_lutc_input = "datac";
+defparam \cur_a_addr[16]~20 .lut_mask = 16'hAACC;
+defparam \cur_a_addr[16]~20 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \cur_a_addr[16]~23 (
+fiftyfivenm_lcell_comb \cur_a_addr[16]~25 (
 	.dataa(csr_erase_state_0),
 	.datab(csr_erase_state_1),
-	.datac(\cur_a_addr[16]~12_combout ),
+	.datac(\cur_a_addr[16]~20_combout ),
 	.datad(csr_sector_page_erase_addr_reg_16),
 	.cin(gnd),
-	.combout(\cur_a_addr[16]~23_combout ),
+	.combout(\cur_a_addr[16]~25_combout ),
 	.cout());
-defparam \cur_a_addr[16]~23 .lut_mask = 16'hF6FF;
-defparam \cur_a_addr[16]~23 .sum_lutc_input = "datac";
+defparam \cur_a_addr[16]~25 .lut_mask = 16'hF6FF;
+defparam \cur_a_addr[16]~25 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \flash_page_addr~16 (
-	.dataa(\cur_a_addr[16]~23_combout ),
+	.dataa(\cur_a_addr[16]~25_combout ),
 	.datab(\address_convertor|Add0~14_combout ),
 	.datac(gnd),
-	.datad(\access_address_write_protection_checker|LessThan9~3_combout ),
+	.datad(\address_convertor|LessThan0~3_combout ),
 	.cin(gnd),
 	.combout(\flash_page_addr~16_combout ),
 	.cout());
@@ -10493,7 +10513,7 @@ fiftyfivenm_lcell_comb \flash_page_addr~17 (
 	.dataa(\Equal2~0_combout ),
 	.datab(\address_convertor|Add0~16_combout ),
 	.datac(csr_sector_page_erase_addr_reg_17),
-	.datad(\access_address_write_protection_checker|LessThan9~3_combout ),
+	.datad(\address_convertor|LessThan0~3_combout ),
 	.cin(gnd),
 	.combout(\flash_page_addr~17_combout ),
 	.cout());
@@ -10518,7 +10538,7 @@ fiftyfivenm_lcell_comb \flash_page_addr~18 (
 	.dataa(\Equal2~0_combout ),
 	.datab(\address_convertor|Add0~18_combout ),
 	.datac(csr_sector_page_erase_addr_reg_18),
-	.datad(\access_address_write_protection_checker|LessThan9~3_combout ),
+	.datad(\address_convertor|LessThan0~3_combout ),
 	.cin(gnd),
 	.combout(\flash_page_addr~18_combout ),
 	.cout());
@@ -10539,26 +10559,26 @@ dffeas \flash_page_addr[18] (
 defparam \flash_page_addr[18] .is_wysiwyg = "true";
 defparam \flash_page_addr[18] .power_up = "low";
 
-fiftyfivenm_lcell_comb \cur_a_addr[19]~22 (
+fiftyfivenm_lcell_comb \cur_a_addr[19]~21 (
 	.dataa(csr_erase_state_0),
 	.datab(gnd),
 	.datac(csr_sector_page_erase_addr_reg_19),
 	.datad(csr_erase_state_1),
 	.cin(gnd),
-	.combout(\cur_a_addr[19]~22_combout ),
+	.combout(\cur_a_addr[19]~21_combout ),
 	.cout());
-defparam \cur_a_addr[19]~22 .lut_mask = 16'hAFFF;
-defparam \cur_a_addr[19]~22 .sum_lutc_input = "datac";
+defparam \cur_a_addr[19]~21 .lut_mask = 16'hAFFF;
+defparam \cur_a_addr[19]~21 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \flash_page_addr~19 (
-	.dataa(\cur_a_addr[19]~22_combout ),
-	.datab(\address_convertor|Add0~20_combout ),
-	.datac(\access_address_write_protection_checker|LessThan9~1_combout ),
-	.datad(\access_address_write_protection_checker|LessThan9~2_combout ),
+	.dataa(\cur_a_addr[19]~21_combout ),
+	.datab(\address_convertor|LessThan0~0_combout ),
+	.datac(\address_convertor|Add0~20_combout ),
+	.datad(\address_convertor|LessThan0~2_combout ),
 	.cin(gnd),
 	.combout(\flash_page_addr~19_combout ),
 	.cout());
-defparam \flash_page_addr~19 .lut_mask = 16'hEFFF;
+defparam \flash_page_addr~19 .lut_mask = 16'hFEFF;
 defparam \flash_page_addr~19 .sum_lutc_input = "datac";
 
 dffeas \flash_page_addr[19] (
@@ -10590,14 +10610,14 @@ defparam \flash_sector_addr[0] .is_wysiwyg = "true";
 defparam \flash_sector_addr[0] .power_up = "low";
 
 fiftyfivenm_lcell_comb \flash_page_addr~20 (
-	.dataa(\address_convertor|Add0~22_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(\access_address_write_protection_checker|LessThan9~3_combout ),
+	.dataa(\address_convertor|LessThan0~0_combout ),
+	.datab(\address_convertor|Add0~22_combout ),
+	.datac(\cur_a_addr[19]~21_combout ),
+	.datad(\address_convertor|LessThan0~2_combout ),
 	.cin(gnd),
 	.combout(\flash_page_addr~20_combout ),
 	.cout());
-defparam \flash_page_addr~20 .lut_mask = 16'hAAFF;
+defparam \flash_page_addr~20 .lut_mask = 16'hEFFF;
 defparam \flash_page_addr~20 .sum_lutc_input = "datac";
 
 dffeas \flash_page_addr[20] (
@@ -10628,9 +10648,20 @@ dffeas \flash_sector_addr[1] (
 defparam \flash_sector_addr[1] .is_wysiwyg = "true";
 defparam \flash_sector_addr[1] .power_up = "low";
 
+fiftyfivenm_lcell_comb \is_erase_addr_writable~3 (
+	.dataa(csr_sector_page_erase_addr_reg_21),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(csr_sector_page_erase_addr_reg_22),
+	.cin(gnd),
+	.combout(\is_erase_addr_writable~3_combout ),
+	.cout());
+defparam \is_erase_addr_writable~3 .lut_mask = 16'hAAFF;
+defparam \is_erase_addr_writable~3 .sum_lutc_input = "datac";
+
 dffeas \flash_sector_addr[2] (
 	.clk(clock),
-	.d(\sector_convertor|Equal3~0_combout ),
+	.d(\is_erase_addr_writable~3_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
@@ -10695,56 +10726,54 @@ defparam flash_drshft_neg_reg.power_up = "low";
 endmodule
 
 module onchip_flash_altera_onchip_flash_a_address_write_protection_check (
-	csr_sector_page_erase_addr_reg_10,
-	csr_sector_page_erase_addr_reg_17,
-	csr_sector_page_erase_addr_reg_18,
+	csr_sector_page_erase_addr_reg_14,
+	csr_sector_page_erase_addr_reg_15,
 	csr_sector_page_erase_addr_reg_19,
 	csr_erase_state_0,
 	csr_erase_state_1,
 	Equal2,
+	cur_a_addr_15,
 	is_sector4_writable_reg,
 	is_sector3_writable_reg,
-	cur_a_addr_11,
+	cur_a_addr_12,
+	cur_a_addr_14,
 	cur_a_addr_10,
+	cur_a_addr_11,
 	cur_a_addr_9,
 	is_sector2_writable_reg,
 	is_sector1_writable_reg,
-	is_sector5_writable_reg,
-	LessThan9,
-	LessThan91,
-	LessThan92,
 	is_addr_writable,
-	cur_a_addr_16,
+	LessThan0,
+	is_addr_writable1,
+	is_addr_writable2,
 	cur_a_addr_13,
-	cur_a_addr_15,
-	cur_a_addr_12,
-	cur_a_addr_101,
-	cur_a_addr_14)/* synthesis synthesis_greybox=1 */;
-input 	csr_sector_page_erase_addr_reg_10;
-input 	csr_sector_page_erase_addr_reg_17;
-input 	csr_sector_page_erase_addr_reg_18;
+	cur_a_addr_141,
+	cur_a_addr_151,
+	cur_a_addr_16)/* synthesis synthesis_greybox=1 */;
+input 	csr_sector_page_erase_addr_reg_14;
+input 	csr_sector_page_erase_addr_reg_15;
 input 	csr_sector_page_erase_addr_reg_19;
 input 	csr_erase_state_0;
 input 	csr_erase_state_1;
 input 	Equal2;
+input 	cur_a_addr_15;
 input 	is_sector4_writable_reg;
 input 	is_sector3_writable_reg;
-input 	cur_a_addr_11;
+input 	cur_a_addr_12;
+input 	cur_a_addr_14;
 input 	cur_a_addr_10;
+input 	cur_a_addr_11;
 input 	cur_a_addr_9;
 input 	is_sector2_writable_reg;
 input 	is_sector1_writable_reg;
-input 	is_sector5_writable_reg;
-output 	LessThan9;
-output 	LessThan91;
-output 	LessThan92;
 output 	is_addr_writable;
-input 	cur_a_addr_16;
+input 	LessThan0;
+output 	is_addr_writable1;
+output 	is_addr_writable2;
 input 	cur_a_addr_13;
-input 	cur_a_addr_15;
-input 	cur_a_addr_12;
-input 	cur_a_addr_101;
-input 	cur_a_addr_14;
+input 	cur_a_addr_141;
+input 	cur_a_addr_151;
+input 	cur_a_addr_16;
 
 wire gnd;
 wire vcc;
@@ -10755,80 +10784,68 @@ assign vcc = 1'b1;
 // unknown value (1'bx) is not needed for this tool. Default to 1'b0
 assign unknown = 1'b0;
 
-wire \LessThan9~0_combout ;
+wire \is_addr_writable~0_combout ;
 wire \is_addr_writable~1_combout ;
 wire \is_addr_writable~2_combout ;
-wire \is_addr_writable~10_combout ;
 wire \is_addr_writable~3_combout ;
 wire \is_addr_writable~4_combout ;
 wire \is_addr_writable~5_combout ;
 wire \is_addr_writable~6_combout ;
-wire \is_addr_writable~0_combout ;
-wire \is_addr_writable~11_combout ;
 wire \is_addr_writable~7_combout ;
 wire \is_addr_writable~8_combout ;
+wire \is_addr_writable~11_combout ;
+wire \is_addr_writable~12_combout ;
 
-
-fiftyfivenm_lcell_comb \LessThan9~1 (
-	.dataa(cur_a_addr_12),
-	.datab(cur_a_addr_11),
-	.datac(cur_a_addr_13),
-	.datad(cur_a_addr_16),
-	.cin(gnd),
-	.combout(LessThan9),
-	.cout());
-defparam \LessThan9~1 .lut_mask = 16'hFFFE;
-defparam \LessThan9~1 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \LessThan9~2 (
-	.dataa(cur_a_addr_16),
-	.datab(cur_a_addr_14),
-	.datac(cur_a_addr_15),
-	.datad(\LessThan9~0_combout ),
-	.cin(gnd),
-	.combout(LessThan91),
-	.cout());
-defparam \LessThan9~2 .lut_mask = 16'hFEFF;
-defparam \LessThan9~2 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \LessThan9~3 (
-	.dataa(LessThan9),
-	.datab(LessThan91),
-	.datac(Equal2),
-	.datad(csr_sector_page_erase_addr_reg_19),
-	.cin(gnd),
-	.combout(LessThan92),
-	.cout());
-defparam \LessThan9~3 .lut_mask = 16'hFEFF;
-defparam \LessThan9~3 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \is_addr_writable~9 (
-	.dataa(\is_addr_writable~11_combout ),
-	.datab(\is_addr_writable~8_combout ),
-	.datac(is_sector5_writable_reg),
-	.datad(LessThan92),
+	.dataa(\is_addr_writable~3_combout ),
+	.datab(\is_addr_writable~4_combout ),
+	.datac(\is_addr_writable~6_combout ),
+	.datad(\is_addr_writable~8_combout ),
 	.cin(gnd),
 	.combout(is_addr_writable),
 	.cout());
-defparam \is_addr_writable~9 .lut_mask = 16'hFEFF;
+defparam \is_addr_writable~9 .lut_mask = 16'hFFFE;
 defparam \is_addr_writable~9 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \LessThan9~0 (
-	.dataa(csr_erase_state_1),
-	.datab(csr_sector_page_erase_addr_reg_17),
-	.datac(csr_sector_page_erase_addr_reg_18),
-	.datad(csr_erase_state_0),
+fiftyfivenm_lcell_comb \is_addr_writable~10 (
+	.dataa(LessThan0),
+	.datab(csr_sector_page_erase_addr_reg_19),
+	.datac(Equal2),
+	.datad(cur_a_addr_16),
 	.cin(gnd),
-	.combout(\LessThan9~0_combout ),
+	.combout(is_addr_writable1),
 	.cout());
-defparam \LessThan9~0 .lut_mask = 16'hFEFF;
-defparam \LessThan9~0 .sum_lutc_input = "datac";
+defparam \is_addr_writable~10 .lut_mask = 16'hEFFF;
+defparam \is_addr_writable~10 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \is_addr_writable~13 (
+	.dataa(is_addr_writable1),
+	.datab(\is_addr_writable~3_combout ),
+	.datac(\is_addr_writable~4_combout ),
+	.datad(\is_addr_writable~12_combout ),
+	.cin(gnd),
+	.combout(is_addr_writable2),
+	.cout());
+defparam \is_addr_writable~13 .lut_mask = 16'hFFFE;
+defparam \is_addr_writable~13 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \is_addr_writable~0 (
+	.dataa(csr_erase_state_0),
+	.datab(csr_sector_page_erase_addr_reg_15),
+	.datac(csr_erase_state_1),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\is_addr_writable~0_combout ),
+	.cout());
+defparam \is_addr_writable~0 .lut_mask = 16'hBFBF;
+defparam \is_addr_writable~0 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \is_addr_writable~1 (
-	.dataa(cur_a_addr_11),
-	.datab(cur_a_addr_101),
-	.datac(cur_a_addr_9),
-	.datad(cur_a_addr_14),
+	.dataa(cur_a_addr_141),
+	.datab(cur_a_addr_10),
+	.datac(cur_a_addr_11),
+	.datad(cur_a_addr_9),
 	.cin(gnd),
 	.combout(\is_addr_writable~1_combout ),
 	.cout());
@@ -10846,104 +10863,93 @@ fiftyfivenm_lcell_comb \is_addr_writable~2 (
 defparam \is_addr_writable~2 .lut_mask = 16'hEFFE;
 defparam \is_addr_writable~2 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \is_addr_writable~10 (
-	.dataa(is_sector3_writable_reg),
-	.datab(cur_a_addr_14),
-	.datac(\is_addr_writable~2_combout ),
-	.datad(cur_a_addr_13),
-	.cin(gnd),
-	.combout(\is_addr_writable~10_combout ),
-	.cout());
-defparam \is_addr_writable~10 .lut_mask = 16'hFAFC;
-defparam \is_addr_writable~10 .sum_lutc_input = "datac";
-
 fiftyfivenm_lcell_comb \is_addr_writable~3 (
-	.dataa(is_sector2_writable_reg),
-	.datab(is_sector1_writable_reg),
-	.datac(cur_a_addr_12),
-	.datad(cur_a_addr_13),
+	.dataa(cur_a_addr_13),
+	.datab(cur_a_addr_15),
+	.datac(\is_addr_writable~0_combout ),
+	.datad(\is_addr_writable~2_combout ),
 	.cin(gnd),
 	.combout(\is_addr_writable~3_combout ),
 	.cout());
-defparam \is_addr_writable~3 .lut_mask = 16'hEFFE;
+defparam \is_addr_writable~3 .lut_mask = 16'hFFBF;
 defparam \is_addr_writable~3 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \is_addr_writable~4 (
-	.dataa(csr_sector_page_erase_addr_reg_10),
-	.datab(Equal2),
-	.datac(cur_a_addr_10),
-	.datad(cur_a_addr_11),
+	.dataa(cur_a_addr_141),
+	.datab(is_sector3_writable_reg),
+	.datac(cur_a_addr_13),
+	.datad(cur_a_addr_151),
 	.cin(gnd),
 	.combout(\is_addr_writable~4_combout ),
 	.cout());
-defparam \is_addr_writable~4 .lut_mask = 16'h8BFF;
+defparam \is_addr_writable~4 .lut_mask = 16'hEFFF;
 defparam \is_addr_writable~4 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \is_addr_writable~5 (
-	.dataa(cur_a_addr_14),
-	.datab(\is_addr_writable~4_combout ),
-	.datac(cur_a_addr_13),
-	.datad(\is_addr_writable~3_combout ),
+	.dataa(is_sector2_writable_reg),
+	.datab(is_sector1_writable_reg),
+	.datac(gnd),
+	.datad(cur_a_addr_12),
 	.cin(gnd),
 	.combout(\is_addr_writable~5_combout ),
 	.cout());
-defparam \is_addr_writable~5 .lut_mask = 16'hFFFB;
+defparam \is_addr_writable~5 .lut_mask = 16'hAACC;
 defparam \is_addr_writable~5 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \is_addr_writable~6 (
-	.dataa(cur_a_addr_15),
-	.datab(is_sector4_writable_reg),
-	.datac(\is_addr_writable~3_combout ),
-	.datad(\is_addr_writable~5_combout ),
+	.dataa(\is_addr_writable~5_combout ),
+	.datab(cur_a_addr_141),
+	.datac(cur_a_addr_13),
+	.datad(cur_a_addr_151),
 	.cin(gnd),
 	.combout(\is_addr_writable~6_combout ),
 	.cout());
-defparam \is_addr_writable~6 .lut_mask = 16'hD8FF;
+defparam \is_addr_writable~6 .lut_mask = 16'hBFFF;
 defparam \is_addr_writable~6 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \is_addr_writable~0 (
-	.dataa(\LessThan9~0_combout ),
-	.datab(csr_sector_page_erase_addr_reg_19),
-	.datac(Equal2),
-	.datad(cur_a_addr_16),
-	.cin(gnd),
-	.combout(\is_addr_writable~0_combout ),
-	.cout());
-defparam \is_addr_writable~0 .lut_mask = 16'hEFFF;
-defparam \is_addr_writable~0 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \is_addr_writable~11 (
-	.dataa(cur_a_addr_15),
-	.datab(\is_addr_writable~10_combout ),
-	.datac(\is_addr_writable~6_combout ),
-	.datad(\is_addr_writable~0_combout ),
-	.cin(gnd),
-	.combout(\is_addr_writable~11_combout ),
-	.cout());
-defparam \is_addr_writable~11 .lut_mask = 16'hFFFD;
-defparam \is_addr_writable~11 .sum_lutc_input = "datac";
-
 fiftyfivenm_lcell_comb \is_addr_writable~7 (
-	.dataa(\is_addr_writable~4_combout ),
-	.datab(cur_a_addr_12),
-	.datac(cur_a_addr_13),
-	.datad(cur_a_addr_14),
+	.dataa(cur_a_addr_10),
+	.datab(cur_a_addr_11),
+	.datac(cur_a_addr_12),
+	.datad(cur_a_addr_13),
 	.cin(gnd),
 	.combout(\is_addr_writable~7_combout ),
 	.cout());
-defparam \is_addr_writable~7 .lut_mask = 16'hBFFF;
+defparam \is_addr_writable~7 .lut_mask = 16'h7FFF;
 defparam \is_addr_writable~7 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \is_addr_writable~8 (
-	.dataa(cur_a_addr_16),
-	.datab(cur_a_addr_15),
-	.datac(gnd),
-	.datad(\is_addr_writable~7_combout ),
+	.dataa(is_sector4_writable_reg),
+	.datab(cur_a_addr_151),
+	.datac(\is_addr_writable~7_combout ),
+	.datad(cur_a_addr_141),
 	.cin(gnd),
 	.combout(\is_addr_writable~8_combout ),
 	.cout());
-defparam \is_addr_writable~8 .lut_mask = 16'hEEFF;
+defparam \is_addr_writable~8 .lut_mask = 16'hFEFF;
 defparam \is_addr_writable~8 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \is_addr_writable~11 (
+	.dataa(is_sector4_writable_reg),
+	.datab(csr_sector_page_erase_addr_reg_14),
+	.datac(Equal2),
+	.datad(cur_a_addr_14),
+	.cin(gnd),
+	.combout(\is_addr_writable~11_combout ),
+	.cout());
+defparam \is_addr_writable~11 .lut_mask = 16'hACFF;
+defparam \is_addr_writable~11 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \is_addr_writable~12 (
+	.dataa(\is_addr_writable~6_combout ),
+	.datab(cur_a_addr_151),
+	.datac(\is_addr_writable~7_combout ),
+	.datad(\is_addr_writable~11_combout ),
+	.cin(gnd),
+	.combout(\is_addr_writable~12_combout ),
+	.cout());
+defparam \is_addr_writable~12 .lut_mask = 16'hFFFE;
+defparam \is_addr_writable~12 .sum_lutc_input = "datac";
 
 endmodule
 
@@ -10963,15 +10969,20 @@ module onchip_flash_altera_onchip_flash_convert_address (
 	csr_sector_page_erase_addr_reg_17,
 	csr_sector_page_erase_addr_reg_18,
 	csr_sector_page_erase_addr_reg_19,
+	csr_erase_state_0,
+	csr_erase_state_1,
 	Equal2,
-	cur_a_addr_11,
-	cur_a_addr_9,
-	cur_a_addr_16,
-	cur_a_addr_13,
-	cur_a_addr_15,
 	cur_a_addr_12,
 	cur_a_addr_10,
-	cur_a_addr_14)/* synthesis synthesis_greybox=1 */;
+	cur_a_addr_11,
+	cur_a_addr_9,
+	LessThan0,
+	LessThan01,
+	LessThan02,
+	cur_a_addr_13,
+	cur_a_addr_14,
+	cur_a_addr_15,
+	cur_a_addr_16)/* synthesis synthesis_greybox=1 */;
 output 	Add0;
 output 	Add01;
 output 	Add02;
@@ -10987,15 +10998,20 @@ output 	Add011;
 input 	csr_sector_page_erase_addr_reg_17;
 input 	csr_sector_page_erase_addr_reg_18;
 input 	csr_sector_page_erase_addr_reg_19;
+input 	csr_erase_state_0;
+input 	csr_erase_state_1;
 input 	Equal2;
-input 	cur_a_addr_11;
-input 	cur_a_addr_9;
-input 	cur_a_addr_16;
-input 	cur_a_addr_13;
-input 	cur_a_addr_15;
 input 	cur_a_addr_12;
 input 	cur_a_addr_10;
+input 	cur_a_addr_11;
+input 	cur_a_addr_9;
+output 	LessThan0;
+output 	LessThan01;
+output 	LessThan02;
+input 	cur_a_addr_13;
 input 	cur_a_addr_14;
+input 	cur_a_addr_15;
+input 	cur_a_addr_16;
 
 wire gnd;
 wire vcc;
@@ -11017,6 +11033,7 @@ wire \Add0~15 ;
 wire \Add0~17 ;
 wire \Add0~19 ;
 wire \Add0~21 ;
+wire \LessThan0~1_combout ;
 
 
 fiftyfivenm_lcell_comb \Add0~0 (
@@ -11151,6 +11168,50 @@ fiftyfivenm_lcell_comb \Add0~22 (
 defparam \Add0~22 .lut_mask = 16'hF0F0;
 defparam \Add0~22 .sum_lutc_input = "cin";
 
+fiftyfivenm_lcell_comb \LessThan0~0 (
+	.dataa(csr_erase_state_1),
+	.datab(csr_sector_page_erase_addr_reg_17),
+	.datac(csr_sector_page_erase_addr_reg_18),
+	.datad(csr_erase_state_0),
+	.cin(gnd),
+	.combout(LessThan0),
+	.cout());
+defparam \LessThan0~0 .lut_mask = 16'hFEFF;
+defparam \LessThan0~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \LessThan0~2 (
+	.dataa(cur_a_addr_16),
+	.datab(cur_a_addr_14),
+	.datac(cur_a_addr_15),
+	.datad(\LessThan0~1_combout ),
+	.cin(gnd),
+	.combout(LessThan01),
+	.cout());
+defparam \LessThan0~2 .lut_mask = 16'hFFFE;
+defparam \LessThan0~2 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \LessThan0~3 (
+	.dataa(LessThan01),
+	.datab(Equal2),
+	.datac(csr_sector_page_erase_addr_reg_19),
+	.datad(LessThan0),
+	.cin(gnd),
+	.combout(LessThan02),
+	.cout());
+defparam \LessThan0~3 .lut_mask = 16'hEFFF;
+defparam \LessThan0~3 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \LessThan0~1 (
+	.dataa(cur_a_addr_12),
+	.datab(cur_a_addr_11),
+	.datac(cur_a_addr_13),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\LessThan0~1_combout ),
+	.cout());
+defparam \LessThan0~1 .lut_mask = 16'hFEFE;
+defparam \LessThan0~1 .sum_lutc_input = "datac";
+
 endmodule
 
 module onchip_flash_altera_onchip_flash_convert_sector (
@@ -11158,14 +11219,12 @@ module onchip_flash_altera_onchip_flash_convert_sector (
 	csr_sector_page_erase_addr_reg_21,
 	csr_sector_page_erase_addr_reg_22,
 	flash_sector_0,
-	flash_sector,
-	Equal3)/* synthesis synthesis_greybox=1 */;
+	flash_sector)/* synthesis synthesis_greybox=1 */;
 input 	csr_sector_page_erase_addr_reg_20;
 input 	csr_sector_page_erase_addr_reg_21;
 input 	csr_sector_page_erase_addr_reg_22;
 output 	flash_sector_0;
 output 	flash_sector;
-output 	Equal3;
 
 wire gnd;
 wire vcc;
@@ -11199,17 +11258,6 @@ fiftyfivenm_lcell_comb \flash_sector~1 (
 	.cout());
 defparam \flash_sector~1 .lut_mask = 16'hAAFF;
 defparam \flash_sector~1 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \Equal3~0 (
-	.dataa(csr_sector_page_erase_addr_reg_21),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(csr_sector_page_erase_addr_reg_22),
-	.cin(gnd),
-	.combout(Equal3),
-	.cout());
-defparam \Equal3~0 .lut_mask = 16'hAAFF;
-defparam \Equal3~0 .sum_lutc_input = "datac";
 
 endmodule
 

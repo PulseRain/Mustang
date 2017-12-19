@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="onchip_flash" kind="onchip_flash" version="1.0" fabric="QSYS">
  <!-- Format version 16.1 196 (Future versions may contain additional information.) -->
- <!-- 2017.07.16.21:50:56 -->
+ <!-- 2017.12.18.23:09:03 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1500267056</value>
+  <value>1513667343</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -280,7 +280,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="SECTOR_ACCESS_MODE">
    <type>[Ljava.lang.String;</type>
-   <value>Read and write,Read and write,Read and write,Read and write,Read and write</value>
+   <value>Read and write,Read and write,Read and write,Read and write,Read only</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -597,7 +597,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="SECTOR_READ_PROTECTION_MODE">
    <type>int</type>
-   <value>0</value>
+   <value>16</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>

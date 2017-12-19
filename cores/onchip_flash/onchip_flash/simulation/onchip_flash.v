@@ -52,7 +52,7 @@ module onchip_flash (
 		.AVMM_DATA_ADDR_WIDTH                (17),
 		.AVMM_DATA_DATA_WIDTH                (32),
 		.AVMM_DATA_BURSTCOUNT_WIDTH          (2),
-		.SECTOR_READ_PROTECTION_MODE         (0),
+		.SECTOR_READ_PROTECTION_MODE         (16),
 		.FLASH_SEQ_READ_DATA_COUNT           (2),
 		.FLASH_ADDR_ALIGNMENT_BITS           (1),
 		.FLASH_READ_CYCLE_MAX_INDEX          (4),
