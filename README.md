@@ -1,2 +1,3 @@
 # Mustang
-Top level of PulseRain M10 RTL design
+Top level for STEP-FPGA Platform
+http://www.stepfpga.com/
