@@ -81,7 +81,7 @@ set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to UART_TXD
 set_instance_assignment -name FAST_INPUT_REGISTER ON -to UART_RXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug_led
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to UART_TXD
-set_global_assignment -name SEED 55
+set_global_assignment -name SEED 1
 set_global_assignment -name REMOVE_REDUNDANT_LOGIC_CELLS ON
 set_global_assignment -name FIT_ATTEMPTS_TO_SKIP 0
 set_global_assignment -name PRE_MAPPING_RESYNTHESIS ON
@@ -163,18 +163,18 @@ set_global_assignment -name QIP_FILE ../submodules/PulseRain_FP51_MCU/synth/Inte
 set_global_assignment -name SYSTEMVERILOG_FILE ../source/Mustang_fast.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../source/code_mem_power_on_loader.sv
 #set_global_assignment -name POST_FLOW_SCRIPT_FILE "quartus_sh:post_flow.tcl"
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to I2C_SDA
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to I2C_SCL
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PWM_OUT
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PWM_OUT
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to I2C_SDA
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to I2C_SCL
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to LCD_SDA
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to LCD_SCL
+
+#set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PWM_OUT
+#set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PWM_OUT
 
 set_global_assignment -name GENERATE_SVF_FILE ON
 set_global_assignment -name GENERATE_JAM_FILE ON
 set_global_assignment -name GENERATE_JBC_FILE ON
-set_location_assignment PIN_A13 -to I2C_SCL
-set_location_assignment PIN_A11 -to I2C_SDA
-set_location_assignment PIN_M5 -to UART_RXD
-set_location_assignment PIN_R3 -to UART_TXD
+
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED1
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED2
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED3
@@ -184,6 +184,176 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED6
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED7
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED8
 
+
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to KEY1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to KEY2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to KEY3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to KEY4
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SW1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SW2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SW3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SW4
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to REG_LED1_R
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to REG_LED1_G
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to REG_LED1_B
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to REG_LED2_R
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to REG_LED2_G
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to REG_LED2_B
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_A1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_B1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_C1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_D1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_E1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_F1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_G1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_DP1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_DIG1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_A2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_B2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_C2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_D2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_E2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_F2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_G2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_DP2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SEG_DIG2
+		  
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to A_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to B_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to D_OUT
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to COL1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to COL2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to COL3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to COL4
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ROW1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ROW2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ROW3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ROW4
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DIN_595
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to RCK_595
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SCK_595
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PMOD_A
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PMOD_B
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PMOD_C
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PMOD_D
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to BEEP
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DS18B20
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PS2_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PS2_DAT
+         
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LCD_BL
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LCD_DAT_CMD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LCD_RES
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LCD_SDA
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LCD_SCL
+
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to VSYNC
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HSYNC
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to VGA_B
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to VGA_G
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to VGA_R
+
+         
+
+
+set_location_assignment PIN_M4 -to I2C_SCL
+set_location_assignment PIN_P3 -to I2C_SDA
+set_location_assignment PIN_M5 -to UART_RXD
+set_location_assignment PIN_R3 -to UART_TXD
+         
+         
+set_location_assignment PIN_J9 -to KEY1
+set_location_assignment PIN_K14 -to KEY2
+set_location_assignment PIN_J11 -to KEY3
+set_location_assignment PIN_J14 -to KEY4
+
+set_location_assignment PIN_J12 -to SW1
+set_location_assignment PIN_H11 -to SW2
+set_location_assignment PIN_H12 -to SW3
+set_location_assignment PIN_H13 -to SW4
+       
+
+set_location_assignment PIN_G15 -to REG_LED1_R
+set_location_assignment PIN_E15 -to REG_LED1_G
+set_location_assignment PIN_E14 -to REG_LED1_B
+set_location_assignment PIN_C15 -to REG_LED2_R
+set_location_assignment PIN_C14 -to REG_LED2_G
+set_location_assignment PIN_D12 -to REG_LED2_B
+
+
+
+set_location_assignment PIN_E1 -to SEG_A1
+set_location_assignment PIN_D2 -to SEG_B1
+set_location_assignment PIN_K2 -to SEG_C1
+set_location_assignment PIN_J2 -to SEG_D1
+set_location_assignment PIN_G2 -to SEG_E1
+set_location_assignment PIN_F5 -to SEG_F1
+set_location_assignment PIN_G5 -to SEG_G1
+set_location_assignment PIN_L1 -to SEG_DP1
+set_location_assignment PIN_E2 -to SEG_DIG1
+set_location_assignment PIN_A3 -to SEG_A2
+set_location_assignment PIN_A2 -to SEG_B2
+set_location_assignment PIN_P2 -to SEG_C2
+set_location_assignment PIN_P1 -to SEG_D2
+set_location_assignment PIN_N1 -to SEG_E2
+set_location_assignment PIN_C1 -to SEG_F2
+set_location_assignment PIN_C2 -to SEG_G2
+set_location_assignment PIN_R2 -to SEG_DP2
+set_location_assignment PIN_B1 -to SEG_DIG2
+
+
+set_location_assignment PIN_R5 -to A_OUT
+set_location_assignment PIN_P6 -to B_OUT
+set_location_assignment PIN_R7 -to D_OUT
+
+set_location_assignment PIN_R9 -to COL1
+set_location_assignment PIN_P9 -to COL2
+set_location_assignment PIN_P8 -to COL3
+set_location_assignment PIN_P7 -to COL4
+
+set_location_assignment PIN_P15 -to ROW1
+set_location_assignment PIN_R14 -to ROW2
+set_location_assignment PIN_P12 -to ROW3
+set_location_assignment PIN_R11 -to ROW4
+
+
+set_location_assignment PIN_L6 -to DIN_595
+set_location_assignment PIN_P4 -to RCK_595
+set_location_assignment PIN_L7 -to SCK_595
+
+set_location_assignment PIN_B14 -to PMOD_A
+set_location_assignment PIN_B13 -to PMOD_B
+set_location_assignment PIN_A14 -to PMOD_C
+set_location_assignment PIN_B11 -to PMOD_D
+
+set_location_assignment PIN_B15 -to BEEP
+
+set_location_assignment PIN_C8 -to DS18B20
+
+set_location_assignment PIN_B4 -to PS2_CLK
+set_location_assignment PIN_A5 -to PS2_DAT
+         
+set_location_assignment PIN_B8 -to LCD_BL
+set_location_assignment PIN_D10 -to LCD_DAT_CMD
+set_location_assignment PIN_A9 -to LCD_RES
+set_location_assignment PIN_A11 -to LCD_SDA
+set_location_assignment PIN_A13 -to LCD_SCL
+
+
+
+       
 set_location_assignment PIN_N15 -to LED1
 set_location_assignment PIN_N14 -to LED2
 set_location_assignment PIN_M14 -to LED3
@@ -196,6 +366,12 @@ set_location_assignment PIN_K11 -to LED8
 
 
 
+
+set_location_assignment PIN_A7 -to VSYNC
+set_location_assignment PIN_B6 -to HSYNC
+set_location_assignment PIN_E7 -to VGA_B
+set_location_assignment PIN_D7 -to VGA_G
+set_location_assignment PIN_B7 -to VGA_R
 
 
 
