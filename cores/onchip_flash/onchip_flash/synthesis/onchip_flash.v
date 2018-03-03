@@ -10,7 +10,7 @@ module onchip_flash (
 		input  wire [31:0] avmm_csr_writedata,      //       .writedata
 		input  wire        avmm_csr_write,          //       .write
 		output wire [31:0] avmm_csr_readdata,       //       .readdata
-		input  wire [16:0] avmm_data_addr,          //   data.address
+		input  wire [15:0] avmm_data_addr,          //   data.address
 		input  wire        avmm_data_read,          //       .read
 		input  wire [31:0] avmm_data_writedata,     //       .writedata
 		input  wire        avmm_data_write,         //       .write
@@ -25,34 +25,34 @@ module onchip_flash (
 		.INIT_FILENAME                       ("altera_onchip_flash.hex"),
 		.INIT_FILENAME_SIM                   ("altera_onchip_flash.dat"),
 		.DEVICE_FAMILY                       ("MAX 10"),
-		.PART_NAME                           ("10M08SAE144C8G"),
+		.PART_NAME                           ("10M08SCM153C8G"),
 		.DEVICE_ID                           ("08"),
 		.SECTOR1_START_ADDR                  (0),
 		.SECTOR1_END_ADDR                    (4095),
 		.SECTOR2_START_ADDR                  (4096),
 		.SECTOR2_END_ADDR                    (8191),
 		.SECTOR3_START_ADDR                  (8192),
-		.SECTOR3_END_ADDR                    (29183),
-		.SECTOR4_START_ADDR                  (29184),
-		.SECTOR4_END_ADDR                    (44031),
-		.SECTOR5_START_ADDR                  (44032),
-		.SECTOR5_END_ADDR                    (79871),
+		.SECTOR3_END_ADDR                    (23039),
+		.SECTOR4_START_ADDR                  (23040),
+		.SECTOR4_END_ADDR                    (58879),
+		.SECTOR5_START_ADDR                  (0),
+		.SECTOR5_END_ADDR                    (0),
 		.MIN_VALID_ADDR                      (0),
-		.MAX_VALID_ADDR                      (79871),
+		.MAX_VALID_ADDR                      (58879),
 		.MIN_UFM_VALID_ADDR                  (0),
-		.MAX_UFM_VALID_ADDR                  (8191),
+		.MAX_UFM_VALID_ADDR                  (23039),
 		.SECTOR1_MAP                         (1),
 		.SECTOR2_MAP                         (2),
-		.SECTOR3_MAP                         (3),
-		.SECTOR4_MAP                         (4),
-		.SECTOR5_MAP                         (5),
-		.ADDR_RANGE1_END_ADDR                (79871),
+		.SECTOR3_MAP                         (4),
+		.SECTOR4_MAP                         (5),
+		.SECTOR5_MAP                         (0),
+		.ADDR_RANGE1_END_ADDR                (8191),
 		.ADDR_RANGE1_OFFSET                  (512),
-		.ADDR_RANGE2_OFFSET                  (0),
-		.AVMM_DATA_ADDR_WIDTH                (17),
+		.ADDR_RANGE2_OFFSET                  (21504),
+		.AVMM_DATA_ADDR_WIDTH                (16),
 		.AVMM_DATA_DATA_WIDTH                (32),
 		.AVMM_DATA_BURSTCOUNT_WIDTH          (2),
-		.SECTOR_READ_PROTECTION_MODE         (16),
+		.SECTOR_READ_PROTECTION_MODE         (28),
 		.FLASH_SEQ_READ_DATA_COUNT           (2),
 		.FLASH_ADDR_ALIGNMENT_BITS           (1),
 		.FLASH_READ_CYCLE_MAX_INDEX          (4),
@@ -63,7 +63,7 @@ module onchip_flash (
 		.PARALLEL_MODE                       (1),
 		.READ_AND_WRITE_MODE                 (1),
 		.WRAPPING_BURST_MODE                 (0),
-		.IS_DUAL_BOOT                        ("True"),
+		.IS_DUAL_BOOT                        ("False"),
 		.IS_ERAM_SKIP                        ("True"),
 		.IS_COMPRESSED_IMAGE                 ("True")
 	) onchip_flash_0 (

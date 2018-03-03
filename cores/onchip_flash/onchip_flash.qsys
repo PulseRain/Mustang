@@ -20,7 +20,7 @@
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
- <parameter name="device" value="10M08SAE144C8G" />
+ <parameter name="device" value="10M08SCM153C8G" />
  <parameter name="deviceFamily" value="MAX 10" />
  <parameter name="deviceSpeedGrade" value="8" />
  <parameter name="fabricMode" value="QSYS" />
@@ -69,14 +69,14 @@
    autoexport="1">
   <parameter name="AUTO_CLOCK_RATE" value="0" />
   <parameter name="CLOCK_FREQUENCY" value="96.0" />
-  <parameter name="CONFIGURATION_MODE">Dual Compressed Images</parameter>
+  <parameter name="CONFIGURATION_MODE">Single Compressed Image</parameter>
   <parameter name="CONFIGURATION_SCHEME">Internal Configuration</parameter>
   <parameter name="DATA_INTERFACE" value="Parallel" />
   <parameter name="DEVICE_FAMILY" value="MAX 10" />
-  <parameter name="PART_NAME" value="10M08SAE144C8G" />
+  <parameter name="PART_NAME" value="10M08SCM153C8G" />
   <parameter name="READ_BURST_COUNT" value="2" />
   <parameter name="READ_BURST_MODE" value="Incrementing" />
-  <parameter name="SECTOR_ACCESS_MODE">Read and write,Read and write,Read and write,Read and write,Read only</parameter>
+  <parameter name="SECTOR_ACCESS_MODE">Read and write,Read and write,Read and write,Read only,Read only</parameter>
   <parameter name="autoInitializationFileName">$${FILENAME}_onchip_flash_0</parameter>
   <parameter name="initFlashContent" value="true" />
   <parameter name="initializationFileName">altera_onchip_flash.hex</parameter>

@@ -6,7 +6,7 @@
 			avmm_csr_writedata      : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
 			avmm_csr_write          : in  std_logic                     := 'X';             -- write
 			avmm_csr_readdata       : out std_logic_vector(31 downto 0);                    -- readdata
-			avmm_data_addr          : in  std_logic_vector(16 downto 0) := (others => 'X'); -- address
+			avmm_data_addr          : in  std_logic_vector(15 downto 0) := (others => 'X'); -- address
 			avmm_data_read          : in  std_logic                     := 'X';             -- read
 			avmm_data_writedata     : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
 			avmm_data_write         : in  std_logic                     := 'X';             -- write

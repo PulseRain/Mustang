@@ -34,7 +34,7 @@ module Mustang_fast (
     // clock / reset
     //=======================================================================
         input wire                                  osc_in,         // expecting 12MHz oscillator in
-        input wire                                  push_button,    // push button for reset
+       // input wire                                  push_button,    // push button for reset
         
     //=======================================================================
     // external interrupt
@@ -58,66 +58,44 @@ module Mustang_fast (
         input wire                                  UART_RXD,
         output logic                                UART_TXD,
         
-        input wire                                  UART_AUX_RXD,
-        output wire                                 UART_AUX_TXD,
-        
         
     //=======================================================================
     // debug LED
     //=======================================================================
         output wire                                 debug_led,
         
-    //=======================================================================
-    // M23XX1024
-    //=======================================================================
-        input   wire                                mem_so,
-        output  wire                                mem_si,
-        output  wire                                mem_hold_n,
-        output  wire                                mem_cs_n, 
-        output  wire                                mem_sck,
           
-    //=======================================================================
-    // Si3000
-    //=======================================================================
-            
-        inout   wire                                Si3000_SDO,
-        output  wire                                Si3000_SDI,
-        inout   wire                                Si3000_SCLK,
-        output  wire                                Si3000_MCLK,
-        input   wire                                Si3000_FSYNC_N,
-        output  wire                                Si3000_RESET_N,
-          
-    //=======================================================================
-    // SD Card
-    //=======================================================================
-        
-        output wire                                 SD_SPI_CS,
-        output wire                                 SD_SPI_CLK,
-        input  wire                                 SD_SPI_DO,
-        output wire                                 SD_SPI_DI,
-        output wire                                 SD_DAT2,
-        output wire                                 SD_DAT1,
-
+   
     //=======================================================================
     // I2C
     //=======================================================================
         inout  wire                                 I2C_SDA,
         inout  wire                                 I2C_SCL,
         
+	 //=======================================================================
+    // LED
+    //=======================================================================
+    	  output wire											 LED1,
+		  output wire											 LED2,
+		  output wire											 LED3,
+		  output wire											 LED4,
+		  output wire											 LED5,
+		  output wire											 LED6,
+		  output wire											 LED7,
+		  output wire											 LED8,
+		  
+		  
+		  
     //=======================================================================
     // PWM
     //=======================================================================
-        output logic unsigned [NUM_OF_PWM - 1 : 0]  PWM_OUT,
-    //=======================================================================
-    // GPIO on JTAG connector
-    //=======================================================================
-  
-        output wire                                 JTAG_PIN6,
-        output wire                                 JTAG_PIN7,
-        output wire                                 JTAG_PIN8
-  
+        output logic unsigned [NUM_OF_PWM - 1 : 0]  PWM_OUT
 );
 
+
+		wire push_button;
+		
+		assign push_button = 1'b1;
 	  
 
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -197,10 +175,12 @@ module Mustang_fast (
 	 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // external interrupt
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		  assign INTx[0] = P0[2];
-		  assign INTx[1] = P0[3];
+		 // assign INTx[0] = P0[2];
+		 // assign INTx[1] = P0[3];
 		  
-	 
+		 assign INTx[0] = 1'b0;
+		 assign INTx[1] = 1'b0;
+		 
 	 
 	 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // I2C
@@ -226,13 +206,6 @@ module Mustang_fast (
             end
         end : pwm_out_proc
             
-    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    // voice codec Si3000, mode 0
-    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        assign Si3000_SCLK = (Si3000_RESET_N) ? 1'bZ : 1'b0;
-        assign Si3000_SDO = (Si3000_FSYNC_N) ? 1'b0 : 1'bZ;
-        assign SD_DAT1 = 1'b1;
-        assign SD_DAT2 = 1'b1;
      
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // PLL and clock control block
@@ -276,7 +249,7 @@ module Mustang_fast (
     // code loader at power on
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         
-        code_mem_power_on_loader code_mem_power_on_loader_i (
+      /*  code_mem_power_on_loader code_mem_power_on_loader_i (
               .clk (clk),
                 .reset_n (pll_locked),
                 .pram_we(loader_pram_we),
@@ -284,7 +257,8 @@ module Mustang_fast (
                 .pram_data (loader_pram_data),
                 .done (loader_done)
         );
-    
+    */
+		assign loader_done = 1'b1;
     
     
         always_ff @(posedge clk, negedge pll_locked) begin : cpu_pram_write_proc
@@ -376,10 +350,7 @@ module Mustang_fast (
                             
                 .UART_RXD (UART_RXD),
                 .UART_TXD (uart_tx_cpu),
-                
-                .UART_AUX_RXD (UART_AUX_RXD),
-                .UART_AUX_TXD (UART_AUX_TXD),
-                
+                                
                 .P0 (P0),
                 .P1 (P1),
                 .P2 (P2),
@@ -413,28 +384,7 @@ module Mustang_fast (
                  
                 .debug_led (debug_led_i),
                 .debug_counter_pulse (debug_counter_pulse),
-                 
-                .mem_so     (mem_so),
-                .mem_si     (mem_si),
-                .mem_hold_n (mem_hold_n),
-                .mem_cs_n   (mem_cs_n),
-                .mem_sck    (mem_sck),
-                     
-                .Si3000_SDO (Si3000_SDO),
-                .Si3000_SDI (Si3000_SDI),
-                .Si3000_SCLK (Si3000_SCLK),
-                .Si3000_MCLK (Si3000_MCLK),
-                .Si3000_FSYNC_N (Si3000_FSYNC_N),
-                .Si3000_RESET_N (Si3000_RESET_N),
-                     
-                .sd_cs_n     (SD_SPI_CS),
-                .sd_spi_clk  (SD_SPI_CLK),
-                .sd_data_out (SD_SPI_DO),
-                .sd_data_in  (SD_SPI_DI),  
-                 
-                .adc_pll_clock_clk (clk_2MHz),
-                .adc_pll_locked_export (pll_locked),
- 
+                
                 .sda_in (sda_in),
                 .scl_in (scl_in),
                 .sda_out (sda_out),
@@ -448,30 +398,17 @@ module Mustang_fast (
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         assign debug_led = (debug_led_i) | (~push_button);
     
-    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    //  dual config
-    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        
     
-        dual_config dual_config_i (
-            .avmm_rcv_address (3'd0),   // avalon.address
-            .avmm_rcv_read (1'b0),      //       .read
-            .avmm_rcv_writedata (32'd0), //       .writedata
-            .avmm_rcv_write (1'b0),     //       .write
-            .avmm_rcv_readdata(),  //       .readdata
-            .clk (clk_24MHz),                //    clk.clk
-            .nreset (1'b1)              // nreset.reset_n
-        );
-    
-
-	 
-	 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    //  JTAG IO
-    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-         assign JTAG_PIN6 = 1'b1;		
-         assign JTAG_PIN7 = 0;
-         assign JTAG_PIN8 = timer_pulse;
-  
+		  assign LED1 = debug_led;
+		  assign LED2 = pll_locked;
+		  assign LED3 = debug_uart_tx_sel_ocd1_cpu0;
+		  assign LED4 = debug_uart_tx_sel_ocd1_cpu0;
+		  assign LED5 = debug_uart_tx_sel_ocd1_cpu0;
+		  
+		  assign LED6 = 1'b0;
+		  assign LED7 = 1'b0;
+		  assign LED8 = 1'b1;
+		  
  
 endmodule : Mustang_fast
 

@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2017.12.18.23:09:03</td>
+    <td class="l">2018.03.01.20:55:36</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -141,23 +141,23 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">CONFIGURATION_MODE</td>
-        <td class="parametervalue">Dual Compressed Images</td>
+        <td class="parametervalue">Single Compressed Image</td>
        </tr>
        <tr>
         <td class="parametername">SECTOR_ID</td>
-        <td class="parametervalue">1,2,3,4,5</td>
+        <td class="parametervalue">1,2,NA,3,4</td>
        </tr>
        <tr>
         <td class="parametername">SECTOR_ACCESS_MODE</td>
-        <td class="parametervalue">Read and write,Read and write,Read and write,Read and write,Read only</td>
+        <td class="parametervalue">Read and write,Read and write,Read and write,Read only,Read only</td>
        </tr>
        <tr>
         <td class="parametername">SECTOR_ADDRESS_MAPPING</td>
-        <td class="parametervalue">0x00000 - 0x03fff,0x04000 - 0x07fff,0x08000 - 0x1c7ff,0x1c800 - 0x2afff,0x2b000 - 0x4dfff</td>
+        <td class="parametervalue">0x00000 - 0x03fff,0x04000 - 0x07fff,NA,0x08000 - 0x167ff,0x16800 - 0x397ff</td>
        </tr>
        <tr>
         <td class="parametername">SECTOR_STORAGE_TYPE</td>
-        <td class="parametervalue">UFM,UFM,CFM (Image 2),CFM (Image 2),CFM (Image 1)</td>
+        <td class="parametervalue">UFM,UFM,NA,UFM,CFM</td>
        </tr>
        <tr>
         <td class="parametername">initFlashContent</td>
@@ -193,7 +193,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">PART_NAME</td>
-        <td class="parametervalue">10M08SAE144C8G</td>
+        <td class="parametervalue">10M08SCM153C8G</td>
        </tr>
        <tr>
         <td class="parametername">AUTO_CLOCK_RATE</td>
@@ -225,23 +225,23 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">SECTOR3_END_ADDR</td>
-        <td class="parametervalue">29183</td>
+        <td class="parametervalue">23039</td>
        </tr>
        <tr>
         <td class="parametername">SECTOR4_START_ADDR</td>
-        <td class="parametervalue">29184</td>
+        <td class="parametervalue">23040</td>
        </tr>
        <tr>
         <td class="parametername">SECTOR4_END_ADDR</td>
-        <td class="parametervalue">44031</td>
+        <td class="parametervalue">58879</td>
        </tr>
        <tr>
         <td class="parametername">SECTOR5_START_ADDR</td>
-        <td class="parametervalue">44032</td>
+        <td class="parametervalue">0</td>
        </tr>
        <tr>
         <td class="parametername">SECTOR5_END_ADDR</td>
-        <td class="parametervalue">79871</td>
+        <td class="parametervalue">0</td>
        </tr>
        <tr>
         <td class="parametername">MIN_VALID_ADDR</td>
@@ -249,7 +249,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">MAX_VALID_ADDR</td>
-        <td class="parametervalue">79871</td>
+        <td class="parametervalue">58879</td>
        </tr>
        <tr>
         <td class="parametername">MIN_UFM_VALID_ADDR</td>
@@ -257,7 +257,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">MAX_UFM_VALID_ADDR</td>
-        <td class="parametervalue">8191</td>
+        <td class="parametervalue">23039</td>
        </tr>
        <tr>
         <td class="parametername">SECTOR1_MAP</td>
@@ -269,19 +269,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">SECTOR3_MAP</td>
-        <td class="parametervalue">3</td>
-       </tr>
-       <tr>
-        <td class="parametername">SECTOR4_MAP</td>
         <td class="parametervalue">4</td>
        </tr>
        <tr>
-        <td class="parametername">SECTOR5_MAP</td>
+        <td class="parametername">SECTOR4_MAP</td>
         <td class="parametervalue">5</td>
        </tr>
        <tr>
+        <td class="parametername">SECTOR5_MAP</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
         <td class="parametername">ADDR_RANGE1_END_ADDR</td>
-        <td class="parametervalue">79871</td>
+        <td class="parametervalue">8191</td>
        </tr>
        <tr>
         <td class="parametername">ADDR_RANGE1_OFFSET</td>
@@ -289,11 +289,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">ADDR_RANGE2_OFFSET</td>
-        <td class="parametervalue">0</td>
+        <td class="parametervalue">21504</td>
        </tr>
        <tr>
         <td class="parametername">AVMM_DATA_ADDR_WIDTH</td>
-        <td class="parametervalue">17</td>
+        <td class="parametervalue">16</td>
        </tr>
        <tr>
         <td class="parametername">AVMM_DATA_DATA_WIDTH</td>
@@ -305,7 +305,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">SECTOR_READ_PROTECTION_MODE</td>
-        <td class="parametervalue">16</td>
+        <td class="parametervalue">28</td>
        </tr>
        <tr>
         <td class="parametername">FLASH_SEQ_READ_DATA_COUNT</td>
@@ -349,7 +349,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">IS_DUAL_BOOT</td>
-        <td class="parametervalue">True</td>
+        <td class="parametervalue">False</td>
        </tr>
        <tr>
         <td class="parametername">IS_ERAM_SKIP</td>
@@ -414,7 +414,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">SECTOR3_END_ADDR</td>
-        <td class="parametervalue">116735</td>
+        <td class="parametervalue">92159</td>
        </tr>
        <tr>
         <td class="parametername">SECTOR3_START_ADDR</td>
@@ -426,23 +426,23 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">SECTOR4_END_ADDR</td>
-        <td class="parametervalue">176127</td>
+        <td class="parametervalue">235519</td>
        </tr>
        <tr>
         <td class="parametername">SECTOR4_START_ADDR</td>
-        <td class="parametervalue">116736</td>
+        <td class="parametervalue">92160</td>
        </tr>
        <tr>
         <td class="parametername">SECTOR5_ENABLED</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">0</td>
        </tr>
        <tr>
         <td class="parametername">SECTOR5_END_ADDR</td>
-        <td class="parametervalue">319487</td>
+        <td class="parametervalue">-1</td>
        </tr>
        <tr>
         <td class="parametername">SECTOR5_START_ADDR</td>
-        <td class="parametervalue">176128</td>
+        <td class="parametervalue">-1</td>
        </tr>
       </table>
      </td>
@@ -452,7 +452,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0.00 seconds</td>
-    <td class="r">rendering took 0.03 seconds</td>
+    <td class="r">rendering took 0.02 seconds</td>
    </tr>
   </table>
  </body>

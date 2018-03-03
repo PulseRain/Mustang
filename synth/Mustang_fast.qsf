@@ -38,7 +38,7 @@
 
 
 set_global_assignment -name FAMILY "MAX 10"
-set_global_assignment -name DEVICE 10M08SAE144C8G
+set_global_assignment -name DEVICE 10M08SCM153C8G
 set_global_assignment -name TOP_LEVEL_ENTITY Mustang_fast
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 16.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:22:39  MARCH 19, 2017"
@@ -59,9 +59,7 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_global_assignment -name NUM_PARALLEL_PROCESSORS 4
 
-set_location_assignment PIN_88 -to osc_in
-set_location_assignment PIN_75 -to UART_RXD
-set_location_assignment PIN_79 -to UART_TXD
+set_location_assignment PIN_J5 -to osc_in
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to osc_in
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_TXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_RXD
@@ -78,22 +76,15 @@ set_global_assignment -name PHYSICAL_SYNTHESIS_MAP_LOGIC_TO_MEMORY_FOR_AREA ON
 set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING ON
 set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
 set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT EXTRA
-set_location_assignment PIN_132 -to debug_led
 set_instance_assignment -name FAST_OUTPUT_ENABLE_REGISTER ON -to debug_led
 set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to UART_TXD
 set_instance_assignment -name FAST_INPUT_REGISTER ON -to UART_RXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug_led
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to UART_TXD
-set_global_assignment -name SEED 54
+set_global_assignment -name SEED 55
 set_global_assignment -name REMOVE_REDUNDANT_LOGIC_CELLS ON
 set_global_assignment -name FIT_ATTEMPTS_TO_SKIP 0
 set_global_assignment -name PRE_MAPPING_RESYNTHESIS ON
-set_location_assignment PIN_130 -to P1[5]
-set_location_assignment PIN_21 -to P0[0]
-set_location_assignment PIN_22 -to P0[1]
-set_location_assignment PIN_54 -to P0[2]
-set_location_assignment PIN_24 -to P0[3]
-set_location_assignment PIN_56 -to P0[4]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to P0
 set_global_assignment -name USE_LOGICLOCK_CONSTRAINTS_IN_BALANCING OFF
 set_global_assignment -name SYNTHESIS_EFFORT AUTO
@@ -116,8 +107,6 @@ set_global_assignment -name ROUTER_CLOCKING_TOPOLOGY_ANALYSIS ON
 set_global_assignment -name PERIPHERY_TO_CORE_PLACEMENT_AND_ROUTING_OPTIMIZATION ON
 set_global_assignment -name WEAK_PULL_UP_RESISTOR OFF
 set_global_assignment -name TREAT_BIDIR_AS_OUTPUT OFF
-set_location_assignment PIN_100 -to P1[6]
-set_location_assignment PIN_131 -to P1[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to P1
 set_global_assignment -name AUTO_RESOURCE_SHARING OFF
 set_global_assignment -name SYNTH_PROTECT_SDC_CONSTRAINT OFF
@@ -129,85 +118,22 @@ set_global_assignment -name ENABLE_OCT_DONE OFF
 set_global_assignment -name EXTERNAL_FLASH_FALLBACK_ADDRESS 00000000
 set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "PASSIVE SERIAL"
 set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
-set_global_assignment -name INTERNAL_FLASH_UPDATE_MODE "DUAL IMAGES"
+set_global_assignment -name INTERNAL_FLASH_UPDATE_MODE "SINGLE COMP IMAGE"
 set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
-set_location_assignment PIN_92 -to P1[0]
-set_location_assignment PIN_105 -to P1[1]
-set_location_assignment PIN_106 -to P1[2]
-set_location_assignment PIN_85 -to P1[3]
-set_location_assignment PIN_99 -to P1[4]
-set_location_assignment PIN_74 -to push_button
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to push_button
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to push_button
-set_location_assignment PIN_25 -to P0[5]
-set_location_assignment PIN_135 -to P0[6]
-set_location_assignment PIN_59 -to P0[7]
-set_location_assignment PIN_29 -to mem_cs_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to mem_cs_n
-set_location_assignment PIN_32 -to mem_so
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to mem_so
-set_location_assignment PIN_26 -to mem_hold_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to mem_hold_n
-set_location_assignment PIN_28 -to mem_si
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to mem_si
-set_location_assignment PIN_27 -to mem_sck
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to mem_sck
 set_global_assignment -name OPTIMIZE_POWER_DURING_FITTING "NORMAL COMPILATION"
-set_location_assignment PIN_39 -to Si3000_RESET_N
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Si3000_RESET_N
-set_location_assignment PIN_44 -to Si3000_SDO
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Si3000_SDO
-set_location_assignment PIN_45 -to Si3000_SDI
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Si3000_SDI
-set_location_assignment PIN_38 -to Si3000_SCLK
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Si3000_SCLK
-set_location_assignment PIN_41 -to Si3000_MCLK
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Si3000_MCLK
-set_location_assignment PIN_43 -to Si3000_FSYNC_N
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Si3000_FSYNC_N
-set_instance_assignment -name FAST_INPUT_REGISTER ON -to Si3000_SDO
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Si3000_SDI
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Si3000_SCLK
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Si3000_MCLK
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Si3000_FSYNC_N
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to Si3000_RESET_N
-set_instance_assignment -name FAST_INPUT_REGISTER ON -to mem_so
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to mem_si
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to mem_cs_n
-set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to mem_sck
 set_global_assignment -name AUTO_RAM_TO_LCELL_CONVERSION ON
 set_global_assignment -name AUTO_RAM_RECOGNITION ON
 
-set_location_assignment PIN_69 -to SD_SPI_CS
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SD_SPI_CS
-set_location_assignment PIN_64 -to SD_SPI_DO
-set_location_assignment PIN_65 -to SD_SPI_CLK
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SD_SPI_DO
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SD_SPI_CLK
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SD_SPI_DO
-set_location_assignment PIN_66 -to SD_SPI_DI
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SD_SPI_DI
-set_location_assignment PIN_62 -to SD_DAT1
-set_location_assignment PIN_70 -to SD_DAT2
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SD_DAT1
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SD_DAT2
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SD_DAT1
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SD_DAT2
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SD_SPI_DI
 
 
 
 set_global_assignment -name ISP_CLAMP_STATE_DEFAULT "TRI-STATE"
-set_location_assignment PIN_60 -to JTAG_PIN7
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to JTAG_PIN7
-set_location_assignment PIN_47 -to JTAG_PIN8
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to JTAG_PIN8
-set_location_assignment PIN_46 -to JTAG_PIN6
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to JTAG_PIN6
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/I2C
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/PWM
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/FP51_fast_core/source
@@ -227,8 +153,6 @@ set_global_assignment -name SEARCH_PATH ../submodules/FP51_OCD/source
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/common
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to I2C_SDA
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to I2C_SCL
-set_location_assignment PIN_101 -to I2C_SDA
-set_location_assignment PIN_102 -to I2C_SCL
 set_global_assignment -name QIP_FILE ../cores/PLL/PLL.qip
 set_global_assignment -name SDC_FILE constraints/Mustang_fast.sdc
 set_global_assignment -name QIP_FILE ../cores/dual_config/dual_config/synthesis/dual_config.qip
@@ -238,23 +162,43 @@ set_global_assignment -name QIP_FILE ../submodules/FP51_OCD/synth/Intel/FP51_OCD
 set_global_assignment -name QIP_FILE ../submodules/PulseRain_FP51_MCU/synth/Intel/PulseRain_FP51_MCU.qip
 set_global_assignment -name SYSTEMVERILOG_FILE ../source/Mustang_fast.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../source/code_mem_power_on_loader.sv
-set_global_assignment -name POST_FLOW_SCRIPT_FILE "quartus_sh:post_flow.tcl"
+#set_global_assignment -name POST_FLOW_SCRIPT_FILE "quartus_sh:post_flow.tcl"
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to I2C_SDA
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to I2C_SCL
 set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PWM_OUT
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PWM_OUT
-set_location_assignment PIN_55 -to PWM_OUT[0]
-set_location_assignment PIN_57 -to PWM_OUT[1]
-set_location_assignment PIN_58 -to PWM_OUT[2]
-set_location_assignment PIN_93 -to PWM_OUT[3]
-set_location_assignment PIN_96 -to PWM_OUT[4]
-set_location_assignment PIN_98 -to PWM_OUT[5]
-set_location_assignment PIN_50 -to UART_AUX_RXD
-set_location_assignment PIN_52 -to UART_AUX_TXD
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_AUX_RXD
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_AUX_TXD
 
 set_global_assignment -name GENERATE_SVF_FILE ON
 set_global_assignment -name GENERATE_JAM_FILE ON
 set_global_assignment -name GENERATE_JBC_FILE ON
+set_location_assignment PIN_A13 -to I2C_SCL
+set_location_assignment PIN_A11 -to I2C_SDA
+set_location_assignment PIN_M5 -to UART_RXD
+set_location_assignment PIN_R3 -to UART_TXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED4
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED5
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED6
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED7
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED8
+
+set_location_assignment PIN_N15 -to LED1
+set_location_assignment PIN_N14 -to LED2
+set_location_assignment PIN_M14 -to LED3
+set_location_assignment PIN_M12 -to LED4
+set_location_assignment PIN_L15 -to LED5
+set_location_assignment PIN_K12 -to LED6
+set_location_assignment PIN_L11 -to LED7
+set_location_assignment PIN_K11 -to LED8
+
+
+
+
+
+
+
+
+
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

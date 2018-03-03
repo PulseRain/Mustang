@@ -1,12 +1,12 @@
-# system info onchip_flash on 2017.12.18.23:08:59
+# system info onchip_flash on 2018.03.01.20:55:33
 system_info:
 name,value
-DEVICE,10M08SAE144C8G
+DEVICE,10M08SCM153C8G
 DEVICE_FAMILY,MAX 10
-GENERATION_ID,1513667338
+GENERATION_ID,1519966532
 #
 #
-# Files generated for onchip_flash on 2017.12.18.23:08:59
+# Files generated for onchip_flash on 2018.03.01.20:55:33
 files:
 filepath,kind,attributes,module,is_top
 simulation/onchip_flash.v,VERILOG,,onchip_flash,true
