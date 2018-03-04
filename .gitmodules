@@ -7,3 +7,5 @@
 [submodule "submodules/PulseRain_FP51_MCU"]
 	path = submodules/PulseRain_FP51_MCU
 	url = https://github.com/PulseRain/PulseRain_FP51_MCU.git
+    branch = step_fpga
+    
