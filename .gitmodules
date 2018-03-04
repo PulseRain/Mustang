@@ -4,3 +4,6 @@
 [submodule "submodules/FP51_OCD"]
 	path = submodules/FP51_OCD
 	url = https://github.com/PulseRain/FP51_OCD.git
+[submodule "submodules/PulseRain_FP51_MCU"]
+	path = submodules/PulseRain_FP51_MCU
+	url = https://github.com/PulseRain/PulseRain_FP51_MCU.git
