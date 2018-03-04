@@ -33,132 +33,132 @@ module Mustang_fast (
     //=======================================================================
     // clock / reset
     //=======================================================================
-		input wire                                          osc_in,         // expecting 12MHz oscillator in
+        input wire                                          osc_in,         // expecting 12MHz oscillator in
         
     //=======================================================================
     // UART
     //=======================================================================
-		input wire                                          UART_RXD,
-		output logic                                        UART_TXD,
+        input wire                                          UART_RXD,
+        output logic                                        UART_TXD,
         
         
     //=======================================================================
     //  KEYS
     //=======================================================================
-		input wire										    KEY1,
-		input wire										    KEY2,
-		input wire										    KEY3,
-		input wire										    KEY4,
+        input wire                                          KEY1,
+        input wire                                          KEY2,
+        input wire                                          KEY3,
+        input wire                                          KEY4,
     
     //=======================================================================
     //  SW
     //=======================================================================
-			input wire										    SW1,
-			input wire										    SW2,
-			input wire										    SW3,
-			input wire										    SW4,
-			
-	 //=======================================================================
+            input wire                                          SW1,
+            input wire                                          SW2,
+            input wire                                          SW3,
+            input wire                                          SW4,
+            
+     //=======================================================================
     //  RGB LED
     //=======================================================================
-			output wire											 REG_LED1_R,
-			output wire											 REG_LED1_G,
-            output wire											 REG_LED1_B,
-		  
-            output wire											 REG_LED2_R,
-            output wire											 REG_LED2_G,
-            output wire											 REG_LED2_B,
-		  
-	 //=======================================================================
+            output wire                                          REG_LED1_R,
+            output wire                                          REG_LED1_G,
+            output wire                                          REG_LED1_B,
+          
+            output wire                                          REG_LED2_R,
+            output wire                                          REG_LED2_G,
+            output wire                                          REG_LED2_B,
+          
+     //=======================================================================
     //  seven-segment Display
     //=======================================================================
-			output wire											 SEG_A1,
-			output wire											 SEG_B1,
-			output wire											 SEG_C1,
-			output wire											 SEG_D1,
-			output wire											 SEG_E1,
-			output wire											 SEG_F1,
-			output wire											 SEG_G1,
-			output wire											 SEG_DP1,
-			output wire											 SEG_DIG1,
-		  
-		   output wire											 SEG_A2,
-			output wire											 SEG_B2,
-			output wire											 SEG_C2,
-			output wire											 SEG_D2,
-			output wire											 SEG_E2,
-			output wire											 SEG_F2,
-			output wire											 SEG_G2,
-			output wire											 SEG_DP2,
-			output wire											 SEG_DIG2,
-		  
+            output wire                                          SEG_A1,
+            output wire                                          SEG_B1,
+            output wire                                          SEG_C1,
+            output wire                                          SEG_D1,
+            output wire                                          SEG_E1,
+            output wire                                          SEG_F1,
+            output wire                                          SEG_G1,
+            output wire                                          SEG_DP1,
+            output wire                                          SEG_DIG1,
+          
+           output wire                                           SEG_A2,
+            output wire                                          SEG_B2,
+            output wire                                          SEG_C2,
+            output wire                                          SEG_D2,
+            output wire                                          SEG_E2,
+            output wire                                          SEG_F2,
+            output wire                                          SEG_G2,
+            output wire                                          SEG_DP2,
+            output wire                                          SEG_DIG2,
+          
     //=======================================================================
     //  Rotary Encoder
     //=======================================================================
-			input wire											 A_OUT,
-		   input wire											 B_OUT,
-			input wire											 D_OUT,
-		   		
-	 //=======================================================================
+            input wire                                           A_OUT,
+           input wire                                            B_OUT,
+            input wire                                           D_OUT,
+                
+     //=======================================================================
     //  Key Matrix
     //=======================================================================
-			input wire											 COL1,
-		   input wire											 COL2,
-			input wire											 COL3,
-			input wire											 COL4,
-			
-			input wire											 ROW1,
-		   input wire											 ROW2,
-			input wire											 ROW3,
-			input wire											 ROW4,
-			
-	 //=======================================================================
+            input wire                                           COL1,
+           input wire                                            COL2,
+            input wire                                           COL3,
+            input wire                                           COL4,
+            
+            input wire                                           ROW1,
+           input wire                                            ROW2,
+            input wire                                           ROW3,
+            input wire                                           ROW4,
+            
+     //=======================================================================
     //  74HC595D
     //=======================================================================
-			output wire											 DIN_595,
-			output wire											 RCK_595,
-			output wire											 SCK_595,
-			
-	 //=======================================================================
+            output wire                                          DIN_595,
+            output wire                                          RCK_595,
+            output wire                                          SCK_595,
+            
+     //=======================================================================
     //  PMOD
     //=======================================================================
-			inout  wire											 PMOD_A,
-			inout  wire											 PMOD_B,
-			inout  wire											 PMOD_C,
-			inout  wire											 PMOD_D,
-	
-	 //=======================================================================
+            inout  wire                                          PMOD_A,
+            inout  wire                                          PMOD_B,
+            inout  wire                                          PMOD_C,
+            inout  wire                                          PMOD_D,
+    
+     //=======================================================================
     //  Piezo Buzzer
     //=======================================================================
-			output wire											 BEEP,
-	
+            output wire                                          BEEP,
+    
     //=======================================================================
     // I2C
     //=======================================================================
         inout  wire                                 I2C_SDA,
         inout  wire                                 I2C_SCL,
     
-	 //=======================================================================
+     //=======================================================================
     // Thermometer
     //=======================================================================
-        inout  wire											 DS18B20,
-	
-	 
-	 //=======================================================================
+        inout  wire                                          DS18B20,
+    
+     
+     //=======================================================================
     // PS/2
     //=======================================================================
-		input  wire											 PS2_CLK,
-		input  wire											 PS2_DAT,
-	
-	 //=======================================================================
+        input  wire                                          PS2_CLK,
+        input  wire                                          PS2_DAT,
+    
+     //=======================================================================
     // LCD
     //=======================================================================
-		output wire											LCD_BL,
-		output wire                                         LCD_DAT_CMD,
-		output wire                                         LCD_RES,
-		inout wire                                          LCD_SDA,
-		inout wire                                          LCD_SCL,
-	
+        output wire                                         LCD_BL,
+        output wire                                         LCD_DAT_CMD,
+        output wire                                         LCD_RES,
+        inout wire                                          LCD_SDA,
+        inout wire                                          LCD_SCL,
+    
     //=======================================================================
     // VGA
     //=======================================================================
@@ -168,23 +168,23 @@ module Mustang_fast (
         output wire                                             VGA_G,
         output wire                                             VGA_B,
         
-	//=======================================================================
+    //=======================================================================
     // LED
     //=======================================================================
-    	  output wire											 LED1,
-		  output wire											 LED2,
-		  output wire											 LED3,
-		  output wire											 LED4,
-		  output wire											 LED5,
-		  output wire											 LED6,
-		  output wire											 LED7,
-		  output wire											 LED8
-		  
-		  
+          output wire                                            LED1,
+          output wire                                            LED2,
+          output wire                                            LED3,
+          output wire                                            LED4,
+          output wire                                            LED5,
+          output wire                                            LED6,
+          output wire                                            LED7,
+          output wire                                            LED8
+          
+          
 );
 
 
-		
+        
 
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // Signals
@@ -247,9 +247,9 @@ module Mustang_fast (
         logic unsigned [DEBUG_PRAM_ADDR_WIDTH - 3 : 0]                    cpu_pram_write_addr_out;
         logic unsigned [DEBUG_DATA_WIDTH * DEBUG_FRAME_DATA_LEN - 1 : 0]  cpu_pram_write_data_out;
         
-		  wire unsigned [7 : 0]                 									  P0;
-		  wire unsigned [7 : 0]                 									  P1;
-			
+          wire unsigned [7 : 0]                                                       P0;
+          wire unsigned [7 : 0]                                                       P1;
+            
         wire unsigned [7 : 0]                                             P2;
         wire unsigned [7 : 0]                                             P3;
       
@@ -259,30 +259,30 @@ module Mustang_fast (
         wire                                                              scl_out;
         
         wire unsigned [NUM_OF_PWM - 1 : 0]                                pwm_out;
-		  
-		  wire  unsigned [1 : 0]                									  INTx;
+          
+          wire  unsigned [1 : 0]                                                      INTx;
         
         logic unsigned [NUM_OF_PWM - 1 : 0]  PWM_OUT;
         
         wire push_button;                            // reset button
-	
-	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // keys
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	
-		assign push_button = KEY1;   // reset button
-	  
-	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    
+        assign push_button = KEY1;   // reset button
+      
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // external interrupt
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		 // assign INTx[0] = P0[2];
-		 // assign INTx[1] = P0[3];
-		  
-		 assign INTx[0] = 1'b0;
-		 assign INTx[1] = 1'b0;
-		 
-	 
-	 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+         // assign INTx[0] = P0[2];
+         // assign INTx[1] = P0[3];
+          
+         assign INTx[0] = 1'b0;
+         assign INTx[1] = 1'b0;
+         
+     
+     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // I2C
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         assign sda_in = I2C_SDA;
@@ -318,7 +318,7 @@ module Mustang_fast (
             .c1 (clk_24MHz),
             .c2 (clk_2MHz),
             .locked (pll_locked));
-		            
+                    
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // button debouncer
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -349,7 +349,7 @@ module Mustang_fast (
     // code loader at power on
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         
-      /*  code_mem_power_on_loader code_mem_power_on_loader_i (
+        code_mem_power_on_loader code_mem_power_on_loader_i (
               .clk (clk),
                 .reset_n (pll_locked),
                 .pram_we(loader_pram_we),
@@ -357,8 +357,6 @@ module Mustang_fast (
                 .pram_data (loader_pram_data),
                 .done (loader_done)
         );
-    */
-		assign loader_done = 1'b1;
     
     
         always_ff @(posedge clk, negedge pll_locked) begin : cpu_pram_write_proc
@@ -520,16 +518,8 @@ module Mustang_fast (
           assign REG_LED2_G = ~pll_locked;
           assign REG_LED2_B = pll_locked;
           
-		  assign LED1 = 1'b0;
-		  assign LED2 = pll_locked;
-		  assign LED3 = debug_uart_tx_sel_ocd1_cpu0;
-		  assign LED4 = debug_uart_tx_sel_ocd1_cpu0;
-		  assign LED5 = debug_uart_tx_sel_ocd1_cpu0;
-		  
-		  assign LED6 = 1'b0;
-		  assign LED7 = 1'b0;
-		  assign LED8 = 1'b1;
-		  
+          assign {LED8, LED7, LED6, LED5, LED4, LED3, LED2, LED1} = ~P3;
+          
  
 endmodule : Mustang_fast
 
