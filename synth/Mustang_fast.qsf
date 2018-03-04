@@ -81,7 +81,7 @@ set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to UART_TXD
 set_instance_assignment -name FAST_INPUT_REGISTER ON -to UART_RXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug_led
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to UART_TXD
-set_global_assignment -name SEED 1
+set_global_assignment -name SEED 2
 set_global_assignment -name REMOVE_REDUNDANT_LOGIC_CELLS ON
 set_global_assignment -name FIT_ATTEMPTS_TO_SKIP 0
 set_global_assignment -name PRE_MAPPING_RESYNTHESIS ON
@@ -147,6 +147,7 @@ set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodu
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_rtl_lib/codec/Si3000
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/chip_ID
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/ADC
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/rotary_encoder
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/UART/FP51
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/CRC/source
 set_global_assignment -name SEARCH_PATH ../submodules/FP51_OCD/source

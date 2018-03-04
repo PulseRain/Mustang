@@ -489,10 +489,24 @@ module Mustang_fast (
                 .scl_in (scl_in),
                 .sda_out (sda_out),
                 .scl_out (scl_out),
+                
+                .encoder_clk(A_OUT),
+                .encoder_dt (B_OUT),
+                .encoder_sw (D_OUT),
+            
                 .pwm_out (pwm_out)
 
         );    
-     
+    
+
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    //  7 segment display
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        assign {SEG_DP1, SEG_G1, SEG_F1, SEG_E1, SEG_D1, SEG_C1, SEG_B1, SEG_A1} = P0;
+        assign {SEG_DP2, SEG_G2, SEG_F2, SEG_E2, SEG_D2, SEG_C2, SEG_B2, SEG_A2} = P1;
+        assign SEG_DIG1 = ~P2[0];
+        assign SEG_DIG2 = ~P2[1];
+        
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     //  debug led
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
