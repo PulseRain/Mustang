@@ -81,7 +81,7 @@ set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to UART_TXD
 set_instance_assignment -name FAST_INPUT_REGISTER ON -to UART_RXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug_led
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to UART_TXD
-set_global_assignment -name SEED 2
+set_global_assignment -name SEED 3
 set_global_assignment -name REMOVE_REDUNDANT_LOGIC_CELLS ON
 set_global_assignment -name FIT_ATTEMPTS_TO_SKIP 0
 set_global_assignment -name PRE_MAPPING_RESYNTHESIS ON
@@ -148,6 +148,8 @@ set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_rtl_lib/codec/Si
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/chip_ID
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/ADC
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/rotary_encoder
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/LCD
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/PS2
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/UART/FP51
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/CRC/source
 set_global_assignment -name SEARCH_PATH ../submodules/FP51_OCD/source
@@ -166,8 +168,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE ../source/code_mem_power_on_loade
 #set_global_assignment -name POST_FLOW_SCRIPT_FILE "quartus_sh:post_flow.tcl"
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to I2C_SDA
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to I2C_SCL
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to LCD_SDA
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to LCD_SCL
 
 #set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to PWM_OUT
 #set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PWM_OUT

@@ -183,7 +183,6 @@ module Mustang_fast (
           
 );
 
-
         
 
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -257,6 +256,8 @@ module Mustang_fast (
         wire                                                              scl_in;
         wire                                                              sda_out;
         wire                                                              scl_out;
+        
+        wire                                                              lcd_sda_i;
         
         wire unsigned [NUM_OF_PWM - 1 : 0]                                pwm_out;
           
@@ -344,6 +345,14 @@ module Mustang_fast (
             end
         
         end 
+        
+        
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // LCD
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        
+       assign  LCD_BL = pwm_out[0];
+        
     
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // code loader at power on
@@ -491,12 +500,22 @@ module Mustang_fast (
                 .encoder_clk(A_OUT),
                 .encoder_dt (B_OUT),
                 .encoder_sw (D_OUT),
+                
+                .ps2_clk (PS2_CLK),
+                .ps2_dat (PS2_DAT),
+                
+                .lcd_rst (LCD_RES),
+                .lcd_csx (),
+                .lcd_dcx (LCD_DAT_CMD),
+                .lcd_scl (LCD_SCL),
+                .lcd_sda (lcd_sda_i),
             
                 .pwm_out (pwm_out)
 
         );    
-    
-
+   
+        assign LCD_SDA = lcd_sda_i;
+        
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     //  7 segment display
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
