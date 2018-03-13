@@ -8,7 +8,7 @@
 		<user_name>Page_0</user_name>
 		<page_flags>1</page_flags>
 		<bit0>
-			<sof_filename>C:/GitHub/step_fpga/synth/output_files/Mustang_fast.sof<compress_bitstream>1</compress_bitstream></sof_filename> 
+			<sof_filename>output_files/Mustang_fast.sof<compress_bitstream>1</compress_bitstream></sof_filename> 
 		</bit0>
 	</sof_data>
 	<version>10</version>
@@ -27,7 +27,7 @@
 		<verify_protect>0</verify_protect>
 		<epof>0</epof>
 		<ufm_source>2</ufm_source>
-		<ufm_filepath>C:/GitHub/step_fpga/synth/output_files/ufm.hex</ufm_filepath>
+		<ufm_filepath>output_files/ufm.hex</ufm_filepath>
 	</MAX10_device_options>
 	<advanced_options>
 		<ignore_epcs_id_check>2</ignore_epcs_id_check>
