@@ -246,8 +246,8 @@ module Mustang_fast (
         logic unsigned [DEBUG_PRAM_ADDR_WIDTH - 3 : 0]                    cpu_pram_write_addr_out;
         logic unsigned [DEBUG_DATA_WIDTH * DEBUG_FRAME_DATA_LEN - 1 : 0]  cpu_pram_write_data_out;
         
-          wire unsigned [7 : 0]                                                       P0;
-          wire unsigned [7 : 0]                                                       P1;
+        wire unsigned [7 : 0]                                             P0;
+        wire unsigned [7 : 0]                                             P1;
             
         wire unsigned [7 : 0]                                             P2;
         wire unsigned [7 : 0]                                             P3;
@@ -259,9 +259,14 @@ module Mustang_fast (
         
         wire                                                              lcd_sda_i;
         
+        wire                                                              mcu_flash_read_req;
+        wire unsigned [23 : 0]                                            mcu_flash_addr_read;
+        wire                                                              mcu_flash_read_en_in;
+        wire unsigned [7 : 0]                                             mcu_flash_byte_in;
+        
         wire unsigned [NUM_OF_PWM - 1 : 0]                                pwm_out;
           
-          wire  unsigned [1 : 0]                                                      INTx;
+        wire  unsigned [1 : 0]                                                      INTx;
         
         logic unsigned [NUM_OF_PWM - 1 : 0]  PWM_OUT;
         
@@ -361,10 +366,18 @@ module Mustang_fast (
         code_mem_power_on_loader code_mem_power_on_loader_i (
               .clk (clk),
                 .reset_n (pll_locked),
+                
+                .flash_read_enable (mcu_flash_read_req),
+                .page_index (mcu_flash_addr_read[$clog2(ON_CHIP_CODE_RAM_SIZE_IN_BYTES) + 3 : $clog2(ON_CHIP_CODE_RAM_SIZE_IN_BYTES)]),
+                .flash_byte_addr (mcu_flash_addr_read[$clog2(ON_CHIP_CODE_RAM_SIZE_IN_BYTES) - 1 : 0]),
+
                 .pram_we(loader_pram_we),
                 .pram_addr (loader_pram_addr),
                 .pram_data (loader_pram_data),
-                .done (loader_done)
+                .done (loader_done),
+                
+                .flash_read_en_out (mcu_flash_read_en_in),
+                .flash_byte_out (mcu_flash_byte_in)
         );
     
     
@@ -509,7 +522,12 @@ module Mustang_fast (
                 .lcd_dcx (LCD_DAT_CMD),
                 .lcd_scl (LCD_SCL),
                 .lcd_sda (lcd_sda_i),
-            
+                
+                .flash_read_req (mcu_flash_read_req),
+                .flash_addr_read (mcu_flash_addr_read),
+                .flash_read_en_in (mcu_flash_read_en_in),
+                .flash_byte_in (mcu_flash_byte_in),
+        
                 .pwm_out (pwm_out)
 
         );    

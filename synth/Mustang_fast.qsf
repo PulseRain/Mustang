@@ -150,6 +150,7 @@ set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodu
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/rotary_encoder
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/LCD
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/PS2
+set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/flash_read
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/PulseRain_rtl_lib/UART/FP51
 set_global_assignment -name SEARCH_PATH ../submodules/PulseRain_FP51_MCU/submodules/CRC/source
 set_global_assignment -name SEARCH_PATH ../submodules/FP51_OCD/source

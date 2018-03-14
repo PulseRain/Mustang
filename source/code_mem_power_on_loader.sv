@@ -31,10 +31,17 @@ module code_mem_power_on_loader (
         input wire                                  clk,                      // clock input
         input wire                                  reset_n,                  // reset, active low
 
+        input wire                                                                  flash_read_enable,
+        input wire unsigned [3 : 0]                                                 page_index,
+        input wire unsigned [$clog2(ON_CHIP_CODE_RAM_SIZE_IN_BYTES) - 1 : 0]        flash_byte_addr,
+
         output logic                                                                pram_we,
         output logic unsigned [$clog2(ON_CHIP_CODE_RAM_SIZE_IN_BYTES / 4) - 1 : 0]  pram_addr,
         output logic unsigned [31 : 0]                                              pram_data,
-        output logic                                done
+        output logic                                                                done,
+        
+        output logic                                                                flash_read_en_out,
+        output logic unsigned [7 : 0]                                               flash_byte_out
         
 );
 
@@ -55,9 +62,13 @@ module code_mem_power_on_loader (
         
         logic unsigned [2 : 0]                                                  wait_counter;
         
+        logic unsigned [3 : 0]                                                  page_index_i = 0;
+        
         logic                                                                   ctl_wait_counter_reset;
+        logic                                                                   ctl_output_read;
     
         logic                                                                   ctl_set_done;
+        logic unsigned [1 : 0]                                                  addr_lsb;
         
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // onchip flash
@@ -68,6 +79,12 @@ module code_mem_power_on_loader (
         always_ff @(posedge clk, negedge reset_n) begin : addr_counter_proc
             if (!reset_n) begin
                 addr_counter <= 0;
+                addr_lsb <= 0;
+            end else if (done) begin
+                if (flash_read_enable) begin
+                    addr_counter <= flash_byte_addr [$high(flash_byte_addr) : 2];
+                    addr_lsb     <= flash_byte_addr [1 : 0];
+                end
             end else if ((!addr_counter_wire_and) && (onchip_flash_data_valid)) begin
                 addr_counter <= addr_counter + ($size(addr_counter))'(1);
             end 
@@ -79,6 +96,8 @@ module code_mem_power_on_loader (
                 pram_addr   <= 0;
                 pram_data   <= 0;
                 ctl_onchip_flash_read_d1 <= 0;
+                flash_read_en_out <= 0;
+                flash_byte_out <= 0;
             end else begin
                 ctl_onchip_flash_read_d1 <= ctl_onchip_flash_read;
                 
@@ -104,6 +123,31 @@ module code_mem_power_on_loader (
                                   onchip_data_out[23 : 16],
                                      
                                 onchip_data_out[31 : 24]};          
+                                
+                                
+                flash_read_en_out <= ctl_output_read;
+                
+                if (ctl_output_read) begin
+                    case (addr_lsb) // synthesis parallel_case 
+                        2'b01 : begin
+                            flash_byte_out <= onchip_data_out[23 : 16];
+                        end
+
+                        2'b10 : begin
+                            flash_byte_out <= onchip_data_out[15 : 8];
+                        end
+
+                        2'b11 : begin
+                            flash_byte_out <= onchip_data_out[7:0];
+                        end
+
+                        default : begin
+                            flash_byte_out <= onchip_data_out[31 : 24];
+                        end
+
+                    endcase
+                end
+                
             end
             
         end : output_reg_proc
@@ -127,6 +171,16 @@ module code_mem_power_on_loader (
             end
         end : done_proc
         
+        always_ff @(posedge clk, negedge reset_n) begin : page_index_i_proc
+            if (!reset_n) begin
+                page_index_i <= 0;
+            end else if (done) begin
+                page_index_i <= page_index;
+            end else begin
+                page_index_i <= 0;
+            end
+        end
+        
         onchip_flash onchip_flash_i (
                 .clock (clk),                                               //    clk.clk
                 .avmm_csr_addr (1'b0),                                      //    csr.address
@@ -134,7 +188,7 @@ module code_mem_power_on_loader (
                 .avmm_csr_writedata (32'd0),                                //       .writedata
                 .avmm_csr_write (1'b0),                                     //       .write
                 .avmm_csr_readdata (),                                      //       .readdata
-                .avmm_data_addr ({(17 - $clog2(ON_CHIP_CODE_RAM_SIZE_IN_BYTES / 4))'(0), addr_counter}),                //   data.address
+                .avmm_data_addr ({(13 - $clog2(ON_CHIP_CODE_RAM_SIZE_IN_BYTES / 4))'(0), page_index_i, addr_counter}),                //   data.address
                 .avmm_data_read (ctl_onchip_flash_read_d1),
                 .avmm_data_writedata (32'd0),                               //       .writedata
                 .avmm_data_write (1'b0),                                    //       .write
@@ -150,7 +204,7 @@ module code_mem_power_on_loader (
     // FSM
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                 
-        enum {S_IDLE, S_READ, S_WRITE, S_END, S_WAIT} states = S_IDLE;
+        enum {S_IDLE, S_READ, S_WRITE, S_END, S_WAIT, S_FLASH_READ, S_FLASH_READ_WAIT} states = S_IDLE;
                 
         localparam FSM_NUM_OF_STATES = states.num();
         logic [FSM_NUM_OF_STATES - 1:0] current_state = 0, next_state;
@@ -190,6 +244,7 @@ module code_mem_power_on_loader (
             ctl_wait_counter_reset = 0;
 
             ctl_set_done = 0;
+            ctl_output_read = 0;
             
             case (1'b1) // synthesis parallel_case 
                 
@@ -200,11 +255,7 @@ module code_mem_power_on_loader (
                 current_state [S_READ]: begin
                     ctl_onchip_flash_read = 1'b1;
                     next_state [S_WRITE] = 1'b1;
-                    
-                    
-                    
                 end
-                
                 
                 current_state [S_WRITE]: begin
                     if (onchip_flash_data_valid) begin
@@ -231,9 +282,29 @@ module code_mem_power_on_loader (
                 
                 current_state [S_END]: begin
                     ctl_set_done = 1'b1;
-                    next_state [S_END] = 1'b1;          
+                    next_state [S_FLASH_READ] = 1'b1;          
                 end
-                                                        
+                
+                current_state [S_FLASH_READ] : begin
+                    
+                    if (flash_read_enable) begin
+                        next_state [S_FLASH_READ_WAIT] = 1'b1;
+                        ctl_onchip_flash_read = 1'b1;
+                    end else begin
+                        next_state [S_FLASH_READ] = 1'b1;
+                    end
+                    
+                end
+                
+                current_state [S_FLASH_READ_WAIT] : begin
+                    if (onchip_flash_data_valid) begin
+                        ctl_output_read = 1'b1;
+                        next_state [S_FLASH_READ] = 1'b1;
+                    end else begin
+                        next_state [S_FLASH_READ_WAIT] = 1'b1;
+                    end
+                end
+                
                 default: begin
                     next_state[S_IDLE] = 1'b1;
                 end
