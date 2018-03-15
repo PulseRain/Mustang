@@ -129,20 +129,20 @@ module code_mem_power_on_loader (
                 
                 if (ctl_output_read) begin
                     case (addr_lsb) // synthesis parallel_case 
-                        2'b01 : begin
-                            flash_byte_out <= onchip_data_out[23 : 16];
+                        2'b11 : begin
+                            flash_byte_out <= onchip_data_out[31 : 24];
                         end
 
                         2'b10 : begin
+                            flash_byte_out <= onchip_data_out[23 : 16];
+                        end
+
+                        2'b01 : begin
                             flash_byte_out <= onchip_data_out[15 : 8];
                         end
 
-                        2'b11 : begin
-                            flash_byte_out <= onchip_data_out[7:0];
-                        end
-
                         default : begin
-                            flash_byte_out <= onchip_data_out[31 : 24];
+                            flash_byte_out <= onchip_data_out[7:0];
                         end
 
                     endcase

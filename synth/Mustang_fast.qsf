@@ -81,7 +81,7 @@ set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to UART_TXD
 set_instance_assignment -name FAST_INPUT_REGISTER ON -to UART_RXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug_led
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to UART_TXD
-set_global_assignment -name SEED 3
+set_global_assignment -name SEED 5
 set_global_assignment -name REMOVE_REDUNDANT_LOGIC_CELLS ON
 set_global_assignment -name FIT_ATTEMPTS_TO_SKIP 0
 set_global_assignment -name PRE_MAPPING_RESYNTHESIS ON
