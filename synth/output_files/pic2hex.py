@@ -19,9 +19,8 @@
 
 
 ###############################################################################
-# convert picture into intel hex format
+# convert picture into Intel hex format
 ###############################################################################
-
 
 import sys
 from PIL import Image
